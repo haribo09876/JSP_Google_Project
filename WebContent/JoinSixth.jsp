@@ -7,8 +7,14 @@
 	<title>JoinSixth</title>
 	<style type="text/css">
 		#frame {
-		border: 1px solid black;
-		}		
+			height: 416px;
+			width: 368px; 
+			padding-top: 48px;
+			padding-left: 40px;
+			padding-right: 40px;
+			padding-bottom: 36px;
+			border: 1px solid gray;
+		}
 	</style>
 	<script type="text/javascript">
 
@@ -16,8 +22,8 @@
 </head>
 <body>
 	<div id="frame">
-		<h1>코드 입력</h1>
-		<h2>6자리 인증 코드를 입력하여 문자 메시지를 받았음을 확인하세요.</h2>
+		<h2>코드 입력</h2>
+		<a>6자리 인증 코드를 입력하여 문자 메시지를 받았음을 확인하세요.</a><br>
 		
 			<input type="text" name="inputCode"><br>
 			<input type="submit" value="새 코드 받기">

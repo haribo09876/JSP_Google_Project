@@ -7,8 +7,14 @@
 	<title>JoinThird</title>
 	<style type="text/css">
 		#frame {
-		border: 1px solid black;
-		}		
+			height: 416px;
+			width: 368px; 
+			padding-top: 48px;
+			padding-left: 40px;
+			padding-right: 40px;
+			padding-bottom: 36px;
+			border: 1px solid gray;
+		}
 	</style>
 	<script type="text/javascript">
 
@@ -16,8 +22,8 @@
 </head>
 <body>
 	<div id="frame">
-		<h1>Gmail 주소 선택하기</h1>
-		<h2>Gmail 주소를 선택하거나 새 Gmail 주소를 만드세요.</h2>
+		<h2>Gmail 주소 선택하기</h2>
+		<a>Gmail 주소를 선택하거나 새 Gmail 주소를 만드세요.</a><br>
 
 			<input type="radio" name="firstIdSuggestion">firstIdSuggestion<br>
 			<input type="radio" name="secondIdSuggestion">secondIdSuggestion<br>

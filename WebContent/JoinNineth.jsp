@@ -7,8 +7,14 @@
 	<title>JoinNineth</title>
 	<style type="text/css">
 		#frame {
-		border: 1px solid black;
-		}		
+			height: 416px;
+			width: 368px; 
+			padding-top: 48px;
+			padding-left: 40px;
+			padding-right: 40px;
+			padding-bottom: 36px;
+			border: 1px solid gray;
+		}
 	</style>
 	<script type="text/javascript">
 
@@ -16,8 +22,8 @@
 </head>
 <body>
 	<div id="frame">
-		<h1>계정 정보 검토</h1>
-		<h2>나중에 이 이메일 주소를 사용하여 로그인할 수 있습니다</h2>
+		<h2>계정 정보 검토</h2>
+		<a>나중에 이 이메일 주소를 사용하여 로그인할 수 있습니다</a><br>
 	
 			<a>홍길동</a><br>
 			<a>gildonghong@gmail.com</a><br>

@@ -7,8 +7,14 @@
 	<title>JoinSeventh</title>
 	<style type="text/css">
 		#frame {
-		border: 1px solid black;
-		}		
+			height: 416px;
+			width: 368px; 
+			padding-top: 48px;
+			padding-left: 40px;
+			padding-right: 40px;
+			padding-bottom: 36px;
+			border: 1px solid gray;
+		}
 	</style>
 	<script type="text/javascript">
 
@@ -16,8 +22,8 @@
 </head>
 <body>
 	<div id="frame">
-		<h1>복구 이메일 추가</h1>
-		<h2>사용자 계정에서 비정상적인 활동이 감지되거나 사용자가 계정에 액세스할 수 없는 경우 Google에서 사용자에게 연락하기 위해 사용하는 이메일 주소입니다.</h2>
+		<h2>복구 이메일 추가</h2>
+		<a>사용자 계정에서 비정상적인 활동이 감지되거나 사용자가 계정에 액세스할 수 없는 경우 Google에서 사용자에게 연락하기 위해 사용하는 이메일 주소입니다.</a><br>
 
 			<input type="text" name="recoveryEmail" placeholder='복구 이메일 주소'><br>
 			<input type="submit" value="다음">

@@ -7,8 +7,14 @@
 	<title>JoinEighth</title>
 	<style type="text/css">
 		#frame {
-		border: 1px solid black;
-		}		
+			height: 416px;
+			width: 368px; 
+			padding-top: 48px;
+			padding-left: 40px;
+			padding-right: 40px;
+			padding-bottom: 36px;
+			border: 1px solid gray;
+		}
 	</style>
 	<script type="text/javascript">
 
@@ -16,7 +22,7 @@
 </head>
 <body>
 	<div id="frame">
-		<h1>전화번호 추가</h1>
+		<h2>전화번호 추가</h2>
 	
 			<select name="country">
 	    		<option value="">대한민국</option>
@@ -29,7 +35,7 @@
 			
 			<input type="text" name="phoneNum" placeholder='전화번호'><br>
 		
-		<h3>Google은 이 번호를 계정 보안 용도로만 사용합니다. 다른 사용자에게는 전화번호가 표시되지 않습니다. 나중에 다른 용도로도 이 번호를 사용할지 결정할 수 있습니다.</h2>
+		<a>Google은 이 번호를 계정 보안 용도로만 사용합니다. 다른 사용자에게는 전화번호가 표시되지 않습니다. 나중에 다른 용도로도 이 번호를 사용할지 결정할 수 있습니다.</a><br>
 
 			<input type="text" name="recoveryEmail" placeholder='복구 이메일 주소'><br>
 			<input type="submit" value="다음">

@@ -7,8 +7,14 @@
 	<title>JoinFourth</title>
 	<style type="text/css">
 		#frame {
-		border: 1px solid black;
-		}		
+			height: 416px;
+			width: 368px; 
+			padding-top: 48px;
+			padding-left: 40px;
+			padding-right: 40px;
+			padding-bottom: 36px;
+			border: 1px solid gray;
+		}
 	</style>
 	<script type="text/javascript">
 
@@ -16,8 +22,8 @@
 </head>
 <body>
 	<div id="frame">
-		<h1>안전한 비밀번호 만들기</h1>
-		<h2>문자, 숫자, 기호를 조합하여 안전한 비밀번호를 만드세요.</h2>
+		<h2>안전한 비밀번호 만들기</h2>
+		<a>문자, 숫자, 기호를 조합하여 안전한 비밀번호를 만드세요.</a><br>
 
 			비밀번호
 			<input type="text" name="password"><br>

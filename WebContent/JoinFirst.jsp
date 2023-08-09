@@ -7,7 +7,13 @@
 	<title>JoinFirst</title>
 	<style type="text/css">
 		#frame {
-		border: 1px solid black;
+			height: 416px;
+			width: 368px; 
+			padding-top: 48px;
+			padding-left: 40px;
+			padding-right: 40px;
+			padding-bottom: 36px;
+			border: 1px solid gray;
 		}
 	</style>
 	<script type="text/javascript">
@@ -16,8 +22,8 @@
 </head>
 <body>
 	<div id="frame">
-		<h1>Google 계정 만들기</h1>
-		<h2>이름을 입력하세요.</h2>
+		<h2>Google 계정 만들기</h2>
+		<a>이름을 입력하세요.</a><br>
 
 			성(선택사항)
 			<input type="text" name="familyName"><br>
