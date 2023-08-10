@@ -8,6 +8,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.Date;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
@@ -17,51 +19,49 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import member.dao.MemberDao;
-import member.dto.MemberDto;
+import spms.dao.MemberDao;
+import spms.dto.MemberDto;
 
-@WebServlet("/member/add")
+@WebServlet("/member/list")
 public class MemberAddServlet extends HttpServlet {
-
-//	회원등록화면
+	
+	private static final long serialVersionUID = 1L;
+	
+	@Override
 	protected void doGet(HttpServletRequest request
 			, HttpServletResponse response) throws ServletException, IOException {
 
-		response.sendRedirect("./MemberForm.jsp");
-	}
-
-//	- doPost : 데이터베이스에 데이터 추가 (백엔드)
-	@Override
-	protected void doPost(HttpServletRequest req
-			, HttpServletResponse res) throws ServletException, IOException {
-
 		Connection conn = null;
 
-		String email = req.getParameter("email");
-		String pwd = req.getParameter("password");
-		String name = req.getParameter("name");
-
 		try {
-			MemberDto memberDto = new MemberDto();
-
-			memberDto.setEmail(email);
-			memberDto.setPassword(pwd);
-			memberDto.setName(name);
-
-			ServletContext sc = this.getServletContext();
+			ServletContext sc = this.getServletContext();		
 			conn = (Connection) sc.getAttribute("conn");
 
 			MemberDao memberDao = new MemberDao();
 			memberDao.setConnection(conn);
-			memberDao.memberInsert(memberDto);
 			
-			res.sendRedirect("./list");
-
-			} catch (Exception e) {
-				e.printStackTrace();
-				RequestDispatcher rd = req.getRequestDispatcher("/Error.jsp");
-				rd.forward(req, res);
-				}
+			ArrayList<MemberDto> memberList = null;
+			
+			memberList = (ArrayList<MemberDto>)memberDao.selectList();
+			
+			request.setAttribute("memberList", memberList);
+			
+			RequestDispatcher dispatcher =
+					request.getRequestDispatcher("/member/MemberListView.jsp");
+			
+			dispatcher.forward(request, response);
+		} catch (Exception e) {
+			e.printStackTrace();
+			RequestDispatcher rd = request.getRequestDispatcher("/Error.jsp");
+			rd.forward(request, response);			
+		}
 
 	}
+
+	@Override
+	protected void doPost(HttpServletRequest request
+			, HttpServletResponse response) throws ServletException, IOException {
+
+	}
+
 }

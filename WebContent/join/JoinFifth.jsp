@@ -4,7 +4,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>JoinThird</title>
+	<title>JoinFifth</title>
 	<style type="text/css">
 		#frame {
 			height: 416px;
@@ -22,14 +22,25 @@
 </head>
 <body>
 	<div id="frame">
-		<h2>Gmail 주소 선택하기</h2>
-		<a>Gmail 주소를 선택하거나 새 Gmail 주소를 만드세요.</a><br>
+		<h2>보안문자 입력</h2>
+		<a>휴대전화로 인증 코드 받기</a><br>
 
-			<input type="radio" name="idSuggestion">firstIdSuggestion<br>
-			<input type="radio" name="idSuggestion">secondIdSuggestion<br>
-			<input type="radio" name="idSuggestion">thirdIdSuggestion<br>
-			<input type="submit" name="기존 이메일 사용">기존 이메일 사용<br>
+			<select name="country">
+    			<option value="">대한민국</option>
+	    		<option value="">US</option>
+	    		<option value="">UK</option>
+	    		<option value="">France</option>
+	    		<option value="">Germany</option>
+	    		<option value="">Spain</option>
+			</select> 
+			
+		<form action="add5" method='post'>
+			<input type="text" name="tempPhoneNum" placeholder='전화번호'><br>
+	
+			<a>Google에서 SMS(요금이 부과될 수 있음)를 통해 전화번호를 확인합니다.</a><br>
 			<input type="submit" value="다음">
+		</form>	
+
 	</div>
 	
 		<select name="language">
