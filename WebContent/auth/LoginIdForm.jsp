@@ -4,7 +4,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>로그인 비밀번호입력</title>
+	<title>로그인 아이디입력</title>
 	<style type="text/css">
 		#firstDiv{
 			border: 1px solid gray;
@@ -13,7 +13,7 @@
 			padding: 48px 40px 36px;
 			
 			
-		}
+		}						
 		
 		h2, #firstPtag, #inputDiv{
 			text-align: center;
@@ -31,7 +31,8 @@
 			background-color: blue;
 			float: right;
 		}
-				
+		
+		
 		
 		#idInput{
 			width: 370px;
@@ -74,29 +75,28 @@
 </head>
 
 <body>
+	<div id='totalDiv'>
 	<div id= 'firstDiv'>
 	<div id ='googleDiv'>
 		<a id='firstGoogle'>G</a><a id='secondGoogle'>o</a><a id='thirdGoogle'>o</a><a id='fourthGoogle'>g</a><a id='fifthGoogle'>l</a><a id='sixthGoogle'>e</a>
 	</div>
-	<h2>사용자이름</h2>
-	<p id='firstPtag'>계정 이메일</p><br><br>
-	<form action="./login" method="post">
+	<h2>로그인</h2>
+	<p id='firstPtag'>Google 계정 사용</p>
+	<form action="./loginId" method="post">
 		<div id='inputDiv'>
-		<input id='idInput' type="text" name="email" placeholder="비밀번호 입력">
+		<input id='idInput' type="text" name="email" placeholder="이메일 또는 휴대전화">
 		</div>
-		<label>
-			<input type="checkbox" name="option1" value="value1">  비밀번호 표시
-		</label>
-		<br><br><br><br>
-
-				
-		
-		<a id='thirdAtag'>비밀번호 찾기</a>		
+		<br>
+		<a id='firstAtag'>이메일을 잊으셨나요?</a><br><br>				
+		<p>내 컴퓨터가 아닌가요? 게스트 모드를 사용하여 비공개</p>	
+		<a>로 로그인하세요.</a>
+		<a id='secondAtag'>자세히 알아보기</a><br><br>
+		<a id='thirdAtag' href="">계정 만들기</a>		
 		<input id='next' type="submit" value="다음">
 		
 	</form>
 	
 	</div>
-	
+	</div>
 </body>
 </html>

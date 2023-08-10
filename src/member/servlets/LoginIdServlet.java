@@ -18,14 +18,14 @@ import javax.servlet.http.HttpSession;
 import member.dao.MemberDao;
 import member.dto.MemberDto;
 
-@WebServlet(value = "/auth/login")
-public class LoginServlet extends HttpServlet {
+@WebServlet(value = "/auth/loginId")
+public class LoginIdServlet extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req
 			, HttpServletResponse res) throws ServletException, IOException {
 
-		RequestDispatcher rd = req.getRequestDispatcher("./LoginForm.jsp");
+		RequestDispatcher rd = req.getRequestDispatcher("./LoginIdForm.jsp");
 		rd.forward(req, res);
 
 	}
