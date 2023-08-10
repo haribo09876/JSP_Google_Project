@@ -25,10 +25,9 @@
 		<h2>Google 계정 만들기</h2>
 		<a>이름을 입력하세요.</a><br>
 
-			성(선택사항)
-			<input type="text" name="familyName"><br>
-			이름
-			<input type="text" name="password"><br>
+			
+			<input type="text" name="familyName" placeholder='성(선택사항)'><br>
+			<input type="text" name="ownName" placeholder='이름'><br>
 			<input type="submit" value="다음">
 	</div>
 

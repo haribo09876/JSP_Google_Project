@@ -25,10 +25,8 @@
 		<h2>안전한 비밀번호 만들기</h2>
 		<a>문자, 숫자, 기호를 조합하여 안전한 비밀번호를 만드세요.</a><br>
 
-			비밀번호
-			<input type="text" name="password"><br>
-			확인
-			<input type="text" name="passwordCheck"><br>
+			<input type="text" name="password" placeholder="비밀번호"><br>
+			<input type="text" name="passwordCheck" placeholder="확인"><br>
 
 			<input type="checkbox" name="ShowingPassword">비밀번호 표시<br>
 			<input type="submit" value="다음">

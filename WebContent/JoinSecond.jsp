@@ -25,10 +25,10 @@
 		<h2>기본 정보</h2>
 		<a>생일과 성별을 입력하세요.</a><br>
 
-			연도
-			<input type="text" name="year">
-			월
+			<input type="text" name="year" placeholder='연도'>
+
 			<select name="month">
+				<option value="none" selected>월</option>
     			<option value="1">1월</option>
 	    		<option value="2">2월</option>
 	    		<option value="3">3월</option>
@@ -42,11 +42,10 @@
 	    		<option value="11">11월</option>
 	    		<option value="12">12월</option>
 			</select>
-			일
-			<input type="text" name="day"><br>
+			<input type="text" name="day" placeholder='일'><br>
 		
-			성별
 			<select name="gender">
+				<option value="none" selected>성별</option>
 	 			<option value="male" >남성</option>
 	 			<option value="female">여성</option>
 	 			<option value="female">기타</option>
