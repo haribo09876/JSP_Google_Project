@@ -13,9 +13,7 @@
 			padding: 48px 40px 36px;
 			
 			
-		}
-				
-		
+		}						
 		
 		h2, #firstPtag, #inputDiv{
 			text-align: center;
