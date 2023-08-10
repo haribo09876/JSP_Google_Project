@@ -25,7 +25,7 @@
 		<h2>코드 입력</h2>
 		<a>6자리 인증 코드를 입력하여 문자 메시지를 받았음을 확인하세요.</a><br>
 		
-			<input type="text" name="inputCode"><br>
+			<input type="text" name="inputCode" placeholder="코드 입력"><br>
 			<input type="submit" value="새 코드 받기">
 			<input type="submit" value="다음">
 	</div>

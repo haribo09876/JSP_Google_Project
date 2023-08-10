@@ -25,9 +25,9 @@
 		<h2>Gmail 주소 선택하기</h2>
 		<a>Gmail 주소를 선택하거나 새 Gmail 주소를 만드세요.</a><br>
 
-			<input type="radio" name="firstIdSuggestion">firstIdSuggestion<br>
-			<input type="radio" name="secondIdSuggestion">secondIdSuggestion<br>
-			<input type="radio" name="thirdIdSuggestion">thirdIdSuggestion<br>
+			<input type="radio" name="idSuggestion">firstIdSuggestion<br>
+			<input type="radio" name="idSuggestion">secondIdSuggestion<br>
+			<input type="radio" name="idSuggestion">thirdIdSuggestion<br>
 			<input type="submit" name="기존 이메일 사용">기존 이메일 사용<br>
 			<input type="submit" value="다음">
 	</div>
