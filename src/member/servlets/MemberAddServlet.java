@@ -17,8 +17,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import spms.dao.MemberDao;
-import spms.dto.MemberDto;
+import member.dao.MemberDao;
+import member.dto.MemberDto;
 
 @WebServlet("/member/add")
 public class MemberAddServlet extends HttpServlet {

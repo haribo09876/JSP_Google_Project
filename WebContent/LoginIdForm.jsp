@@ -14,6 +14,8 @@
 			
 			
 		}
+				
+		
 		
 		h2, #firstPtag, #inputDiv{
 			text-align: center;
@@ -75,6 +77,7 @@
 </head>
 
 <body>
+	<div id='totalDiv'>
 	<div id= 'firstDiv'>
 	<div id ='googleDiv'>
 		<a id='firstGoogle'>G</a><a id='secondGoogle'>o</a><a id='thirdGoogle'>o</a><a id='fourthGoogle'>g</a><a id='fifthGoogle'>l</a><a id='sixthGoogle'>e</a>
@@ -90,12 +93,12 @@
 		<p>내 컴퓨터가 아닌가요? 게스트 모드를 사용하여 비공개</p>	
 		<a>로 로그인하세요.</a>
 		<a id='secondAtag'>자세히 알아보기</a><br><br>
-		<a id='thirdAtag'>계정 만들기</a>		
+		<a id='thirdAtag' href="">계정 만들기</a>		
 		<input id='next' type="submit" value="다음">
 		
 	</form>
 	
 	</div>
-	
+	</div>
 </body>
 </html>
