@@ -5,100 +5,101 @@ import java.util.Date;
 // Bean spec
 public class MemberDto {
 
-	private int no;
-	private String name;
-	private String email;
-	private String password;
-	private Date createDate;
-	private Date modifiedDate;
+		private int mno;
+		private String mname;
+		private Date birthDate;
+		private String gender;
+		private String email;
+		private String recoveryEmail;
+		private int phoneNo;
+		private String pwd;
+		
+		public MemberDto() {
+			super();
+		}
 
-	public MemberDto() {
-		super();
-	}
-	
-	public MemberDto(String name, String email) {
-		super();
-		this.name = name;
-		this.email = email;
-	}
+		public MemberDto(int mno, String mname, Date birthDate, String gender, String email, String recoveryEmail,
+				int phoneNo, String pwd) {
+			super();
+			this.mno = mno;
+			this.mname = mname;
+			this.birthDate = birthDate;
+			this.gender = gender;
+			this.email = email;
+			this.recoveryEmail = recoveryEmail;
+			this.phoneNo = phoneNo;
+			this.pwd = pwd;
+		}
 
-	public MemberDto(String name, String email, String password) {
-		super();
-		this.name = name;
-		this.email = email;
-		this.password = password;
-	}
+		public int getMno() {
+			return mno;
+		}
 
-	public MemberDto(int no, String name, String email, Date createDate) {
-		super();
-		this.no = no;
-		this.name = name;
-		this.email = email;
-		this.createDate = createDate;
-	}
+		public void setMno(int mno) {
+			this.mno = mno;
+		}
 
-	public MemberDto(int no, String name, String email, String password, Date createDate, Date modifiedDate) {
-		super();
-		this.no = no;
-		this.name = name;
-		this.email = email;
-		this.password = password;
-		this.createDate = createDate;
-		this.modifiedDate = modifiedDate;
-	}
+		public String getMname() {
+			return mname;
+		}
 
-	public int getNo() {
-		return no;
-	}
+		public void setMname(String mname) {
+			this.mname = mname;
+		}
 
-	public void setNo(int no) {
-		this.no = no;
-	}
+		public Date getBirthDate() {
+			return birthDate;
+		}
 
-	public String getName() {
-		return name;
-	}
+		public void setBirthDate(Date birthDate) {
+			this.birthDate = birthDate;
+		}
 
-	public void setName(String name) {
-		this.name = name;
-	}
+		public String getGender() {
+			return gender;
+		}
 
-	public String getEmail() {
-		return email;
-	}
+		public void setGender(String gender) {
+			this.gender = gender;
+		}
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
+		public String getEmail() {
+			return email;
+		}
 
-	public String getPassword() {
-		return password;
-	}
+		public void setEmail(String email) {
+			this.email = email;
+		}
 
-	public void setPassword(String password) {
-		this.password = password;
-	}
+		public String getRecoveryEmail() {
+			return recoveryEmail;
+		}
 
-	public Date getCreateDate() {
-		return createDate;
-	}
+		public void setRecoveryEmail(String recoveryEmail) {
+			this.recoveryEmail = recoveryEmail;
+		}
 
-	public void setCreateDate(Date createDate) {
-		this.createDate = createDate;
-	}
+		public int getPhoneNo() {
+			return phoneNo;
+		}
 
-	public Date getModifiedDate() {
-		return modifiedDate;
-	}
+		public void setPhoneNo(int phoneNo) {
+			this.phoneNo = phoneNo;
+		}
 
-	public void setModifiedDate(Date modifiedDate) {
-		this.modifiedDate = modifiedDate;
-	}
+		public String getPwd() {
+			return pwd;
+		}
 
-	@Override
-	public String toString() {
-		return "MemberDto [no=" + no + ", name=" + name + ", email=" + email + ", password=" + password
-				+ ", createDate=" + createDate + ", modifiedDate=" + modifiedDate + "]";
-	}
+		public void setPwd(String pwd) {
+			this.pwd = pwd;
+		}
 
+		@Override
+		public String toString() {
+			return "MemberDto [mno=" + mno + ", mname=" + mname + ", birthDate=" + birthDate + ", gender=" + gender
+					+ ", email=" + email + ", recoveryEmail=" + recoveryEmail + ", phoneNo=" + phoneNo + ", pwd=" + pwd
+					+ "]";
+		} 
+		
 }
