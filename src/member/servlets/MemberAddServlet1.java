@@ -39,7 +39,6 @@ public class MemberAddServlet1 extends HttpServlet {
 		String familyName = req.getParameter("familyName");
 		String ownName = req.getParameter("ownName");
 		String mname = familyName + ownName;
-		System.out.println(mname);
 
 		try {
 			ServletContext sc = this.getServletContext();

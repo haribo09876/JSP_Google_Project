@@ -9,6 +9,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
 import javax.servlet.RequestDispatcher;
@@ -39,14 +41,28 @@ public class MemberAddServlet2 extends HttpServlet {
 
 		Connection conn = null;
 
-		Date 
-		String gender = req.getParameter("gender");
+		String year = req.getParameter("year");
+		String month = req.getParameter("month");
+		String day = req.getParameter("day");
+		String tempBirthDate = year + month + day;
 
+
+
+	
+
+		
+		String gender = req.getParameter("gender");
+		
 		try {
+			SimpleDateFormat format = new SimpleDateFormat("yyyyMMdd");
+			java.util.Date parsedDate = format.parse(tempBirthDate);
+			java.util.Date birthDate = new java.sql.Date(parsedDate.getTime());
+			
 			ServletContext sc = this.getServletContext();
 			conn = (Connection) sc.getAttribute("conn");
 			
 			HttpSession session = req.getSession();
+			session.setAttribute("birthDate", birthDate);
 			session.setAttribute("gender", gender);
 			
 			res.sendRedirect("./JoinThird.jsp");
