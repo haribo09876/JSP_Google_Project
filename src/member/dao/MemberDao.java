@@ -88,14 +88,10 @@ public class MemberDao {
 //			Date birthDate = memberDto.getBirthDate();
 			String gender = memberDto.getGender();
 			String email = memberDto.getEmail();
-<<<<<<< HEAD
 			String recoveryEmail = memberDto.getRecoveryEmail();
 			int phoneNo = memberDto.getPhoneNo();
 			String pwd = memberDto.getPwd();
-=======
-			String pwd = memberDto.getPwd();
 			String name = memberDto.getMname();
->>>>>>> branch 'master' of https://github.com/haribo09876/JSP_Google_Project.git
 
 			String sql = "";
 
