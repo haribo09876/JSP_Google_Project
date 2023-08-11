@@ -4,7 +4,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>JoinNineth</title>
+	<title>JoinFourth</title>
 	<style type="text/css">
 		#frame {
 			height: 416px;
@@ -22,20 +22,31 @@
 </head>
 <body>
 	<div id="frame">
-		<h2>계정 정보 검토</h2>
-		<a>나중에 이 이메일 주소를 사용하여 로그인할 수 있습니다</a><br>
-	
-			<a>홍길동</a><br>
-			<a>gildonghong@gmail.com</a><br>
-			<input type="submit" value="다음">
-	</div>
+		<h2>안전한 비밀번호 만들기</h2>
+		<a>문자, 숫자, 기호를 조합하여 안전한 비밀번호를 만드세요.</a><br>
 
+		<form action="add4" method='post'>
+			<input type="text" name="pwd" placeholder="비밀번호"><br>
+			<input type="text" name="pwd" placeholder="확인"><br>
+			<input type="checkbox" name="ShowingPassword">비밀번호 표시<br>
+			<input type="submit" value="다음">
+		</form>
+
+
+	</div>
+	
 		<select name="language">
     		<option value="">한국어</option>
     		<option value="">English</option>
 		</select>
 		<a>도움말</a>
 		<a>개인정보처리방침</a>
-		<a>약관</a>
+		<a>약관</a>	
+<%-- 	<% --%>
+<!-- 		String pwd = request.getParameter("pwd"); -->
+
+<!-- 		session.setAttribute("pwd", pwd); -->
+<%-- 	%> --%>
 </body>
+
 </html>

@@ -4,7 +4,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>JoinFourth</title>
+	<title>JoinSixth</title>
 	<style type="text/css">
 		#frame {
 			height: 416px;
@@ -22,14 +22,14 @@
 </head>
 <body>
 	<div id="frame">
-		<h2>안전한 비밀번호 만들기</h2>
-		<a>문자, 숫자, 기호를 조합하여 안전한 비밀번호를 만드세요.</a><br>
-
-			<input type="text" name="password" placeholder="비밀번호"><br>
-			<input type="text" name="passwordCheck" placeholder="확인"><br>
-
-			<input type="checkbox" name="ShowingPassword">비밀번호 표시<br>
+		<h2>코드 입력</h2>
+		<a>6자리 인증 코드를 입력하여 문자 메시지를 받았음을 확인하세요.</a><br>
+		
+		<form action="add6" method='post'>
+			<input type="text" name="inputCode" placeholder="코드 입력"><br>
+			<input type="submit" value="새 코드 받기">
 			<input type="submit" value="다음">
+		</form>
 	</div>
 	
 		<select name="language">
@@ -38,6 +38,12 @@
 		</select>
 		<a>도움말</a>
 		<a>개인정보처리방침</a>
-		<a>약관</a>	
+		<a>약관</a>
+<%-- 	<% --%>
+<!-- 		String inputCode = request.getParameter("inputCode"); -->
+
+<!-- 		session.setAttribute("inputCode", inputCode); -->
+<%-- 	%> --%>
 </body>
+
 </html>

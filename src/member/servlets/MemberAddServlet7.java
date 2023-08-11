@@ -1,10 +1,13 @@
 package member.servlets;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
@@ -18,16 +21,13 @@ import javax.servlet.http.HttpSession;
 import member.dao.MemberDao;
 import member.dto.MemberDto;
 
-@WebServlet(value = "/auth/loginPassword")
-public class LoginPasswordServlet extends HttpServlet {
+@WebServlet("/member/add7")
+public class MemberAddServlet7 extends HttpServlet {
 
-	@Override
 	protected void doGet(HttpServletRequest req
 			, HttpServletResponse res) throws ServletException, IOException {
 
-		RequestDispatcher rd = req.getRequestDispatcher("./LoginIdForm.jsp");
-		rd.forward(req, res);
-
+		res.sendRedirect("./JoinSeventh.jsp");
 	}
 
 	@Override
@@ -36,30 +36,22 @@ public class LoginPasswordServlet extends HttpServlet {
 
 		Connection conn = null;
 
-		try {
-			String pwd = req.getParameter("password");
+		String recoveryEmail = req.getParameter("recoveryEmail");
 
+		try {
 			ServletContext sc = this.getServletContext();
 			conn = (Connection) sc.getAttribute("conn");
-
-			MemberDao memberDao = new MemberDao();
-			memberDao.setConnection(conn);
-
-			MemberDto memberDto = memberDao.memberPasswordExist(pwd);
-
-			if (memberDto == null) {
-				RequestDispatcher rd = req.getRequestDispatcher("./LoginFail.jsp");
-				rd.forward(req, res);
-			}
+			
 			HttpSession session = req.getSession();
-			session.setAttribute("member", memberDto);
+			session.setAttribute("recoveryEmail", recoveryEmail);
+			
+			res.sendRedirect("./JoinEighth.jsp");
 
-			res.sendRedirect("../member/list");
-		} catch (Exception e) {
-			e.printStackTrace();
-			throw new ServletException();
-		}
+			} catch (Exception e) {
+				e.printStackTrace();
+				RequestDispatcher rd = req.getRequestDispatcher("/Error.jsp");
+				rd.forward(req, res);
+				}
 
 	}
-
 }

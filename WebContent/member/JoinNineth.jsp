@@ -1,10 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+	<%!
+// 		HttpSession session = request.getSession();
+
+// 		String mname = (String)session.getAttribute("mname");
+	
+// 		String email = (String)session.getAttribute("email");
+	%>    
+    
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>JoinFirst</title>
+	<title>JoinNineth</title>
 	<style type="text/css">
 		#frame {
 			height: 416px;
@@ -22,13 +30,15 @@
 </head>
 <body>
 	<div id="frame">
-		<h2>Google 계정 만들기</h2>
-		<a>이름을 입력하세요.</a><br>
-
-			
-			<input type="text" name="familyName" placeholder='성(선택사항)'><br>
-			<input type="text" name="ownName" placeholder='이름'><br>
+		<h2>계정 정보 검토</h2>
+		<a>나중에 이 이메일 주소를 사용하여 로그인할 수 있습니다</a><br>
+		
+		<form action="add9" method='post'>
+			<a>홍길동</a><br>
+			<a>gildonghong@gmail.com</a><br>
 			<input type="submit" value="다음">
+		</form> 
+
 	</div>
 
 		<select name="language">

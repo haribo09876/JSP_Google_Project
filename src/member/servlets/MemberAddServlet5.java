@@ -1,10 +1,13 @@
 package member.servlets;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
@@ -18,16 +21,13 @@ import javax.servlet.http.HttpSession;
 import member.dao.MemberDao;
 import member.dto.MemberDto;
 
-@WebServlet(value = "/auth/login")
-public class LoginServlet extends HttpServlet {
+@WebServlet("/member/add5")
+public class MemberAddServlet5 extends HttpServlet {
 
-	@Override
 	protected void doGet(HttpServletRequest req
 			, HttpServletResponse res) throws ServletException, IOException {
 
-		RequestDispatcher rd = req.getRequestDispatcher("./LoginIdForm.jsp");
-		rd.forward(req, res);
-
+		res.sendRedirect("./JoinFifth.jsp");
 	}
 
 	@Override
@@ -36,31 +36,22 @@ public class LoginServlet extends HttpServlet {
 
 		Connection conn = null;
 
-		try {
-			String email = req.getParameter("email");
-			String pwd = req.getParameter("password");
+		String tempPhoneNum = req.getParameter("tempPhoneNum");
 
+		try {
 			ServletContext sc = this.getServletContext();
 			conn = (Connection) sc.getAttribute("conn");
 
-			MemberDao memberDao = new MemberDao();
-			memberDao.setConnection(conn);
+//			HttpSession session = req.getSession();
+//			session.setAttribute("tempPhoneNum", tempPhoneNum);
+			
+			res.sendRedirect("./JoinSixth.jsp");
 
-			MemberDto memberDto = memberDao.memberExist(email, pwd);
-
-			if (memberDto == null) {
-				RequestDispatcher rd = req.getRequestDispatcher("./LoginFail.jsp");
+			} catch (Exception e) {
+				e.printStackTrace();
+				RequestDispatcher rd = req.getRequestDispatcher("/Error.jsp");
 				rd.forward(req, res);
-			}
-			HttpSession session = req.getSession();
-			session.setAttribute("member", memberDto);
-
-			res.sendRedirect("../member/list");
-		} catch (Exception e) {
-			e.printStackTrace();
-			throw new ServletException();
-		}
+				}
 
 	}
-
 }
