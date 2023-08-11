@@ -85,29 +85,28 @@ public class MemberDao {
 
 		try {
 			String mname = memberDto.getMname();
-//			Date birthDate = memberDto.getBirthDate();
+			Date birthDate = memberDto.getBirthDate();
 			String gender = memberDto.getGender();
 			String email = memberDto.getEmail();
 			String recoveryEmail = memberDto.getRecoveryEmail();
 			int phoneNo = memberDto.getPhoneNo();
 			String pwd = memberDto.getPwd();
-			String name = memberDto.getMname();
 
 			String sql = "";
 
 			sql += "INSERT INTO MEMBERS";
-			sql += "(MNO, MNAME, GENDER, EMAIL, RECOVERY_EMAIL, PHONE_NO, PWD)";
-			sql += "VALUES(MEMBERS_MNO_SEQ.NEXTVAL, ?, ?, ?)";
+			sql += "(MNO, MNAME, BIRTH_DATE, GENDER, EMAIL, RECOVERY_EMAIL, PHONE_NO, PWD)";
+			sql += "VALUES(MEMBERS_MNO_SEQ.NEXTVAL, ?, ?, ?, ?, ?, ?, ?)";
 
 			pstmt = connection.prepareStatement(sql);
 
-			pstmt.setString(2, mname);
-//			pstmt.setDate(3, birthDate);
-			pstmt.setString(4, gender);
-			pstmt.setString(5, email);
-			pstmt.setString(6, recoveryEmail);
-			pstmt.setInt(7, phoneNo);
-			pstmt.setString(8, pwd);
+			pstmt.setString(1, mname);
+			pstmt.setDate(2, (java.sql.Date) birthDate);
+			pstmt.setString(3, gender);
+			pstmt.setString(4, email);
+			pstmt.setString(5, recoveryEmail);
+			pstmt.setInt(6, phoneNo);
+			pstmt.setString(7, pwd);
 
 			resultNum = pstmt.executeUpdate();
 

@@ -58,7 +58,9 @@
 	</style>
 	
 	<script type="text/javascript">
-		
+		function pageMoveAddFnc() {
+			location="/board/add";
+		}
 	</script>
 </head>
 
@@ -79,7 +81,11 @@
 			<c:forEach var="boardDto" items="${boardList}">
 				<tr>
 					<td id="boardTdCustom1">${boardDto.pno}</td>
-					<td id="boardTdCustom2">${boardDto.title}</td>
+					<td id="boardTdCustom2">
+						<a href='./detail?pno=${boardDto.pno}'>
+							${boardDto.title}
+						</a>
+					</td>
 					<td class="boardTdCustom3">${boardDto.editor}</td>
 					<td class="boardTdCustom3">${boardDto.creDate}</td>
 					<td id="boardTdCustom4">${boardDto.viewCount}</td>
@@ -95,7 +101,7 @@
 			<input type="button" value="찾기">
 		</form>
 		<form action="add">
-			<button onclick='location="/board/add"'>글쓰기</button>
+			<button onclick='pageMoveAddFnc();'>글쓰기</button>
 		</form>
 		<a>[이전]</a>
 		<a>1</a>

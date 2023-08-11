@@ -41,7 +41,7 @@ public class MemberAddServlet9 extends HttpServlet {
 			HttpSession session = req.getSession();
 			
 			String mname = (String)session.getAttribute("mname");
-//			Date birthDate = (Date)session.getAttribute("birthDate");
+			Date birthDate = (Date)session.getAttribute("birthDate");
 			String gender = (String)session.getAttribute("gender");
 			String email = (String)session.getAttribute("email");
 			String recoveryEmail = (String)session.getAttribute("recoveryEmail");
@@ -51,7 +51,7 @@ public class MemberAddServlet9 extends HttpServlet {
 			MemberDto memberDto = new MemberDto();
 
 			memberDto.setMname(mname);
-//			memberDto.setGender(birthDate);
+			memberDto.setBirthDate(birthDate);
 			memberDto.setGender(gender);
 			memberDto.setEmail(email);
 			memberDto.setRecoveryEmail(recoveryEmail);
@@ -64,16 +64,8 @@ public class MemberAddServlet9 extends HttpServlet {
 			MemberDao memberDao = new MemberDao();
 			memberDao.setConnection(conn);
 			memberDao.memberInsert(memberDto);
-			
-//			System.out.println(memberDto.getEmail());
-//			System.out.println(memberDto.getBirthDate());
-//			System.out.println(memberDto.getGender());
-//			System.out.println(memberDto.getMname());
-//			System.out.println(memberDto.getPhoneNo());
-//			System.out.println(memberDto.getPwd());
-//			System.out.println(memberDto.getRecoveryEmail());
 
-//			res.sendRedirect("BOARD첫화면으로~.jsp");
+			res.sendRedirect("./LoginIdForm.jsp");
 			} catch (Exception e) {
 				e.printStackTrace();
 				RequestDispatcher rd = req.getRequestDispatcher("/Error.jsp");

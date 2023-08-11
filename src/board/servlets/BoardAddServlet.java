@@ -28,7 +28,7 @@ public class BoardAddServlet extends HttpServlet {
 		res.setContentType("text/html");
 		res.setCharacterEncoding("UTF-8");
 
-		res.sendRedirect("./BoardForm.jsp");
+		res.sendRedirect("./BoardAddForm.jsp");
 	}
 
 	// 데이터베이스에 데이터 추가
