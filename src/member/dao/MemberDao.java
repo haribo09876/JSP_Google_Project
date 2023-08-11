@@ -261,12 +261,10 @@ public class MemberDao {
 		ResultSet rs = null;
 		
 		String sql = "";
-		sql += "SELECT EMAIL, MNAME, PWD";
+		sql += "SELECT EMAIL";
 		sql += " FROM MEMBERS";
-		sql += " WHERE EMAIL = ?";
-		sql += " AND PWD = ?";
+		sql += " WHERE EMAIL = ?";		
 		
-		String name = "";
 	
 		try {
 			pstmt = connection.prepareStatement(sql);
@@ -280,11 +278,9 @@ public class MemberDao {
 			MemberDto memberDto = new MemberDto();
 			
 			if (rs.next()) {
-				email = rs.getString("email");
-				name = rs.getString("mname");
+				email = rs.getString("email");	
 
 				memberDto.setEmail(email);
-				memberDto.setMname(name);
 				
 				return memberDto;				
 			}
@@ -320,10 +316,10 @@ public class MemberDao {
 			String sql = "";
 			sql += "SELECT EMAIL, MNAME, PWD";
 			sql += " FROM MEMBERS";
-			sql += " WHERE EMAIL = ?";
-			sql += " AND PWD = ?";
+			sql += " WHERE PWD = ?";
 			
-			String name = "";
+			
+
 		
 			try {
 				pstmt = connection.prepareStatement(sql);
@@ -338,11 +334,9 @@ public class MemberDao {
 				
 				if (rs.next()) {
 					pwd = rs.getString("password");
-					name = rs.getString("mname");
 
 					memberDto.setEmail(pwd);
-					memberDto.setMname(name);
-					
+						
 					return memberDto;				
 				}
 					

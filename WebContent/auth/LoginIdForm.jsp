@@ -119,31 +119,25 @@
 	</style>
 	<script type="text/javascript">
 		
-		
-	
 		function nextFnc() {
-						
-			var hidePTag = document.createElement('hide');
-			var hide2PTag = document.createElement('hide2');
-						
-			var myObj = document.getElementById('inputDiv');
-			
-			var myInput = document.getElementById('idInput');
-										
-			myInput.style.borderColor = 'red';
-									
-			document.getElementById('hide').style.display = 'block';			
-			document.getElementById('hide2').style.display = 'block';
+																			
+				var hidePTag = document.createElement('hide');
+				var hide2PTag = document.createElement('hide2');
+							
+				var myObj = document.getElementById('inputDiv');
 				
-			
-			
-			
-			
+				var myInput = document.getElementById('idInput');
+											
+				myInput.style.borderColor = 'red';
+										
+				document.getElementById('hide').style.display = 'block';			
+				document.getElementById('hide2').style.display = 'block';
+				event.preventDefault();
 		
+		}	
 			
-			
-			
-		}
+
+		
 	
 	</script>
 </head>
@@ -172,7 +166,7 @@
 		<a>로 로그인하세요.</a>
 		<a id='secondAtag' href="">자세히 알아보기</a><br><br>
 		<a id='thirdAtag' href="">계정 만들기</a>		
-		<input id='next' type="button" value="다음" onclick="nextFnc();">
+		<input id='next' type="submit" value="다음" onclick="nextFnc();">
 		
 	</form>
 	
