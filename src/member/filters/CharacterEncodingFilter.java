@@ -17,7 +17,7 @@ public class CharacterEncodingFilter implements Filter{
 	public void init(FilterConfig config) throws ServletException {
 		// TODO Auto-generated method stub
 		this.config = config;
-		System.out.println("허허 filter init호출");
+		System.out.println("filter init호출");
 	}
 
 	@Override

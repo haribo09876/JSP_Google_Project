@@ -16,6 +16,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import member.dao.MemberDao;
 import member.dto.MemberDto;
@@ -23,14 +24,12 @@ import member.dto.MemberDto;
 @WebServlet("/member/add3")
 public class MemberAddServlet3 extends HttpServlet {
 
-//	회원등록화면
-	protected void doGet(HttpServletRequest request
-			, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest req
+			, HttpServletResponse res) throws ServletException, IOException {
 
-		response.sendRedirect("./JoinThird.jsp");
+		res.sendRedirect("./JoinThird.jsp");
 	}
 
-//	- doPost : 데이터베이스에 데이터 추가 (백엔드)
 	@Override
 	protected void doPost(HttpServletRequest req
 			, HttpServletResponse res) throws ServletException, IOException {
@@ -40,18 +39,13 @@ public class MemberAddServlet3 extends HttpServlet {
 		String email = req.getParameter("email");
 
 		try {
-			MemberDto memberDto = new MemberDto();
-
-			memberDto.setEmail(email);
-
 			ServletContext sc = this.getServletContext();
 			conn = (Connection) sc.getAttribute("conn");
 
-			MemberDao memberDao = new MemberDao();
-			memberDao.setConnection(conn);
-			memberDao.memberInsert(memberDto);
-			
-			res.sendRedirect("./JoinFourth");
+			HttpSession session = req.getSession();
+			session.setAttribute("email", email);
+						
+			res.sendRedirect("./JoinFourth.jsp");
 
 			} catch (Exception e) {
 				e.printStackTrace();

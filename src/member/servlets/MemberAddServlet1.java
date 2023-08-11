@@ -16,6 +16,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import member.dao.MemberDao;
 import member.dto.MemberDto;
@@ -23,33 +24,29 @@ import member.dto.MemberDto;
 @WebServlet("/member/add1")
 public class MemberAddServlet1 extends HttpServlet {
 
-//	회원등록화면
-	protected void doGet(HttpServletRequest request
-			, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest req
+			, HttpServletResponse res) throws ServletException, IOException {
 
-		response.sendRedirect("./JoinFirst.jsp");
+		res.sendRedirect("./JoinFirst.jsp");
 	}
 
-//	- doPost : 데이터베이스에 데이터 추가 (백엔드)
 	@Override
 	protected void doPost(HttpServletRequest req
 			, HttpServletResponse res) throws ServletException, IOException {
 
 		Connection conn = null;
 
-		String mname = req.getParameter("familyName" + "ownName");
+		String familyName = req.getParameter("familyName");
+		String ownName = req.getParameter("ownName");
+		String mname = familyName + ownName;
+		System.out.println(mname);
 
 		try {
-			MemberDto memberDto = new MemberDto();
-
-			memberDto.setMname(mname);
-
 			ServletContext sc = this.getServletContext();
 			conn = (Connection) sc.getAttribute("conn");
-
-			MemberDao memberDao = new MemberDao();
-			memberDao.setConnection(conn);
-			memberDao.memberInsert(memberDto);
+			
+			HttpSession session = req.getSession();
+			session.setAttribute("mname", mname);
 			
 			res.sendRedirect("./JoinSecond.jsp");
 

@@ -53,7 +53,7 @@ public class LoginIdServlet extends HttpServlet {
 				rd.forward(req, res);
 			}
 			HttpSession session = req.getSession();
-			session.setAttribute("member", memberDto);
+			session.setAttribute("member", memberDto); 
 
 			res.sendRedirect("../member/list");
 		} catch (Exception e) {

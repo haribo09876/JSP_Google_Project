@@ -16,6 +16,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import member.dao.MemberDao;
 import member.dto.MemberDto;
@@ -23,39 +24,28 @@ import member.dto.MemberDto;
 @WebServlet("/member/add5")
 public class MemberAddServlet5 extends HttpServlet {
 
-//	회원등록화면
-	protected void doGet(HttpServletRequest request
-			, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest req
+			, HttpServletResponse res) throws ServletException, IOException {
 
-		response.sendRedirect("./JoinFifth.jsp");
+		res.sendRedirect("./JoinFifth.jsp");
 	}
 
-//	- doPost : 데이터베이스에 데이터 추가 (백엔드)
 	@Override
 	protected void doPost(HttpServletRequest req
 			, HttpServletResponse res) throws ServletException, IOException {
 
-//		Connection conn = null;
-//
-//		String email = req.getParameter("email");
-//		String pwd = req.getParameter("password");
-//		String name = req.getParameter("name");
-//
+		Connection conn = null;
+
+		String tempPhoneNum = req.getParameter("tempPhoneNum");
+
 		try {
-//			MemberDto memberDto = new MemberDto();
-//
-//			memberDto.setEmail(email);
-//			memberDto.setPassword(pwd);
-//			memberDto.setName(name);
-//
-//			ServletContext sc = this.getServletContext();
-//			conn = (Connection) sc.getAttribute("conn");
-//
-//			MemberDao memberDao = new MemberDao();
-//			memberDao.setConnection(conn);
-//			memberDao.memberInsert(memberDto);
+			ServletContext sc = this.getServletContext();
+			conn = (Connection) sc.getAttribute("conn");
+
+//			HttpSession session = req.getSession();
+//			session.setAttribute("tempPhoneNum", tempPhoneNum);
 			
-			res.sendRedirect("./JoinSixth");
+			res.sendRedirect("./JoinSixth.jsp");
 
 			} catch (Exception e) {
 				e.printStackTrace();

@@ -84,22 +84,29 @@ public class MemberDao {
 		PreparedStatement pstmt = null;
 
 		try {
+			String mname = memberDto.getMname();
+//			Date birthDate = memberDto.getBirthDate();
+			String gender = memberDto.getGender();
 			String email = memberDto.getEmail();
-			String pwd = memberDto.getPassword();
-			String name = memberDto.getName();
+			String recoveryEmail = memberDto.getRecoveryEmail();
+			int phoneNo = memberDto.getPhoneNo();
+			String pwd = memberDto.getPwd();
 
 			String sql = "";
 
 			sql += "INSERT INTO MEMBERS";
-			sql += "(MNO, EMAIL, PWD, MNAME, CRE_DATE, MOD_DATE)";
-			sql += "VALUES(MEMBERS_MNO_SEQ.NEXTVAL, ?, ?, ?";
-			sql += ", SYSDATE, SYSDATE)";
+			sql += "(MNO, MNAME, GENDER, EMAIL, RECOVERY_EMAIL, PHONE_NO, PWD)";
+			sql += "VALUES(MEMBERS_MNO_SEQ.NEXTVAL, ?, ?, ?)";
 
 			pstmt = connection.prepareStatement(sql);
 
-			pstmt.setString(1, email);
-			pstmt.setString(2, pwd);
-			pstmt.setString(3, name);
+			pstmt.setString(2, mname);
+//			pstmt.setDate(3, birthDate);
+			pstmt.setString(4, gender);
+			pstmt.setString(5, email);
+			pstmt.setString(6, recoveryEmail);
+			pstmt.setInt(7, phoneNo);
+			pstmt.setString(8, pwd);
 
 			resultNum = pstmt.executeUpdate();
 

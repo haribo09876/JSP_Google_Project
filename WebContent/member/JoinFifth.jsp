@@ -4,7 +4,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>JoinEighth</title>
+	<title>JoinFifth</title>
 	<style type="text/css">
 		#frame {
 			height: 416px;
@@ -22,25 +22,27 @@
 </head>
 <body>
 	<div id="frame">
-		<h2>전화번호 추가</h2>
-	
+		<h2>보안문자 입력</h2>
+		<a>휴대전화로 인증 코드 받기</a><br>
+
 			<select name="country">
-	    		<option value="">대한민국</option>
+    			<option value="">대한민국</option>
 	    		<option value="">US</option>
 	    		<option value="">UK</option>
 	    		<option value="">France</option>
 	    		<option value="">Germany</option>
 	    		<option value="">Spain</option>
-			</select>
+			</select> 
 			
-			<form action="add8" method='post'>
-				<input type="text" name="phoneNo" placeholder='전화번호'>
-				<a>Google은 이 번호를 계정 보안 용도로만 사용합니다. 다른 사용자에게는 전화번호가 표시되지 않습니다. 나중에 다른 용도로도 이 번호를 사용할지 결정할 수 있습니다.</a><br>
-				<input type="submit" value="다음">
-				<input type="submit" value="건너뛰기">
-			</form><br>
-	</div>
+		<form action="add5" method='post'>
+			<input type="text" name="tempPhoneNum" placeholder='전화번호'><br>
+	
+			<a>Google에서 SMS(요금이 부과될 수 있음)를 통해 전화번호를 확인합니다.</a><br>
+			<input type="submit" value="다음">
+		</form>	
 
+	</div>
+	
 		<select name="language">
     		<option value="">한국어</option>
     		<option value="">English</option>
@@ -48,5 +50,11 @@
 		<a>도움말</a>
 		<a>개인정보처리방침</a>
 		<a>약관</a>
+<%-- 	<% --%>
+<!-- 		String verPhoneNum = request.getParameter("verPhoneNum"); -->
+
+<!-- 		session.setAttribute("verPhoneNum", verPhoneNum); -->
+<!-- 	%> -->
 </body>
+
 </html>
