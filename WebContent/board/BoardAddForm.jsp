@@ -44,14 +44,16 @@
 	</style>
 	
 	<script type="text/javascript">
-		
+		function pageMoveListFnc() {
+			location.href = "./list";
+		}
 	</script>
 </head>
 
 <body>
 	<div id="container">
 		<p id="pageTitle">게시판 등록</p>
-		<form action="add">
+		<form action='add' method='post'>
 			<table>
 				<tr>
 					<td class="items">제목</td>
@@ -73,11 +75,11 @@
 				</tr>
 				<tr>
 					<td colspan="2">
-						<textarea id="contents" rows="20" cols="70" required></textarea>
+						<textarea id="contents" rows="20" cols="70" name="contents" required></textarea>
 					</td>
 				</tr>
 			</table>
-			<input type="button" class="buttonAline" value="취소">
+			<input type="button" class="buttonAline" value="취소" onclick="pageMoveListFnc();">
 			<input type="submit" class="buttonAline" value="완료">
 		</form>
 	</div>

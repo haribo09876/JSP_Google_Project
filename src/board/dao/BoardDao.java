@@ -25,8 +25,7 @@ public class BoardDao {
 		
 		try {
 			String sql = "SELECT PNO, TITLE, EDITOR, CRE_DATE, VIEW_COUNT"
-						+ " FROM BOARD"
-						+ " ORDER BY PNO DESC";
+						+ " FROM BOARD";
 			
 			pstmt = connection.prepareStatement(sql);
 			
@@ -91,8 +90,8 @@ public class BoardDao {
 			String contents = boardDto.getContents();
 			
 			String sql = "INSERT INTO BOARD"
-					+ " VALUE(TITLE, EDITOR, POST_PWD, CONTENTS, CRE_DATE)"
-					+ " VALUES(?, ?, ?, ?, SYSDATE)";
+					+ " VALUE(PNO, TITLE, EDITOR, P_PWD, CONTENTS, VIEW_COUNT, CRE_DATE)"
+					+ "VALUES(BOARD_PNO_SEQ.NEXTVAL, ?, ?, ?, ?, 0, SYSDATE)";
 			
 			pstmt = connection.prepareStatement(sql);
 			
@@ -116,5 +115,100 @@ public class BoardDao {
 		}
 		
 		return resultNum;
+	}
+	
+	//회원삭제
+	public int boardDelete(int pno) throws SQLException {
+		int result = 0;
+		
+		PreparedStatement pstmt = null;
+		
+		
+		String sql = "DELETE FROM BOARD"
+				+ " WHERE PNO = ?";
+		
+		try {
+			pstmt = connection.prepareStatement(sql);
+			
+			pstmt.setInt(1, pno);
+			
+			result = pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw e;
+		}finally {
+			if(pstmt != null) {
+				try {
+					pstmt.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+			
+		} // finally 종료
+		
+		return result;
+	}
+	
+	public BoardDto boardDetail(int pno) throws Exception{
+		BoardDto boardDto = null;
+		
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+
+		String sql = "SELECT TITLE, EDITOR, POST_PWD, CONTENTS"
+				+ " FROM BOARD"
+				+ " WHERE PNO = ?";
+		
+		try {
+			pstmt = connection.prepareStatement(sql);
+			
+			pstmt.setInt(1, pno);
+			
+			rs = pstmt.executeQuery();
+			
+			String title = "";
+			String editor = "";
+			String postPwd = "";
+			String contents = "";
+			
+			if(rs.next()) {
+				title = rs.getString("TITLE");
+				editor = rs.getString("EDITOR");
+				postPwd = rs.getString("POST_PWD");
+				contents = rs.getString("CONTENTS");
+				
+				boardDto = new BoardDto();
+				
+				boardDto.setTitle(title);
+				boardDto.setEditor(editor);
+				boardDto.setPostPwd(postPwd);
+				boardDto.setContents(contents);
+			}else {
+				throw new Exception("해당 게시글을 찾을 수 없습니다.");
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}finally {
+			if(rs != null) {
+				try {
+					rs.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+			
+			if(pstmt != null) {
+				try {
+					pstmt.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+			
+		} //finally end
+		
+		return boardDto;
 	}
 }

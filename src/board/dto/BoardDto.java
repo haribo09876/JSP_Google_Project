@@ -10,14 +10,13 @@ public class BoardDto {
 	private String postPwd;
 	private String contents;
 	private int viewCount;
-	private String pwd;
 	private Date creDate;
 	private int mno;
 
 	public BoardDto() {
 		super();
 	}
-
+	
 	public BoardDto(int pno, String title, String editor, int viewCount, Date creDate) {
 		super();
 		this.pno = pno;
@@ -27,8 +26,8 @@ public class BoardDto {
 		this.creDate = creDate;
 	}
 
-	public BoardDto(int pno, String title, String editor, String postPwd, String contents, int viewCount, String pwd,
-			Date creDate, int mno) {
+	public BoardDto(int pno, String title, String editor, String postPwd, String contents, int viewCount,
+			Date creDate) {
 		super();
 		this.pno = pno;
 		this.title = title;
@@ -36,7 +35,18 @@ public class BoardDto {
 		this.postPwd = postPwd;
 		this.contents = contents;
 		this.viewCount = viewCount;
-		this.pwd = pwd;
+		this.creDate = creDate;
+	}
+	
+	public BoardDto(int pno, String title, String editor, String postPwd, 
+			String contents, int viewCount, Date creDate, int mno) {
+		super();
+		this.pno = pno;
+		this.title = title;
+		this.editor = editor;
+		this.postPwd = postPwd;
+		this.contents = contents;
+		this.viewCount = viewCount;
 		this.creDate = creDate;
 		this.mno = mno;
 	}
@@ -89,14 +99,6 @@ public class BoardDto {
 		this.viewCount = viewCount;
 	}
 
-	public String getPwd() {
-		return pwd;
-	}
-
-	public void setPwd(String pwd) {
-		this.pwd = pwd;
-	}
-
 	public Date getcreDate() {
 		return creDate;
 	}
@@ -116,7 +118,7 @@ public class BoardDto {
 	@Override
 	public String toString() {
 		return "BoardDto [pno=" + pno + ", title=" + title + ", editor=" + editor + ", postPwd=" + postPwd
-				+ ", contents=" + contents + ", viewCount=" + viewCount + ", pwd=" + pwd + ", creDate=" + creDate
+				+ ", contents=" + contents + ", viewCount=" + viewCount + ", creDate=" + creDate
 				+ ", mno=" + mno + "]";
 	}
 
