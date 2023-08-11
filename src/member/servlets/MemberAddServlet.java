@@ -45,8 +45,8 @@ public class MemberAddServlet extends HttpServlet {
 			MemberDto memberDto = new MemberDto();
 
 			memberDto.setEmail(email);
-			memberDto.setPassword(pwd);
-			memberDto.setName(name);
+			memberDto.setPwd(pwd);
+			memberDto.setMname(name);
 
 			ServletContext sc = this.getServletContext();
 			conn = (Connection) sc.getAttribute("conn");

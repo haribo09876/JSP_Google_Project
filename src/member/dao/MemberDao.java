@@ -48,7 +48,7 @@ public class MemberDao {
 				email = rs.getString("EMAIL");
 				creDate = rs.getDate("CRE_DATE");
 
-				MemberDto memberDto = new MemberDto(no, name, email, creDate);
+				MemberDto memberDto = new MemberDto();
 
 				memberList.add(memberDto);
 
@@ -85,8 +85,8 @@ public class MemberDao {
 
 		try {
 			String email = memberDto.getEmail();
-			String pwd = memberDto.getPassword();
-			String name = memberDto.getName();
+			String pwd = memberDto.getPwd();
+			String name = memberDto.getMname();
 
 			String sql = "";
 
@@ -153,7 +153,7 @@ public class MemberDao {
 		return result;
 	}
 
-	public MemberDto memberSelectOne(int no) throws Exception {
+	public MemberDto memberSelectOne(int mno) throws Exception {
 		MemberDto memberDto = null;
 
 		PreparedStatement pstmt = null;
@@ -161,14 +161,14 @@ public class MemberDao {
 
 		String sql = "";
 
-		sql += "SELECT MNAME, EMAIL, CRE_DATE";
+		sql += "SELECT MNAME, EMAIL";
 		sql += " FROM MEMBERS";
 		sql += " WHERE  MNO = ?";
 
 		try {
 			pstmt = connection.prepareStatement(sql);
 
-			pstmt.setInt(1, no);
+			pstmt.setInt(1, mno);
 
 			rs = pstmt.executeQuery();
 
@@ -178,15 +178,13 @@ public class MemberDao {
 
 			if (rs.next()) {
 				mName = rs.getString("MNAME");
-				email = rs.getString("EMAIL");
-				creDate = rs.getDate("CRE_DATE");
+				email = rs.getString("EMAIL");				
 
 				memberDto = new MemberDto();
 
-				memberDto.setNo(no);
-				memberDto.setName(mName);
+				memberDto.setMno(mno);
+				memberDto.setMname(mName);
 				memberDto.setEmail(email);
-				memberDto.setCreateDate(creDate);
 			} else {
 				throw new Exception("해당 번호의 회원을 찾을 수 없습니다");
 			}
@@ -229,8 +227,8 @@ public class MemberDao {
 			pstmt = connection.prepareStatement(sql);
 			
 			pstmt.setString(1, memberDto.getEmail());
-			pstmt.setString(2, memberDto.getName());
-			pstmt.setInt(3, memberDto.getNo());
+			pstmt.setString(2, memberDto.getMname());
+			pstmt.setInt(3, memberDto.getMno());
 			
 			result = pstmt.executeUpdate();
 		} catch (Exception e) {
@@ -248,8 +246,8 @@ public class MemberDao {
 		return result;		
 	}
 
-	public MemberDto memberExist(String email
-			, String pwd) throws SQLException {
+	public MemberDto memberIdExist(String email)
+		throws SQLException {
 		
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -268,7 +266,6 @@ public class MemberDao {
 			int colIndex = 1;
 			
 			pstmt.setString(colIndex++, email);
-			pstmt.setString(colIndex, pwd);
 
 			rs = pstmt.executeQuery();
 
@@ -279,7 +276,7 @@ public class MemberDao {
 				name = rs.getString("mname");
 
 				memberDto.setEmail(email);
-				memberDto.setName(name);
+				memberDto.setMname(name);
 				
 				return memberDto;				
 			}
@@ -306,4 +303,60 @@ public class MemberDao {
 		return null;
 	}
 	
+	public MemberDto memberPasswordExist(String pwd)
+			throws SQLException {
+			
+			PreparedStatement pstmt = null;
+			ResultSet rs = null;
+			
+			String sql = "";
+			sql += "SELECT EMAIL, MNAME, PWD";
+			sql += " FROM MEMBERS";
+			sql += " WHERE EMAIL = ?";
+			sql += " AND PWD = ?";
+			
+			String name = "";
+		
+			try {
+				pstmt = connection.prepareStatement(sql);
+
+				int colIndex = 1;
+				
+				pstmt.setString(colIndex++, pwd);
+
+				rs = pstmt.executeQuery();
+
+				MemberDto memberDto = new MemberDto();
+				
+				if (rs.next()) {
+					pwd = rs.getString("password");
+					name = rs.getString("mname");
+
+					memberDto.setEmail(pwd);
+					memberDto.setMname(name);
+					
+					return memberDto;				
+				}
+					
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			finally {
+				try {
+					if (rs != null) {
+						rs.close();
+					}
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+				try {
+					if (pstmt != null) {
+						pstmt.close();
+					}
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+			return null;
+		}
 }

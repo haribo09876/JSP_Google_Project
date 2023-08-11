@@ -38,7 +38,6 @@ public class LoginIdServlet extends HttpServlet {
 
 		try {
 			String email = req.getParameter("email");
-			String pwd = req.getParameter("password");
 
 			ServletContext sc = this.getServletContext();
 			conn = (Connection) sc.getAttribute("conn");
@@ -46,7 +45,7 @@ public class LoginIdServlet extends HttpServlet {
 			MemberDao memberDao = new MemberDao();
 			memberDao.setConnection(conn);
 
-			MemberDto memberDto = memberDao.memberExist(email, pwd);
+			MemberDto memberDto = memberDao.memberIdExist(email);
 
 			if (memberDto == null) {
 				RequestDispatcher rd = req.getRequestDispatcher("./LoginFail.jsp");
