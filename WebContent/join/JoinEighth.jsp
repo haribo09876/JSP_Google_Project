@@ -33,13 +33,12 @@
 	    		<option value="">Spain</option>
 			</select>
 			
-			<input type="text" name="phoneNum" placeholder='전화번호'><br>
-		
-		<a>Google은 이 번호를 계정 보안 용도로만 사용합니다. 다른 사용자에게는 전화번호가 표시되지 않습니다. 나중에 다른 용도로도 이 번호를 사용할지 결정할 수 있습니다.</a><br>
-
-			<input type="text" name="recoveryEmail" placeholder='복구 이메일 주소'><br>
-			<input type="submit" value="다음">
-			<input type="submit" value="건너뛰기">
+			<form action="add8" method='post'>
+				<input type="text" name="phoneNo" placeholder='전화번호'>
+				<a>Google은 이 번호를 계정 보안 용도로만 사용합니다. 다른 사용자에게는 전화번호가 표시되지 않습니다. 나중에 다른 용도로도 이 번호를 사용할지 결정할 수 있습니다.</a><br>
+				<input type="submit" value="다음">
+				<input type="submit" value="건너뛰기">
+			</form><br>
 	</div>
 
 		<select name="language">

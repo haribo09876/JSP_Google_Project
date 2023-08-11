@@ -4,7 +4,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>JoinSeventh</title>
+	<title>JoinSixth</title>
 	<style type="text/css">
 		#frame {
 			height: 416px;
@@ -22,12 +22,14 @@
 </head>
 <body>
 	<div id="frame">
-		<h2>복구 이메일 추가</h2>
-		<a>사용자 계정에서 비정상적인 활동이 감지되거나 사용자가 계정에 액세스할 수 없는 경우 Google에서 사용자에게 연락하기 위해 사용하는 이메일 주소입니다.</a><br>
-
-			<input type="text" name="recoveryEmail" placeholder='복구 이메일 주소'><br>
+		<h2>코드 입력</h2>
+		<a>6자리 인증 코드를 입력하여 문자 메시지를 받았음을 확인하세요.</a><br>
+		
+		<form action="add6" method='post'>
+			<input type="text" name="inputCode" placeholder="코드 입력"><br>
+			<input type="submit" value="새 코드 받기">
 			<input type="submit" value="다음">
-			<input type="submit" value="건너뛰기">
+		</form>
 	</div>
 	
 		<select name="language">
@@ -36,6 +38,6 @@
 		</select>
 		<a>도움말</a>
 		<a>개인정보처리방침</a>
-		<a>약관</a>
+		<a>약관</a>	
 </body>
 </html>

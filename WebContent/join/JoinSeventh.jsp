@@ -4,7 +4,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>JoinFourth</title>
+	<title>JoinSeventh</title>
 	<style type="text/css">
 		#frame {
 			height: 416px;
@@ -22,14 +22,15 @@
 </head>
 <body>
 	<div id="frame">
-		<h2>안전한 비밀번호 만들기</h2>
-		<a>문자, 숫자, 기호를 조합하여 안전한 비밀번호를 만드세요.</a><br>
+		<h2>복구 이메일 추가</h2>
+		<a>사용자 계정에서 비정상적인 활동이 감지되거나 사용자가 계정에 액세스할 수 없는 경우 Google에서 사용자에게 연락하기 위해 사용하는 이메일 주소입니다.</a><br>
 
-			<input type="text" name="password" placeholder="비밀번호"><br>
-			<input type="text" name="passwordCheck" placeholder="확인"><br>
-
-			<input type="checkbox" name="ShowingPassword">비밀번호 표시<br>
+		<form action="add7" method='post'>
+			<input type="text" name="recoveryEmail" placeholder='복구 이메일 주소'>
 			<input type="submit" value="다음">
+			<input type="submit" value="건너뛰기">
+		</form><br>
+
 	</div>
 	
 		<select name="language">
@@ -38,6 +39,6 @@
 		</select>
 		<a>도움말</a>
 		<a>개인정보처리방침</a>
-		<a>약관</a>	
+		<a>약관</a>
 </body>
 </html>
