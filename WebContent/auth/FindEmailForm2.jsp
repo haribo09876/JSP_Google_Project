@@ -5,7 +5,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>로그인 아이디입력</title>
+	<title>이메일 찾기 이름입력</title>
 	<style type="text/css">
 		p{
 			font-size: 14px;
@@ -63,17 +63,18 @@
 		
 		
 		
-		#idInput{
+		#idInput, #idInput2{
 			border: 1px solid #E5E5E5;			
 			width: 340px;
 			height: 50px;
 			font-size: 18px;
 			padding-left: 20px;
 			border-radius: 5px;
+			margin-bottom: 20px;
 		}
 		
 				
-		#idInput:focus{
+		#idInput:focus, #idInput2:focus{
 			border-color: #0982f0;
 			outline: none;
 		}
@@ -128,9 +129,9 @@
 						
 			var myObj = document.getElementById('inputDiv');
 			
-			var myInput = document.getElementById('idInput');
+			var myInput2 = document.getElementById('idInput2');
 										
-			myInput.style.borderColor = 'red';
+			myInput2.style.borderColor = 'red';
 									
 			document.getElementById('hide').style.display = 'block';			
 			document.getElementById('hide2').style.display = 'block';
@@ -155,23 +156,20 @@
 	<div id ='googleDiv'>
 		<a id='firstGoogle'>G</a><a id='secondGoogle'>o</a><a id='thirdGoogle'>o</a><a id='fourthGoogle'>g</a><a id='fifthGoogle'>l</a><a id='sixthGoogle'>e</a>
 	</div>
-	<h2>로그인</h2>
-	<p id='firstPtag'>Google 계정 사용</p>
+	<h2>이름을 입력하세요</h2>
+	<p id='firstPtag'>Google 계정 이름 입력</p>
 	<form action="./loginId" method="post">
 		<div id='inputDiv'>
-					
-		<input id='idInput' type="text" name="email" placeholder="이메일 또는 휴대전화" onfocus="this.placeholder = ''" onblur="this.placeholder = '이메일 또는 휴대전화'"/>
+		<input id='idInput' type="text" name="firstName" placeholder="성" onfocus="this.placeholder = ''" onblur="this.placeholder = '성'"/>			
+		<input id='idInput2' type="text" name="lastName" placeholder="이름" onfocus="this.placeholder = ''" onblur="this.placeholder = '이름'"/>
 		</div>
 		
 		<span id='hide' style="display:none; color: red;">
 		<img id='hide2'src="./icon.png" style="display: none; float: left;">
-		이메일이나 전화번호를 입력하세요</span>				
+		이름을 입력하세요.</span>				
 		<br>
-		<a id='firstAtag' href="./FindEmailForm.jsp">이메일을 잊으셨나요?</a><br><br>				
-		<p>내 컴퓨터가 아닌가요? 게스트 모드를 사용하여 비공개</p>	
-		<a>로 로그인하세요.</a>
-		<a id='secondAtag' href="">자세히 알아보기</a><br><br>
-		<a id='thirdAtag' href="">계정 만들기</a>		
+		<br>
+		<br>	
 		<input id='next' type="button" value="다음" onclick="nextFnc();">
 		
 	</form>

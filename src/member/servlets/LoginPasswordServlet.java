@@ -37,7 +37,6 @@ public class LoginPasswordServlet extends HttpServlet {
 		Connection conn = null;
 
 		try {
-			String email = req.getParameter("email");
 			String pwd = req.getParameter("password");
 
 			ServletContext sc = this.getServletContext();
@@ -46,7 +45,7 @@ public class LoginPasswordServlet extends HttpServlet {
 			MemberDao memberDao = new MemberDao();
 			memberDao.setConnection(conn);
 
-			MemberDto memberDto = memberDao.memberExist(email, pwd);
+			MemberDto memberDto = memberDao.memberPasswordExist(pwd);
 
 			if (memberDto == null) {
 				RequestDispatcher rd = req.getRequestDispatcher("./LoginFail.jsp");
