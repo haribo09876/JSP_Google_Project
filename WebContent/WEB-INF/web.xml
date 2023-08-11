@@ -32,7 +32,7 @@
 <!-- 필터 선언 -->
 	<filter>
 		<filter-name>CharacterEncodingFilter</filter-name>
-		<filter-class>member.filters.CharacterEncodingFilter</filter-class>
+		<filter-class>encoding.filters.CharacterEncodingFilter</filter-class>
 		
 		<init-param>
 			<param-name>encoding</param-name>
@@ -42,7 +42,7 @@
 	<filter-mapping>
 		<filter-name>CharacterEncodingFilter</filter-name>
 		<url-pattern>/*</url-pattern>
-	</filter-mapping> 
+	</filter-mapping>
 	
 	 
   <welcome-file-list>
