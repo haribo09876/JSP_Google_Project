@@ -31,9 +31,8 @@
 			<input type="submit" name="기존 이메일 사용">기존 이메일 사용<br>
 			<input type="submit" value="다음">
 		</form>
-
 	</div>
-	
+	<div>
 		<select name="language">
     		<option value="">한국어</option>
     		<option value="">English</option>
@@ -41,11 +40,6 @@
 		<a>도움말</a>
 		<a>개인정보처리방침</a>
 		<a>약관</a>
-<%-- 	<% --%>
-<!-- 		String email = request.getParameter("email"); -->
-
-<!-- 		session.setAttribute("email", email); -->
-<%-- 	%> --%>
+	</div>
 </body>
-
 </html>

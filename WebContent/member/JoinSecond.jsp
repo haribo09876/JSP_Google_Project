@@ -24,10 +24,8 @@
 	<div id="frame">
 		<h2>기본 정보</h2>
 		<a>생일과 성별을 입력하세요.</a><br>
-
 		<form action="add2" method='post'>
 			<input type="text" name="year" placeholder='연도'>
-
 			<select name="month">
 				<option value="none" selected>월</option>
     			<option value="01">1월</option>
@@ -44,19 +42,16 @@
 	    		<option value="12">12월</option>
 			</select>
 			<input type="text" name="day" placeholder='일'><br>
-		
 			<select name="gender">
 				<option value="none" selected>성별</option>
 	 			<option value="남성" >남성</option>
 	 			<option value="여성">여성</option>
 	 			<option value="기타">기타</option>
 			</select><br>
-			
 			<input type="submit" value="다음">
 		</form>
-		
 	</div>
-						
+	<div>
 		<select name="language">
     		<option value="">한국어</option>
     		<option value="">English</option>
@@ -64,6 +59,6 @@
 		<a>도움말</a>
 		<a>개인정보처리방침</a>
 		<a>약관</a>
+	</div>
 </body>
-
 </html>
