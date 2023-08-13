@@ -61,8 +61,6 @@
 			border-radius: 5px;
 		}
 		
-		
-		
 		#idInput{
 			border: 1px solid #E5E5E5;			
 			width: 340px;
@@ -71,13 +69,11 @@
 			padding-left: 20px;
 			border-radius: 5px;
 		}
-		
 				
 		#idInput:focus{
 			border-color: #0982f0;
 			outline: none;
 		}
-		
 		
 		#googleDiv{
 		 	font-size: 30px;
@@ -108,19 +104,13 @@
 			color: #EA4335;
 		}
 		
-		
-		
 		select{
 			border: none;
 			width: 200px;
 		}
 	
-	
 	</style>
-	<script type="text/javascript">
-		
-		
-	
+	<script type="text/javascript">	
 		function nextFnc() {
 						
 			var hidePTag = document.createElement('hide');
@@ -134,17 +124,7 @@
 									
 			document.getElementById('hide').style.display = 'block';			
 			document.getElementById('hide2').style.display = 'block';
-				
-			
-			
-			
-			
-		
-			
-			
-			
 		}
-	
 	</script>
 </head>
 
