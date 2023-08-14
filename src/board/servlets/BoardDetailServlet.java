@@ -16,10 +16,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import board.dao.BoardDao;
 import board.dto.BoardDto;
-import member.dao.MemberDao;
-import member.dto.MemberDto;
 
-@WebServlet("/member/detail")
+@WebServlet("/board/detail")
 public class BoardDetailServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) 
@@ -81,50 +79,53 @@ public class BoardDetailServlet extends HttpServlet {
 
 	} // doGet end
 
-//	@Override
-//	protected void doPost(HttpServletRequest req, HttpServletResponse res) 
-//			throws ServletException, IOException {
-//		// TODO Auto-generated method stub
-//		BoardDto boardDto = null;
-//		
-//		Connection conn = null;
-//
-//		try {
-//			String name = req.getParameter("name");
-//			String email = req.getParameter("email");
-//			String mNo = req.getParameter("no");
-//			int no = Integer.parseInt(mNo);
-//			
-//			memberDto = new MemberDto();
-//
-//			boardDto.setName(name);
-//			boardDto.setEmail(email);
-//			boardDto.setNo(no);
-//			
-//			ServletContext sc = this.getServletContext();
-//			
-//			conn = (Connection)sc.getAttribute("conn");
-//			
-//			MemberDao memberDao = new MemberDao();
-//			memberDao.setConnection(conn);
-//			
-//			int result = memberDao.memberUpdate(boardDto);
-//			
-//			if (result == 0) {
-//				System.out.println("회원 정보 조회가 실패하였습니다.");
-//			}
-//			
-//			res.sendRedirect("./list");
-//
-//		} catch (Exception e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//			
-//			req.setAttribute("error", e);
-//			RequestDispatcher dispatcher = 
-//					req.getRequestDispatcher("./Error.jsp");
-//			
-//			dispatcher.forward(req, res);
-//		}
-//	}
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse res) 
+			throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		BoardDto boardDto = null;
+		
+		Connection conn = null;
+
+		try {
+			int pno = Integer.parseInt(req.getParameter("pno"));
+			String title = req.getParameter("title");
+			String editor = req.getParameter("editor");
+			String postPwd = req.getParameter("postPwd");
+			String contents = req.getParameter("contents");
+			
+			boardDto = new BoardDto();
+
+			boardDto.setPno(pno);
+			boardDto.setTitle(title);
+			boardDto.setEditor(editor);
+			boardDto.setPostPwd(postPwd);
+			boardDto.setContents(contents);
+			
+			ServletContext sc = this.getServletContext();
+			
+			conn = (Connection)sc.getAttribute("conn");
+			
+			BoardDao boardDao = new BoardDao();
+			boardDao.setConnection(conn);
+			
+			int result = boardDao.boardDetail(boardDto);
+			
+			if (result == 0) {
+				System.out.println("게시물 조회에 실패하였습니다.");
+			}
+			
+			res.sendRedirect("./list");
+
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			
+			req.setAttribute("error", e);
+			RequestDispatcher dispatcher = 
+					req.getRequestDispatcher("./Error.jsp");
+			
+			dispatcher.forward(req, res);
+		}
+	}
 }

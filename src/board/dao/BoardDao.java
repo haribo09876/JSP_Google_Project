@@ -150,17 +150,18 @@ public class BoardDao {
 		return result;
 	}
 	
+	//게시글 상세
 	public BoardDto boardDetail(int pno) throws Exception{
 		BoardDto boardDto = null;
 		
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 
-		String sql = "SELECT TITLE, EDITOR, POST_PWD, CONTENTS"
-				+ " FROM BOARD"
-				+ " WHERE PNO = ?";
-		
 		try {
+			String sql = "SELECT TITLE, EDITOR, P_PWD, CONTENTS"
+					+ " FROM BOARD"
+					+ " WHERE PNO = ?";
+			
 			pstmt = connection.prepareStatement(sql);
 			
 			pstmt.setInt(1, pno);
@@ -175,7 +176,7 @@ public class BoardDao {
 			if(rs.next()) {
 				title = rs.getString("TITLE");
 				editor = rs.getString("EDITOR");
-				postPwd = rs.getString("POST_PWD");
+				postPwd = rs.getString("P_PWD");
 				contents = rs.getString("CONTENTS");
 				
 				boardDto = new BoardDto();

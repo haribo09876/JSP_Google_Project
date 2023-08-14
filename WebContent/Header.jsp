@@ -5,7 +5,7 @@
 <jsp:useBean
 	id="member"
 	scope="session"
-	class="spms.dto.MemberDto"
+	class="member.dto.MemberDto"
 />
 
 <div style="background-color: #00008b; color: #ffffff; height: 20px; padding: 5px;">

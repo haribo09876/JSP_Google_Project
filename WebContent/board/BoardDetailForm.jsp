@@ -1,5 +1,6 @@
 <%@ page language='java' contentType='text/html; charset=UTF-8'
     pageEncoding='UTF-8'%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -72,12 +73,12 @@
 	
 	<div id='container'>
 		<p id='pageTitle'>게시글 상세</p>
-		<form action='add' method='post'>
+		<form action='./detail' method='post'>
 			<table>
 				<tr>
 					<td class='items'>제목</td>
 					<td id='itemsInput'>
-						<input type='text' name='title' value='${boardDto.title}'>
+						<input type='text' name='title' value='${requestScope.boardDto.title}'>
 					</td>
 				</tr>
 				<tr>
@@ -98,9 +99,9 @@
 					</td>
 				</tr>
 			</table>
-			<input type='button' class='buttonAline' value='삭제' onclick='pageMoveDeleteFnc(${boardDto.pno});'>
-			<input type='submit' class='buttonAline' value='수정' onclick='pageMoveupdateFnc(${boardDto.pno});'>
-			<input type='submit' class='buttonAline' value='목록' onclick='pageMoveListFnc();'>
+			<input type='button' class='buttonAline' value='삭제' onclick='pageMoveDeleteFnc(${boardDto.pno});' />
+			<input type='button' class='buttonAline' value='수정' onclick='pageMoveupdateFnc(${boardDto.pno});' />
+			<input type='button' class='buttonAline' value='목록' onclick='pageMoveListFnc();' />
 		</form>
 	</div>
 </body>
