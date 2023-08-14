@@ -137,18 +137,20 @@
 		
 	
 		function nextFnc() {
-						
 			var hidePTag = document.createElement('hide');
-			var hide2PTag = document.createElement('hide2');
-						
-			var myObj = document.getElementById('inputDiv');
-			
+			var hide2PTag = document.createElement('hide2');						
+			var myObj = document.getElementById('inputDiv');			
 			var myInput = document.getElementById('idInput');
+			
+			if (!myInput.value) {
+				myInput.style.borderColor = 'red';				
+				document.getElementById('hide').style.display = 'block';			
+				document.getElementById('hide2').style.display = 'block';
+				event.preventDefault();
+			}
+			
 										
-			myInput.style.borderColor = 'red';
-									
-			document.getElementById('hide').style.display = 'block';			
-			document.getElementById('hide2').style.display = 'block';
+			
 		}		
 			
 		function checkFnc() {
@@ -182,7 +184,7 @@
 		
 		<span id='hide' style="display:none; color: red;">
 		<img id='hide2'src="./icon.png" style="display: none; float: left;">
-		비밀번호를 입력하세요</span>				
+		비밀번호를 입력하세요.</span>				
 		<br>
 		<label>
 			<input id='pwdOpen' type="checkbox" onchange="checkFnc();">  비밀번호 표시

@@ -135,13 +135,7 @@
 									
 			document.getElementById('hide').style.display = 'block';			
 			document.getElementById('hide2').style.display = 'block';
-				
-			
-			
-			
-			
-		
-			
+			event.preventDefault();	
 			
 			
 		}
@@ -170,7 +164,7 @@
 		<br>
 		<br>
 		<br>	
-		<input id='next' type="button" value="다음" onclick="nextFnc();">
+		<input id='next' type="submit" value="다음" onclick="nextFnc();">
 		
 	</form>
 	

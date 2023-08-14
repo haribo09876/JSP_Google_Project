@@ -97,7 +97,28 @@
 		}
   </style>
   <script>
+	function checkName() {
+		
+	}
+	
+/*     var optionStr = "";
 
+    optionStr = "width=500px, height=800px, left=200px";
+    optionStr += ", top=20px, scrollbars=no, toolbar=no";
+    optionStr += ", location=no";
+
+    // 새 창으로 문서를 열 때 사용
+    open("경로", "windos 이름", "옵션들")
+
+    // 		window.open("https://www.naver.com/" 
+    // 				,"naver", optionStr);
+
+    function popUpFnc() {
+      window.open("./ChildWindowBasic1.jsp", "naver", optionStr);
+    } */
+	
+	
+	
   </script>
 </head>
 
