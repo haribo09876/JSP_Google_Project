@@ -37,7 +37,8 @@ public class LoginPasswordServlet extends HttpServlet {
 		Connection conn = null;
 
 		try {
-			String pwd = req.getParameter("password");
+			String pwd = req.getParameter("pwd");
+			String email = req.getParameter("email");
 
 			ServletContext sc = this.getServletContext();
 			conn = (Connection) sc.getAttribute("conn");
@@ -45,12 +46,19 @@ public class LoginPasswordServlet extends HttpServlet {
 			MemberDao memberDao = new MemberDao();
 			memberDao.setConnection(conn);
 
-			MemberDto memberDto = memberDao.memberPasswordExist(pwd);
+			MemberDto memberDto = memberDao.memberPasswordExist(email, pwd);
+			
+			if(memberDto == null) { RequestDispatcher rd =
+					req.getRequestDispatcher("./LoginPasswordForm2.jsp");
+					  
+					rd.forward(req, res);
+					  
+					}
 			
 			HttpSession session = req.getSession();
 			session.setAttribute("member", memberDto);
 
-			res.sendRedirect("../member/list");
+			res.sendRedirect("../board/list");
 		} catch (Exception e) {
 			e.printStackTrace();
 			throw new ServletException();

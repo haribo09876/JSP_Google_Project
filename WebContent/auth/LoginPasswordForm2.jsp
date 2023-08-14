@@ -138,7 +138,9 @@
 	
 		function nextFnc() {
 			var hidePTag = document.createElement('hide');
-			var hide2PTag = document.createElement('hide2');						
+			var hide2PTag = document.createElement('hide2');
+			var hide3PTag = document.createElement('hide3');
+			var hide4PTag = document.createElement('hide4');
 			var myObj = document.getElementById('inputDiv');			
 			var myInput = document.getElementById('idInput');
 			
@@ -146,6 +148,8 @@
 				myInput.style.borderColor = 'red';				
 				document.getElementById('hide').style.display = 'block';			
 				document.getElementById('hide2').style.display = 'block';
+				document.getElementById('hide3').style.display = 'none';
+				document.getElementById('hide4').style.display = 'none';
 				event.preventDefault();
 			}
 			
@@ -184,7 +188,10 @@
 		
 		<span id='hide' style="display:none; color: red;">
 		<img id='hide2'src="./icon.png" style="display: none; float: left;">
-		비밀번호를 입력하세요.</span>				
+		비밀번호를 입력하세요.</span>	
+		<span id='hide3' style="display:block; color: red;">
+		<img id='hide4'src="./icon.png" style="display: block; float: left;">
+		잘못된 비밀번호입니다. 다시 시도하거나 비밀번호 찾기를 클릭하여 재설정하세요.</span>			
 		<br>
 		<label>
 			<input id='pwdOpen' type="checkbox" onchange="checkFnc();">  비밀번호 표시

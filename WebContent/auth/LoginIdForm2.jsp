@@ -64,7 +64,7 @@
 		
 		
 		#idInput{
-			border: 1px solid #E5E5E5;			
+			border: 1px solid red;			
 			width: 340px;
 			height: 50px;
 			font-size: 18px;
@@ -74,7 +74,7 @@
 		
 				
 		#idInput:focus{
-			border-color: #0982f0;
+			border-color: red;
 			outline: none;
 		}
 		
