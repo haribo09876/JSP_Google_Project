@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
-	<title>JoinFifth</title>
+<meta charset="UTF-8">
+<title>JoinFifth</title>
 	<style type="text/css">
 		h1 {
 			text-align: center;
@@ -38,10 +38,16 @@
 			border-radius: 4px;
 		}
 		
-		.footerText {
-			padding-left: 27px;
+		.thirdTitle {
+			margin-top: 24px;
+			color: rgb(32, 33, 36);
+			font-family: roboto, "Noto Sans Myanmar UI", arial, sans-serif;
+			font-size: 14px;
+			font-weight: 400;
+			letter-spacing: 0.1px;
+			line-height: 1.5;
 		}
-
+		
 		.innerInput {
 			width: 94px;
 			height: 48px;
@@ -49,6 +55,10 @@
 			border-radius: 4px;
 			margin-top: 24px;
 			margin-right: 20px;
+		}
+		
+		.footerText {
+			padding-left: 27px;
 		}
 		
 		.button {
@@ -103,7 +113,7 @@
 			padding-bottom: 12px;
 			margin-top: 24px;
 		}
-		
+				
 		#innerSelect {
 			width: 336px;
 			height: 28px;
@@ -122,17 +132,17 @@
 			height: 48px;
 			padding-top: 32px;
 		}
-		
+
 		#footer {
 			width: 448px;
 			height: 48px;
 			padding-top: 20px;
 			font-size: 13px;
 		}
-  </style>
-  <script>
-
-  </script>
+</style>
+<script>
+	
+</script>
 </head>
 
 <body>
@@ -140,7 +150,7 @@
 		<div>
 			<img id="logo" src="Logo.png">
 			<h1>보안문자 입력</h1>
-			<div id="secondTitle">
+			<div class="thirdTitle">
 				<span>휴대전화로 인증 코드 받기</span><br>
 			</div>
 			<select name="country">
@@ -153,10 +163,13 @@
 			</select>
 			<form action="add5" method="post">
 				<div>
-					<input class="inputBox" type="text" name="tempPhoneNum" placeholder="전화번호"><br>
+					<input class="inputBox" type="text" name="tempPhoneNum"
+						placeholder="전화번호"><br>
 				</div>
-				<a>Google에서 SMS(요금이 부과될 수 있음)를 통해 전화번호를 확인합니다.</a><br>
-				<div id="divButton">
+				<div class="thirdTitle">
+					<span>Google에서 SMS(요금이 부과될 수 있음)를 통해 전화번호를 확인합니다.</span><br>
+				</div>
+				<div class="thirdTitle">
 					<input class="button" type="submit" value="다음">
 				</div>
 			</form>
@@ -166,10 +179,8 @@
 		<select name="language">
 			<option value="">한국어</option>
 			<option value="">English</option>
-		</select>
-		<a class="footerText">도움말</a>
-		<a class="footerText">개인정보처리방침</a>
-		<a class="footerText">약관</a>
+		</select> <a class="footerText">도움말</a> <a class="footerText">개인정보처리방침</a> <a
+			class="footerText">약관</a>
 	</div>
 </body>
 

@@ -4,7 +4,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>JoinEighth</title>
+	<title>JoinZero</title>
 	<style type="text/css">
 		h1 {
 			text-align: center;
@@ -63,15 +63,25 @@
 		}
 		
 		.button {
-			width: 180px;
+			width: 76px;
 			height: 36px;
-			color: rgb(26, 115, 232);
-			background-color: white;
-			border: 1px solid #DADCE0;
+			background-color: rgb(26, 115, 232);
+			border: 0px;
 			border-collapse: collapse;
 			border-radius: 4px;
 			font-size: 14px;
 			font-weight: 400;
+			color: white;
+			float: right;
+		}
+		
+		.simpleButton {
+			border: 0px;
+			border-collapse: collapse;
+			background-color: white;
+			font-size: 14px;
+			font-weight: 400;
+			color: rgb(26, 115, 232);
 		}
 		
 		#frame {
@@ -152,37 +162,33 @@
 			padding-top: 20px;
 			font-size: 13px;
 		}
-	</style>
-	<script>
+</style>
+<script>
 	
-	</script>
+</script>
 </head>
 
 <body>
 	<div id="frame">
 		<div>
 			<img id="logo" src="Logo.png">
-			<h1>전화번호 추가</h1>
-			<select name="country">
-				<option value="">대한민국</option>
-				<option value="">US</option>
-				<option value="">UK</option>
-				<option value="">France</option>
-				<option value="">Germany</option>
-				<option value="">Spain</option>
-			</select>
-			<form action="add8" method="post">
+			<h1>로그인</h1>
+			<div id="secondTitle">
+				<span>Google 계정 사용</span><br>
+			</div>
+			<form action="loginPwd" method="post">
 				<div>
-					<input id="inputBoxSecond" type="number" name="phoneNo"
-						placeholder="전화번호"><br>
+					<input class="inputBox" type="text" name="emailOrPhoneNo"
+						placeholder="이메일 또는 휴대전화"><br>
 				</div>
+				<input class="simpleButton" type="button" value="이메일을 잊으셨나요?">
 				<div class="thirdTitle">
-					<span>Google은 이 번호를 계정 보안 용도로만 사용합니다. 다른 사용자에게는 전화번호가 표시되지
-						않습니다. 나중에 다른 용도로도 이 번호를 사용할지 결정할 수 있습니다.</span><br>
+					<span>내 컴퓨터가 아닌가요? 시크릿 브라우징 창을 사용하여 로그인하세요.</span> <input
+						class="simpleButton" type="button" value="자세히 알아보기">
 				</div>
-				<div class="thirdTitle">
-					<input class="button" type="submit" value="다음"> <input
-						class="button" type="submit" value="건너뛰기">
+				<div id="divButton">
+					<input class="simpleButton" type="button" value="계정 만들기"> <input
+						class="button" type="submit" value="다음">
 				</div>
 			</form>
 		</div>
