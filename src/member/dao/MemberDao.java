@@ -312,26 +312,31 @@ public class MemberDao {
 			ResultSet rs = null;
 			
 			String sql = "";
-			sql += "SELECT PWD";
+			sql += "SELECT MNAME, EMAIL";
 			sql += " FROM MEMBERS";
 			sql += " WHERE EMAIL = ?";
+			sql += " AND PWD = ?";
+			
+			String name = "";
 		
 			try {
 								
 				pstmt = connection.prepareStatement(sql);
-				
+								
 				pstmt.setString(1, pwd);
-
-				rs = pstmt.executeQuery();
-
-				MemberDto memberDto = new MemberDto();								
 				
-				if (rs.next()) {
+				rs = pstmt.executeQuery();
+				
+				MemberDto memberDto = new MemberDto();			
+				
+				if(rs.next()) {
+					name = rs.getString("mname");
+					email = rs.getString("email");
 					
-					pwd = rs.getString("pwd");					
 					memberDto.setEmail(email);
-					memberDto.setPwd(pwd);
-						
+					memberDto.setMname(name);
+					
+					
 					return memberDto;				
 				}
 					

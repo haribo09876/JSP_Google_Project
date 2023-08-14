@@ -180,7 +180,7 @@
 	</div>
 	<h2>시작하기</h2>
 	<p id='firstPtag' onclick="moveFnc();">계정이메일</p>
-	<form action="./loginId" method="post">
+	<form action="./loginPassword" method="post">
 		<div id='inputDiv'>
 					
 		<input id='idInput' type="password" name="password" placeholder="비밀번호 입력" onfocus="this.placeholder = ''" onblur="this.placeholder = '이메일 또는 휴대전화'"/>
