@@ -110,11 +110,7 @@
 		}
 	
 	</style>
-<<<<<<< HEAD
 
-=======
-<<<<<<< HEAD
->>>>>>> branch 'master' of https://github.com/haribo09876/JSP_Google_Project.git
 	<script type="text/javascript">
 		
 	function nextFnc() {
@@ -130,31 +126,8 @@
 			}	
 											
 	}	
-<<<<<<< HEAD
-			
-=======
-			
 
-		
-	
-=======
-	<script type="text/javascript">	
-		function nextFnc() {
-						
-			var hidePTag = document.createElement('hide');
-			var hide2PTag = document.createElement('hide2');
-						
-			var myObj = document.getElementById('inputDiv');
-			
-			var myInput = document.getElementById('idInput');
-										
-			myInput.style.borderColor = 'red';
-									
-			document.getElementById('hide').style.display = 'block';			
-			document.getElementById('hide2').style.display = 'block';
-		}
->>>>>>> branch 'master' of https://github.com/haribo09876/JSP_Google_Project.git
->>>>>>> branch 'master' of https://github.com/haribo09876/JSP_Google_Project.git
+
 	</script>
 </head>
 

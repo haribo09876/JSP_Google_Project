@@ -327,7 +327,7 @@ public class MemberDao {
 				MemberDto memberDto = new MemberDto();								
 				
 				if (rs.next()) {
-					email = rs.getString("email");
+					
 					pwd = rs.getString("pwd");					
 					memberDto.setEmail(email);
 					memberDto.setPwd(pwd);

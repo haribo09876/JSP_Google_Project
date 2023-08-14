@@ -122,24 +122,18 @@
 		
 	
 		function nextFnc() {
-						
+			var myInput = document.getElementById('idInput');
 			var hidePTag = document.createElement('hide');
-			var hide2PTag = document.createElement('hide2');
-						
+			var hide2PTag = document.createElement('hide2');						
 			var myObj = document.getElementById('inputDiv');
 			
-			var myInput = document.getElementById('idInput');
-										
-			myInput.style.borderColor = 'red';
-									
-			document.getElementById('hide').style.display = 'block';			
-			document.getElementById('hide2').style.display = 'block';
+			if (!myInput.value) {
+				myInput.style.borderColor = 'red';
 				
-			
-			
-			
-			
-		
+				document.getElementById('hide').style.display = 'block';			
+				document.getElementById('hide2').style.display = 'block';
+				event.preventDefault();
+			}
 			
 			
 			
@@ -157,7 +151,7 @@
 	</div>
 	<h2>이메일 찾기</h2>
 	<p id='firstPtag'>전화번호 또는 복구 이메일을 입력하세요.</p>
-	<form action="./loginId" method="post">
+	<form action="./FindEmail" method="post">
 		<div id='inputDiv'>
 					
 		<input id='idInput' type="text" name="password" placeholder="전화번호 또는 이메일" onfocus="this.placeholder = ''" onblur="this.placeholder = '이메일 또는 휴대전화'"/>
@@ -169,7 +163,7 @@
 		<br>
 		<br>
 		<br>	
-		<input id='next' type="button" value="다음" onclick="nextFnc();">
+		<input id='next' type="submit" value="다음" onclick="nextFnc();">
 		
 	</form>
 	

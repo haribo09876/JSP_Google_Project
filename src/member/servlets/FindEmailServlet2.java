@@ -18,14 +18,14 @@ import javax.servlet.http.HttpSession;
 import member.dao.MemberDao;
 import member.dto.MemberDto;
 
-@WebServlet(value = "/auth/loginPassword")
-public class LoginPasswordServlet extends HttpServlet {
+@WebServlet(value = "/auth/FindEmail2")
+public class FindEmailServlet2 extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req
 			, HttpServletResponse res) throws ServletException, IOException {
 
-		RequestDispatcher rd = req.getRequestDispatcher("./LoginPasswordForm.jsp");
+		RequestDispatcher rd = req.getRequestDispatcher("./FindEmailForm2.jsp");
 		rd.forward(req, res);
 
 	}
@@ -37,7 +37,6 @@ public class LoginPasswordServlet extends HttpServlet {
 		Connection conn = null;
 
 		try {
-			String pwd = req.getParameter("pwd");
 			String email = req.getParameter("email");
 
 			ServletContext sc = this.getServletContext();
@@ -46,23 +45,19 @@ public class LoginPasswordServlet extends HttpServlet {
 			MemberDao memberDao = new MemberDao();
 			memberDao.setConnection(conn);
 
-			MemberDto memberDto = memberDao.memberPasswordExist(email, pwd);
-			
-			if(memberDto == null) { RequestDispatcher rd =
-					req.getRequestDispatcher("./LoginPasswordForm2.jsp");
-					  
-					rd.forward(req, res);
-					  
-			}
-			
+			MemberDto memberDto = memberDao.memberIdExist(email);
+														 			 			
 			HttpSession session = req.getSession();
-			session.setAttribute("member", memberDto);
+			session.setAttribute("member", memberDto); 
 
-			res.sendRedirect("../board/list");
+			res.sendRedirect("../auth/loginPassword");
+		} catch (IllegalStateException e) {
+			// TODO: handle exception
+			e.printStackTrace();
 		} catch (Exception e) {
 			e.printStackTrace();
-			throw new ServletException();
-		}
+//			throw new ServletException();
+		} 
 
 	}
 
