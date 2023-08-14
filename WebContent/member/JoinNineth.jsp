@@ -152,10 +152,6 @@
 			<form action="add9" method="post">
 				<img id="profileIcon" src="ProfileIcon.png"> <a>홍길동</a><br>
 				<a>gildonghong@gmail.com</a><br>
-				<div>
-					<input class="inputBox" type="text" name="recoveryEmail"
-						placeholder="복구 이메일 주소"><br>
-				</div>
 				<div id="divButton">
 					<input class="button" type="submit" value="다음">
 				</div>
