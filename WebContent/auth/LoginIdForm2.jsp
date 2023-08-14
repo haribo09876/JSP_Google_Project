@@ -5,7 +5,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>로그인 아이디입력</title>
+	<title>로그인 아이디입력2</title>
 	<style type="text/css">
 		p{
 			font-size: 14px;
@@ -119,19 +119,23 @@
 	</style>
 	<script type="text/javascript">
 		
-	function nextFnc() {
-		var myInput = document.getElementById('idInput');
-		var hidePTag = document.createElement('hide');
-		var hide2PTag = document.createElement('hide2');						
-		var myObj = document.getElementById('inputDiv');
-			if (!myInput.value) {
-				myInput.style.borderColor = 'red';					
-				document.getElementById('hide').style.display = 'block';			
-				document.getElementById('hide2').style.display = 'block';
-				event.preventDefault();
-			}	
-											
-	}	
+		function nextFnc() {
+			var myInput = document.getElementById('idInput');
+			var hidePTag = document.createElement('hide');
+			var hide2PTag = document.createElement('hide2');
+			var hide3PTag = document.createElement('hide3');
+			var hide4PTag = document.createElement('hide4');
+			var myObj = document.getElementById('inputDiv');
+				if (!myInput.value) {
+					myInput.style.borderColor = 'red';					
+					document.getElementById('hide').style.display = 'block';			
+					document.getElementById('hide2').style.display = 'block';
+					document.getElementById('hide3').style.display = 'none';
+					document.getElementById('hide4').style.display = 'none';
+					event.preventDefault();
+				}	
+												
+		}	
 			
 
 		
@@ -156,7 +160,10 @@
 		
 		<span id='hide' style="display:none; color: red;">
 		<img id='hide2'src="./icon.png" style="display: none; float: left;">
-		이메일이나 전화번호를 입력하세요</span>				
+		이메일이나 전화번호를 입력하세요</span>
+		<span id='hide3' style="display:block; color: red;">
+		<img id='hide4'src="./icon.png" style="display: block; float: left;">
+		Google 계정을 찾을 수 없습니다.</span>				
 		<br>
 		<a id='firstAtag' href="./FindEmailForm.jsp">이메일을 잊으셨나요?</a><br><br>				
 		<p>내 컴퓨터가 아닌가요? 게스트 모드를 사용하여 비공개</p>	

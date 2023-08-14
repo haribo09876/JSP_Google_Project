@@ -46,19 +46,14 @@ public class LoginIdServlet extends HttpServlet {
 			memberDao.setConnection(conn);
 
 			MemberDto memberDto = memberDao.memberIdExist(email);
-			
-			
-			/*
-			 * if(memberDto == null) { RequestDispatcher rd =
-			 * req.getRequestDispatcher("./LoginIdForm.jsp");
-			 * 
-			 * rd.forward(req, res);
-			 * 
-			 * }
-			 */
-			 
-
-			
+								
+			if(memberDto == null) { RequestDispatcher rd =
+			req.getRequestDispatcher("./LoginForm2.jsp");
+			  
+			rd.forward(req, res);
+			  
+			}
+			 			 			
 			HttpSession session = req.getSession();
 			session.setAttribute("member", memberDto); 
 
