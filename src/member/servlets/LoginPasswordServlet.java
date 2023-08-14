@@ -37,15 +37,16 @@ public class LoginPasswordServlet extends HttpServlet {
 		Connection conn = null;
 
 		try {
-			String pwd = req.getParameter("pwd");
 			String email = req.getParameter("email");
-
+			String pwd = req.getParameter("pwd");
+			
 			ServletContext sc = this.getServletContext();
+			
 			conn = (Connection) sc.getAttribute("conn");
-
+			
 			MemberDao memberDao = new MemberDao();
 			memberDao.setConnection(conn);
-
+			
 			MemberDto memberDto = memberDao.memberPasswordExist(email, pwd);
 			
 			if(memberDto == null) { RequestDispatcher rd =
@@ -61,7 +62,7 @@ public class LoginPasswordServlet extends HttpServlet {
 			res.sendRedirect("../board/list");
 		} catch (Exception e) {
 			e.printStackTrace();
-			throw new ServletException();
+//			throw new ServletException();
 		}
 
 	}
