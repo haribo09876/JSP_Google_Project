@@ -25,7 +25,7 @@ public class LoginPasswordServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest req
 			, HttpServletResponse res) throws ServletException, IOException {
 
-		RequestDispatcher rd = req.getRequestDispatcher("./LoginIdForm.jsp");
+		RequestDispatcher rd = req.getRequestDispatcher("./LoginPasswordForm.jsp");
 		rd.forward(req, res);
 
 	}
@@ -46,11 +46,7 @@ public class LoginPasswordServlet extends HttpServlet {
 			memberDao.setConnection(conn);
 
 			MemberDto memberDto = memberDao.memberPasswordExist(pwd);
-
-			if (memberDto == null) {
-				RequestDispatcher rd = req.getRequestDispatcher("./LoginFail.jsp");
-				rd.forward(req, res);
-			}
+			
 			HttpSession session = req.getSession();
 			session.setAttribute("member", memberDto);
 

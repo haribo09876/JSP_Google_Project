@@ -1,4 +1,4 @@
-<%@page import="spms.dto.MemberDto"%>
+<%@page import="member.dto.MemberDto"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
@@ -16,7 +16,7 @@
 	%>
 	SPMS(Simple Project Management System)
 		<span style="float:right;">
-			<%=member.getName()%>님
+			<%=member.getMname()%>님
 			<a style="color: white;"
 				href="<%=request.getContextPath()%>/auth/logout">로그아웃</a>
 		</span>
