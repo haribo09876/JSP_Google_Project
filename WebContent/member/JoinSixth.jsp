@@ -23,15 +23,14 @@
 <body>
 	<div id="frame">
 		<h2>코드 입력</h2>
-		<a>6자리 인증 코드를 입력하여 문자 메시지를 받았음을 확인하세요.</a><br>
-		
+		<a>6자리 인증 코드를 입력하여 문자 메시지를 받았음을 확인하세요.</a><br>	
 		<form action="add6" method='post'>
 			<input type="text" name="inputCode" placeholder="코드 입력"><br>
 			<input type="submit" value="새 코드 받기">
 			<input type="submit" value="다음">
 		</form>
 	</div>
-	
+	<div>
 		<select name="language">
     		<option value="">한국어</option>
     		<option value="">English</option>
@@ -39,11 +38,6 @@
 		<a>도움말</a>
 		<a>개인정보처리방침</a>
 		<a>약관</a>
-<%-- 	<% --%>
-<!-- 		String inputCode = request.getParameter("inputCode"); -->
-
-<!-- 		session.setAttribute("inputCode", inputCode); -->
-<%-- 	%> --%>
+	</div>
 </body>
-
 </html>

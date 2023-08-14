@@ -61,8 +61,6 @@
 			border-radius: 5px;
 		}
 		
-		
-		
 		#idInput{
 			border: 1px solid #E5E5E5;			
 			width: 340px;
@@ -71,13 +69,11 @@
 			padding-left: 20px;
 			border-radius: 5px;
 		}
-		
 				
 		#idInput:focus{
 			border-color: #0982f0;
 			outline: none;
 		}
-		
 		
 		#googleDiv{
 		 	font-size: 30px;
@@ -108,15 +104,13 @@
 			color: #EA4335;
 		}
 		
-		
-		
 		select{
 			border: none;
 			width: 200px;
 		}
 	
-	
 	</style>
+<<<<<<< HEAD
 	<script type="text/javascript">
 		
 	function nextFnc() {
@@ -136,6 +130,23 @@
 
 		
 	
+=======
+	<script type="text/javascript">	
+		function nextFnc() {
+						
+			var hidePTag = document.createElement('hide');
+			var hide2PTag = document.createElement('hide2');
+						
+			var myObj = document.getElementById('inputDiv');
+			
+			var myInput = document.getElementById('idInput');
+										
+			myInput.style.borderColor = 'red';
+									
+			document.getElementById('hide').style.display = 'block';			
+			document.getElementById('hide2').style.display = 'block';
+		}
+>>>>>>> branch 'master' of https://github.com/haribo09876/JSP_Google_Project.git
 	</script>
 </head>
 

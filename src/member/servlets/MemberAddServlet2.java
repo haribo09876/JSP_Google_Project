@@ -45,12 +45,7 @@ public class MemberAddServlet2 extends HttpServlet {
 		String month = req.getParameter("month");
 		String day = req.getParameter("day");
 		String tempBirthDate = year + month + day;
-
-
-
 	
-
-		
 		String gender = req.getParameter("gender");
 		
 		try {
