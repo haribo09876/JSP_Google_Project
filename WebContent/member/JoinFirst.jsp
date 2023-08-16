@@ -95,10 +95,35 @@
 			padding-top: 20px;
 			font-size: 13px;
 		}
-  </style>
-  <script>
-
-  </script>
+	</style>
+	<script>
+		function conditionCheck() {
+			var ownNameObj = document.getElementsByClassName("inputBox")[1];
+			var familyNameValue = document.getElementsByClassName("inputBox")[0].value;
+			var ownNameValue = document.getElementsByClassName("inputBox")[1].value;
+			var firstHiddenATagObj = document.getElementById("firstHiddenATag");
+			var secondHiddenATagObj = document.getElementById("secondHiddenATag");
+			
+			if (ownNameValue == "") {
+				ownNameObj.style.border = "2px solid red";
+				firstHiddenATagObj.style.display = "block";
+				firstHiddenATagObj.style.fontSize = "12px";
+				firstHiddenATagObj.style.color = "red";
+				return false;
+			} else if (ownNameValue != "") {
+				if((familyNameValue+ownNameValue).length > 20) {
+					ownNameObj.style.border = "2px solid red";
+					firstHiddenATagObj.style.display = "none";
+					secondHiddenATagObj.style.display = "block";
+					secondHiddenATagObj.style.fontSize = "12px";
+					secondHiddenATagObj.style.color = "red";
+					return false;
+				} else {
+					return true;
+				}
+      		}
+    	}
+	</script>
 </head>
 
 <body>
@@ -109,13 +134,14 @@
 			<div id="secondTitle">
 				<span>이름을 입력하세요.</span><br>
 			</div>
-			<form action="add1" method='post'>
+			<form action="add1" method="post" onsubmit="return conditionCheck()">
 				<div>
-					<input class="inputBox" type="text" name="familyName" placeholder='성(선택사항)'><br>
-					<input class="inputBox" type="text" name="ownName" placeholder='이름'><br>
+					<input class="inputBox" type="text" name="familyName" placeholder="성(선택사항)"><br>
+					<input class="inputBox" type="text" name="ownName" placeholder="이름"><br>
+					<a id="firstHiddenATag" style="display:none">&nbsp;? 이름을 입력하세요.</a>
+					<a id="secondHiddenATag" style="display:none">&nbsp;? 이름의 길이를 다시 확인하세요.</a>
 				</div>
 				<div id="divButton">
-				<% %>
 					<input id="button" type="submit" value="다음">
 				</div>
 			</form>
