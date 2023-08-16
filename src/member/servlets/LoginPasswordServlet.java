@@ -56,12 +56,14 @@ public class LoginPasswordServlet extends HttpServlet {
                  
             rd.forward(req, res);
                  
+         }else {
+        	 session.setAttribute("member", memberDto);
+
+             res.sendRedirect("../board/list");
          }
          
    
-         session.setAttribute("member", memberDto);
-
-         res.sendRedirect("../board/list");
+         
       } catch (Exception e) {
          e.printStackTrace();
 //         throw new ServletException();

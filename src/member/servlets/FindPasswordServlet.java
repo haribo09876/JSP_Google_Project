@@ -18,14 +18,14 @@ import javax.servlet.http.HttpSession;
 import member.dao.MemberDao;
 import member.dto.MemberDto;
 
-@WebServlet(value = "/auth/FindEmail")
-public class FindEmailServlet extends HttpServlet {
+@WebServlet(value = "/auth/FindPassword")
+public class FindPasswordServlet extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req
 	         , HttpServletResponse res) throws ServletException, IOException {
 
-	      RequestDispatcher rd = req.getRequestDispatcher("./FindEmailForm.jsp");
+	      RequestDispatcher rd = req.getRequestDispatcher("./FindPasswordForm.jsp");
 	      rd.forward(req, res);
 
 	   }
@@ -37,7 +37,7 @@ public class FindEmailServlet extends HttpServlet {
 	      Connection conn = null;
 
 	      try {
-	         String recovery_email = req.getParameter("recovery_email");
+	         String email = req.getParameter("email");
 
 	         ServletContext sc = this.getServletContext();
 	         conn = (Connection) sc.getAttribute("conn");
@@ -46,9 +46,9 @@ public class FindEmailServlet extends HttpServlet {
 	         memberDao.setConnection(conn);	         	        
 	         	                        	        	                             
 	         HttpSession session = req.getSession();
-	         session.setAttribute("recovery_email", recovery_email);       
+	         session.setAttribute("email", email);       
 
-	         res.sendRedirect("../auth/FindEmail2?recovery_email=" + req.getParameter("recovery_email"));
+	         res.sendRedirect("../auth/FindPassword2?email=" + req.getParameter("email"));
 
 	      } catch (Exception e) {
 	         e.printStackTrace();

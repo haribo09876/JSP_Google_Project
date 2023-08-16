@@ -197,7 +197,7 @@
       </label>
       <br><br><br><br>
       
-      <a id='thirdAtag' href="">비밀번호 찾기</a>      
+      <a id='thirdAtag' href="./">비밀번호 찾기</a>      
       <input id='next' type="submit" value="다음" onclick="nextFnc();">
       
    </form>

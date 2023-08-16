@@ -154,7 +154,7 @@
 	<form action="./FindEmail" method="post">
 		<div id='inputDiv'>
 					
-		<input id='idInput' type="text" name="password" placeholder="전화번호 또는 이메일" onfocus="this.placeholder = ''" onblur="this.placeholder = '이메일 또는 휴대전화'"/>
+		<input id='idInput' type="text" name="recovery_email" placeholder="전화번호 또는 이메일" onfocus="this.placeholder = ''" onblur="this.placeholder = '이메일 또는 휴대전화'"/>
 		</div>
 		
 		<span id='hide' style="display:none; color: red;">

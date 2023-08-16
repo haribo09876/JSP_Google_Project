@@ -18,8 +18,8 @@ import javax.servlet.http.HttpSession;
 import member.dao.MemberDao;
 import member.dto.MemberDto;
 
-@WebServlet(value = "/auth/FindEmail2")
-public class FindEmailServlet2 extends HttpServlet {
+@WebServlet(value = "/auth/FindPassword2")
+public class FindPasswordServlet2 extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req
@@ -38,7 +38,7 @@ public class FindEmailServlet2 extends HttpServlet {
 
 		try {
 			HttpSession session = req.getSession();                  
-	        String recovery_email = (String)session.getAttribute("recovery_email");
+	        String email = (String)session.getAttribute("email");
 	        String firstName = req.getParameter("firstName");
 	        String lastName = req.getParameter("lastName");
 	        String mname = firstName + lastName;
@@ -49,18 +49,18 @@ public class FindEmailServlet2 extends HttpServlet {
 			MemberDao memberDao = new MemberDao();
 			memberDao.setConnection(conn);
 
-			MemberDto memberDto = memberDao.memberFindId(recovery_email, mname);
+			MemberDto memberDto = memberDao.memberFindPassword(email, mname);
 			
 			if(memberDto == null) { 
 		           RequestDispatcher rd =
-		                 req.getRequestDispatcher("./FindEmailForm.jsp");
+		                 req.getRequestDispatcher("./FindPasswordForm.jsp");
 		                 
 		           rd.forward(req, res);
 		                 
 		    }else {
 		    	session.setAttribute("member", memberDto); 
 
-				res.sendRedirect("./ResultFindEmailForm.jsp");
+				res.sendRedirect("./ResultFindPasswordForm.jsp");
 		    }
 														 			 			
 			
