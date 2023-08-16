@@ -65,7 +65,7 @@
 </head>
 
 <body>
-	
+<jsp:include page="/Header.jsp"/>
 	<div id="container">
 		<h2>공지사항</h2>
 		<div id="lineDiv"></div>

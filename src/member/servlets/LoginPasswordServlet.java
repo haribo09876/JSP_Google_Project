@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.websocket.Session;
 
 import member.dao.MemberDao;
 import member.dto.MemberDto;
@@ -21,50 +22,51 @@ import member.dto.MemberDto;
 @WebServlet(value = "/auth/loginPassword")
 public class LoginPasswordServlet extends HttpServlet {
 
-	@Override
-	protected void doGet(HttpServletRequest req
-			, HttpServletResponse res) throws ServletException, IOException {
+   @Override
+   protected void doGet(HttpServletRequest req
+         , HttpServletResponse res) throws ServletException, IOException {
+      String email = req.getParameter("email");
+      RequestDispatcher rd = req.getRequestDispatcher("./LoginPasswordForm.jsp");
+      rd.forward(req, res);      
 
-		RequestDispatcher rd = req.getRequestDispatcher("./LoginPasswordForm.jsp");
-		rd.forward(req, res);
+   }
 
-	}
+   @Override
+   protected void doPost(HttpServletRequest req
+         , HttpServletResponse res) throws ServletException, IOException {
 
-	@Override
-	protected void doPost(HttpServletRequest req
-			, HttpServletResponse res) throws ServletException, IOException {
+      Connection conn = null;
 
-		Connection conn = null;
+      try {         
+         HttpSession session = req.getSession();                  
+         String email = (String)session.getAttribute("email");
+         String pwd = req.getParameter("pwd");
+         
+         ServletContext sc = this.getServletContext();         
+         conn = (Connection) sc.getAttribute("conn");
+         
+         MemberDao memberDao = new MemberDao();
+         memberDao.setConnection(conn);
+         
+         MemberDto memberDto = memberDao.memberPasswordExist(email, pwd);
+         
+         if(memberDto == null) { 
+            RequestDispatcher rd =
+                  req.getRequestDispatcher("./LoginPasswordForm2.jsp");
+                 
+            rd.forward(req, res);
+                 
+         }
+         
+   
+         session.setAttribute("member", memberDto);
 
-		try {
-			String email = req.getParameter("email");
-			String pwd = req.getParameter("pwd");
-			
-			ServletContext sc = this.getServletContext();
-			
-			conn = (Connection) sc.getAttribute("conn");
-			
-			MemberDao memberDao = new MemberDao();
-			memberDao.setConnection(conn);
-			
-			MemberDto memberDto = memberDao.memberPasswordExist(email, pwd);
-			
-			if(memberDto == null) { RequestDispatcher rd =
-					req.getRequestDispatcher("./LoginPasswordForm2.jsp");
-					  
-					rd.forward(req, res);
-					  
-			}
-			
-			HttpSession session = req.getSession();
-			session.setAttribute("member", memberDto);
+         res.sendRedirect("../board/list");
+      } catch (Exception e) {
+         e.printStackTrace();
+//         throw new ServletException();
+      }
 
-			res.sendRedirect("../board/list");
-		} catch (Exception e) {
-			e.printStackTrace();
-//			throw new ServletException();
-		}
-
-	}
+   }
 
 }

@@ -21,52 +21,51 @@ import member.dto.MemberDto;
 @WebServlet(value = "/auth/loginId")
 public class LoginIdServlet extends HttpServlet {
 
-	@Override
-	protected void doGet(HttpServletRequest req
-			, HttpServletResponse res) throws ServletException, IOException {
+   @Override
+   protected void doGet(HttpServletRequest req
+         , HttpServletResponse res) throws ServletException, IOException {
 
-		RequestDispatcher rd = req.getRequestDispatcher("./LoginIdForm.jsp");
-		rd.forward(req, res);
+      RequestDispatcher rd = req.getRequestDispatcher("./LoginIdForm.jsp");
+      rd.forward(req, res);
 
-	}
+   }
 
-	@Override
-	protected void doPost(HttpServletRequest req
-			, HttpServletResponse res) throws ServletException, IOException {
+   @Override
+   protected void doPost(HttpServletRequest req
+         , HttpServletResponse res) throws ServletException, IOException {
 
-		Connection conn = null;
+      Connection conn = null;
 
-		try {
-			String email = req.getParameter("email");
+      try {
+         String email = req.getParameter("email");
 
-			ServletContext sc = this.getServletContext();
-			conn = (Connection) sc.getAttribute("conn");
+         ServletContext sc = this.getServletContext();
+         conn = (Connection) sc.getAttribute("conn");
 
-			MemberDao memberDao = new MemberDao();
-			memberDao.setConnection(conn);
+         MemberDao memberDao = new MemberDao();
+         memberDao.setConnection(conn);
 
-			MemberDto memberDto = memberDao.memberIdExist(email);
-								
-			if(memberDto == null) { 
-				RequestDispatcher rd =
-						req.getRequestDispatcher("./LoginIdForm2.jsp");
-			  
-				rd.forward(req, res);
-			  
-			}
-			 			 			
-			HttpSession session = req.getSession();
-			session.setAttribute("member", memberDto); 
+         MemberDto memberDto = memberDao.memberIdExist(email);
+                        
+         if(memberDto == null) { 
+            RequestDispatcher rd =
+                  req.getRequestDispatcher("./LoginIdForm2.jsp");
+           
+            rd.forward(req, res);
+           
+         }
+                             
+         HttpSession session = req.getSession();
+         session.setAttribute("email", email);       
 
-			res.sendRedirect("../auth/loginPassword");
-		} catch (IllegalStateException e) {
-			// TODO: handle exception
-			e.printStackTrace();
-		} catch (Exception e) {
-			e.printStackTrace();
-//			throw new ServletException();
-		} 
+         res.sendRedirect("../auth/loginPassword?email=" + req.getParameter("email"));
 
-	}
+      } catch (Exception e) {
+         e.printStackTrace();
+//         throw new ServletException();
+      } 
+      
+
+   }
 
 }
