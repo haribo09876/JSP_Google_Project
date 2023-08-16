@@ -41,6 +41,13 @@
 		.footerText {
 			padding-left: 27px;
 		}
+		
+		#entire {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+		}
 
 		#frame {
 			width: 368px;
@@ -56,7 +63,7 @@
 		#logo {
 			width: 75px;
 			height: 41px;
-			padding-left: 130px;
+			padding-left: 145px;
 		}
 
 		#secondTitle {
@@ -127,34 +134,36 @@
 </head>
 
 <body>
-	<div id="frame">
-		<div>
-			<img id="logo" src="Logo.png">
-			<h1>Google 계정 만들기</h1>
-			<div id="secondTitle">
-				<span>이름을 입력하세요.</span><br>
+	<div id="entire">
+		<div id="frame">
+			<div>
+				<img id="logo" src="Logo.png">
+				<h1>Google 계정 만들기</h1>
+				<div id="secondTitle">
+					<span>이름을 입력하세요.</span><br>
+				</div>
+				<form action="add1" method="post" onsubmit="return conditionCheck()">
+					<div>
+						<input class="inputBox" type="text" name="familyName"
+							placeholder="성(선택사항)"><br> <input class="inputBox"
+							type="text" name="ownName" placeholder="이름"><br> <a
+							id="firstHiddenATag" style="display: none">&nbsp;? 이름을 입력하세요.</a>
+						<a id="secondHiddenATag" style="display: none">&nbsp;? 이름의 길이를
+							다시 확인하세요.</a>
+					</div>
+					<div id="divButton">
+						<input id="button" type="submit" value="다음">
+					</div>
+				</form>
 			</div>
-			<form action="add1" method="post" onsubmit="return conditionCheck()">
-				<div>
-					<input class="inputBox" type="text" name="familyName" placeholder="성(선택사항)"><br>
-					<input class="inputBox" type="text" name="ownName" placeholder="이름"><br>
-					<a id="firstHiddenATag" style="display:none">&nbsp;? 이름을 입력하세요.</a>
-					<a id="secondHiddenATag" style="display:none">&nbsp;? 이름의 길이를 다시 확인하세요.</a>
-				</div>
-				<div id="divButton">
-					<input id="button" type="submit" value="다음">
-				</div>
-			</form>
 		</div>
-	</div>
-	<div id="footer">
-		<select name="language">
-			<option value="">한국어</option>
-			<option value="">English</option>
-		</select>
-		<a class="footerText">도움말</a>
-		<a class="footerText">개인정보처리방침</a>
-		<a class="footerText">약관</a>
+		<div id="footer">
+			<select name="language">
+				<option value="">한국어</option>
+				<option value="">English</option>
+			</select> <a class="footerText">도움말</a> <a class="footerText">개인정보처리방침</a> <a
+				class="footerText">약관</a>
+		</div>
 	</div>
 </body>
 

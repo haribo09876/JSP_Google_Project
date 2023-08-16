@@ -3,8 +3,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>JoinFifth</title>
+	<meta charset="UTF-8">
+	<title>JoinFifth</title>
 	<style type="text/css">
 		h1 {
 			text-align: center;
@@ -74,6 +74,13 @@
 			float: right;
 		}
 		
+		#entire {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+		}
+		
 		#frame {
 			width: 368px;
 			height: 416px;
@@ -88,7 +95,7 @@
 		#logo {
 			width: 75px;
 			height: 41px;
-			padding-left: 130px;
+			padding-left: 145px;
 		}
 		
 		#secondTitle {
@@ -146,41 +153,43 @@
 </head>
 
 <body>
-	<div id="frame">
-		<div>
-			<img id="logo" src="Logo.png">
-			<h1>보안문자 입력</h1>
-			<div class="thirdTitle">
-				<span>휴대전화로 인증 코드 받기</span><br>
+	<div id="entire">
+		<div id="frame">
+			<div>
+				<img id="logo" src="Logo.png">
+				<h1>보안문자 입력</h1>
+				<div class="thirdTitle">
+					<span>휴대전화로 인증 코드 받기</span><br>
+				</div>
+				<select name="country">
+					<option value="">대한민국</option>
+					<option value="">US</option>
+					<option value="">UK</option>
+					<option value="">France</option>
+					<option value="">Germany</option>
+					<option value="">Spain</option>
+				</select>
+				<form action="add5" method="post">
+					<div>
+						<input class="inputBox" type="text" name="tempPhoneNum"
+							placeholder="전화번호"><br>
+					</div>
+					<div class="thirdTitle">
+						<span>Google에서 SMS(요금이 부과될 수 있음)를 통해 전화번호를 확인합니다.</span><br>
+					</div>
+					<div class="thirdTitle">
+						<input class="button" type="submit" value="다음">
+					</div>
+				</form>
 			</div>
-			<select name="country">
-				<option value="">대한민국</option>
-				<option value="">US</option>
-				<option value="">UK</option>
-				<option value="">France</option>
-				<option value="">Germany</option>
-				<option value="">Spain</option>
-			</select>
-			<form action="add5" method="post">
-				<div>
-					<input class="inputBox" type="text" name="tempPhoneNum"
-						placeholder="전화번호"><br>
-				</div>
-				<div class="thirdTitle">
-					<span>Google에서 SMS(요금이 부과될 수 있음)를 통해 전화번호를 확인합니다.</span><br>
-				</div>
-				<div class="thirdTitle">
-					<input class="button" type="submit" value="다음">
-				</div>
-			</form>
 		</div>
-	</div>
-	<div id="footer">
-		<select name="language">
-			<option value="">한국어</option>
-			<option value="">English</option>
-		</select> <a class="footerText">도움말</a> <a class="footerText">개인정보처리방침</a> <a
-			class="footerText">약관</a>
+		<div id="footer">
+			<select name="language">
+				<option value="">한국어</option>
+				<option value="">English</option>
+			</select> <a class="footerText">도움말</a> <a class="footerText">개인정보처리방침</a> <a
+				class="footerText">약관</a>
+		</div>
 	</div>
 </body>
 

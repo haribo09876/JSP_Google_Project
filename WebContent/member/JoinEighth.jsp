@@ -20,8 +20,7 @@
 		}
 		
 		select {
-			width: 50px;
-			height: 50px;
+			width: 180px;
 			border: 0px;
 			border-collapse: collapse;
 		}
@@ -74,6 +73,13 @@
 			font-weight: 400;
 		}
 		
+		#entire {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+		}		
+		
 		#frame {
 			width: 368px;
 			height: 416px;
@@ -88,7 +94,7 @@
 		#logo {
 			width: 75px;
 			height: 41px;
-			padding-left: 150px;
+			padding-left: 145px;
 		}
 		
 		#secondTitle {
@@ -159,40 +165,42 @@
 </head>
 
 <body>
-	<div id="frame">
-		<div>
-			<img id="logo" src="Logo.png">
-			<h1>전화번호 추가</h1>
-			<select name="country">
-				<option value="">대한민국</option>
-				<option value="">US</option>
-				<option value="">UK</option>
-				<option value="">France</option>
-				<option value="">Germany</option>
-				<option value="">Spain</option>
-			</select>
-			<form action="add8" method="post">
-				<div>
-					<input id="inputBoxSecond" type="number" name="phoneNo"
-						placeholder="전화번호"><br>
-				</div>
-				<div class="thirdTitle">
-					<span>Google은 이 번호를 계정 보안 용도로만 사용합니다. 다른 사용자에게는 전화번호가 표시되지
-						않습니다. 나중에 다른 용도로도 이 번호를 사용할지 결정할 수 있습니다.</span><br>
-				</div>
-				<div class="thirdTitle">
-					<input class="button" type="submit" value="다음"> <input
-						class="button" type="submit" value="건너뛰기">
-				</div>
-			</form>
+	<div id="entire">
+		<div id="frame">
+			<div>
+				<img id="logo" src="Logo.png">
+				<h1>전화번호 추가</h1>
+				<select name="country">
+					<option value="">대한민국</option>
+					<option value="">US</option>
+					<option value="">UK</option>
+					<option value="">France</option>
+					<option value="">Germany</option>
+					<option value="">Spain</option>
+				</select>
+				<form action="add8" method="post">
+					<div>
+						<input id="inputBoxSecond" type="number" name="phoneNo"
+							placeholder="전화번호"><br>
+					</div>
+					<div class="thirdTitle">
+						<span>Google은 이 번호를 계정 보안 용도로만 사용합니다. 다른 사용자에게는 전화번호가 표시되지
+							않습니다. 나중에 다른 용도로도 이 번호를 사용할지 결정할 수 있습니다.</span><br>
+					</div>
+					<div class="thirdTitle">
+						<input class="button" type="submit" value="다음"> <input
+							class="button" type="submit" value="건너뛰기">
+					</div>
+				</form>
+			</div>
 		</div>
-	</div>
-	<div id="footer">
-		<select name="language">
-			<option value="">한국어</option>
-			<option value="">English</option>
-		</select> <a class="footerText">도움말</a> <a class="footerText">개인정보처리방침</a> <a
-			class="footerText">약관</a>
+		<div id="footer">
+			<select name="language">
+				<option value="">한국어</option>
+				<option value="">English</option>
+			</select> <a class="footerText">도움말</a> <a class="footerText">개인정보처리방침</a> <a
+				class="footerText">약관</a>
+		</div>
 	</div>
 </body>
 

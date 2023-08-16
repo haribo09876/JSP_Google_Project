@@ -64,6 +64,13 @@
 			float: right;
 		}
 		
+		#entire {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+		}
+		
 		#frame {
 			width: 368px;
 			height: 416px;
@@ -78,7 +85,7 @@
 		#logo {
 			width: 75px;
 			height: 41px;
-			padding-left: 130px;
+			padding-left: 145px;
 		}
 		
 		#profileIcon {
@@ -142,28 +149,30 @@
 </head>
 
 <body>
-	<div id="frame">
-		<div>
-			<img id="logo" src="Logo.png">
-			<h1>계정 정보 검토</h1>
-			<div id="secondTitle">
-				<span>나중에 이 이메일 주소를 사용하여 로그인할 수 있습니다</span><br>
-			</div>
-			<form action="add9" method="post">
-				<img id="profileIcon" src="ProfileIcon.png"> <a>홍길동</a><br>
-				<a>gildonghong@gmail.com</a><br>
-				<div id="divButton">
-					<input class="button" type="submit" value="다음">
+	<div id="entire">
+		<div id="frame">
+			<div>
+				<img id="logo" src="Logo.png">
+				<h1>계정 정보 검토</h1>
+				<div id="secondTitle">
+					<span>나중에 이 이메일 주소를 사용하여 로그인할 수 있습니다</span><br>
 				</div>
-			</form>
+				<form action="add9" method="post">
+					<img id="profileIcon" src="ProfileIcon.png"> <a>홍길동</a><br>
+					<a>gildonghong@gmail.com</a><br>
+					<div id="divButton">
+						<input class="button" type="submit" value="다음">
+					</div>
+				</form>
+			</div>
 		</div>
-	</div>
-	<div id="footer">
-		<select name="language">
-			<option value="">한국어</option>
-			<option value="">English</option>
-		</select> <a class="footerText">도움말</a> <a class="footerText">개인정보처리방침</a> <a
-			class="footerText">약관</a>
+		<div id="footer">
+			<select name="language">
+				<option value="">한국어</option>
+				<option value="">English</option>
+			</select> <a class="footerText">도움말</a> <a class="footerText">개인정보처리방침</a> <a
+				class="footerText">약관</a>
+		</div>
 	</div>
 </body>
 

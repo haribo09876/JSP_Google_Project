@@ -50,6 +50,13 @@
 			margin-top: 24px;
 			margin-right: 20px;
 		}
+		
+		#entire {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+		}
 
 		#frame {
 			width: 368px;
@@ -65,7 +72,7 @@
 		#logo {
 			width: 75px;
 			height: 41px;
-			padding-left: 130px;
+			padding-left: 145px;
 		}
 
 		#secondTitle {
@@ -136,33 +143,33 @@
 </head>
 
 <body>
-	<div id="frame">
-		<div>
-			<img id="logo" src="Logo.png">
-			<h1>안전한 비밀번호 만들기</h1>
-			<div id="secondTitle">
-				<span>문자, 숫자, 기호를 조합하여 안전한 비밀번호를 만드세요.</span><br>
-			</div>
-			<form action="add4" method='post'>
+	<div id="entire">
+		<div id="frame">
 			<div>
-				<input class="inputBox" type="text" name="pwd" placeholder="비밀번호"><br>
-				<input class="inputBox" type="text" name="pwd" placeholder="확인"><br>
-				<input type="checkbox" name="ShowingPassword">비밀번호 표시<br>
+				<img id="logo" src="Logo.png">
+				<h1>안전한 비밀번호 만들기</h1>
+				<div id="secondTitle">
+					<span>문자, 숫자, 기호를 조합하여 안전한 비밀번호를 만드세요.</span><br>
+				</div>
+				<form action="add4" method='post'>
+					<div>
+						<input class="inputBox" type="text" name="pwd" placeholder="비밀번호"><br>
+						<input class="inputBox" type="text" name="pwd" placeholder="확인"><br>
+						<input type="checkbox" name="ShowingPassword">비밀번호 표시<br>
+					</div>
+					<div id="divButton">
+						<input id="button" type="submit" value="다음">
+					</div>
+				</form>
 			</div>
-			<div id="divButton">
-				<input id="button" type="submit" value="다음">
-			</div>
-			</form>
 		</div>
-	</div>
-	<div id="footer">
-		<select name="language">
-			<option value="">한국어</option>
-			<option value="">English</option>
-		</select>
-			<a class="footerText">도움말</a>
-			<a class="footerText">개인정보처리방침</a>
-			<a class="footerText">약관</a>
+		<div id="footer">
+			<select name="language">
+				<option value="">한국어</option>
+				<option value="">English</option>
+			</select> <a class="footerText">도움말</a> <a class="footerText">개인정보처리방침</a> <a
+				class="footerText">약관</a>
+		</div>
 	</div>
 </body>
 

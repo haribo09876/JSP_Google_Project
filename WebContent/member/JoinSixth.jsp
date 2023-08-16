@@ -20,8 +20,7 @@
 		}
 		
 		select {
-			width: 50px;
-			height: 50px;
+			width: 180px;
 			border: 0px;
 			border-collapse: collapse;
 		}
@@ -75,6 +74,13 @@
 			float: right;
 		}
 		
+		#entire {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+		}
+				
 		#frame {
 			width: 368px;
 			height: 416px;
@@ -89,7 +95,7 @@
 		#logo {
 			width: 75px;
 			height: 41px;
-			padding-left: 150px;
+			padding-left: 145px;
 		}
 		
 		#secondTitle {
@@ -169,31 +175,33 @@
 </head>
 
 <body>
-	<div id="frame">
-		<div>
-			<img id="logo" src="Logo.png">
-			<h1>코드 입력</h1>
-			<div class="thirdTitle">
-				<span>6자리 인증 코드를 입력하여 문자 메시지를 받았음을 확인하세요.</span><br>
+	<div id="entire">
+		<div id="frame">
+			<div>
+				<img id="logo" src="Logo.png">
+				<h1>코드 입력</h1>
+				<div class="thirdTitle">
+					<span>6자리 인증 코드를 입력하여 문자 메시지를 받았음을 확인하세요.</span><br>
+				</div>
+				<form action="add6" method="post">
+					<div>
+						<input class="inputBox" type="text" name="verCode"
+							placeholder="코드 입력"><br>
+					</div>
+					<div id="divButton">
+						<input id="newCode" type="button" value="새 코드 받기"> <input
+							class="button" type="submit" value="다음">
+					</div>
+				</form>
 			</div>
-			<form action="add6" method="post">
-				<div>
-					<input class="inputBox" type="text" name="verCode"
-						placeholder="코드 입력"><br>
-				</div>
-				<div id="divButton">
-					<input id="newCode" type="button" value="새 코드 받기"> <input
-						class="button" type="submit" value="다음">
-				</div>
-			</form>
 		</div>
-	</div>
-	<div id="footer">
-		<select name="language">
-			<option value="">한국어</option>
-			<option value="">English</option>
-		</select> <a class="footerText">도움말</a> <a class="footerText">개인정보처리방침</a> <a
-			class="footerText">약관</a>
+		<div id="footer">
+			<select name="language">
+				<option value="">한국어</option>
+				<option value="">English</option>
+			</select> <a class="footerText">도움말</a> <a class="footerText">개인정보처리방침</a> <a
+				class="footerText">약관</a>
+		</div>
 	</div>
 </body>
 
