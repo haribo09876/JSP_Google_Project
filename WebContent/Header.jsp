@@ -9,18 +9,10 @@
    <script type="text/javascript">
          
       function showPopUp() {
-         var width = 100;
-         var height = 100;
+    	         
+         window.open("../auth/LogoutForm.jsp", "hello popup", 
+        		 "width=800, height=450, top=160, left=1200");
          
-         var left = (window.screen.width / 10);
-         var top = (window.screen.height);
-         
-         var whidowStatus = 'whidth=' + width + ', height=' + height + ', left=' + left + ', top=' + top
-            + ', scrollbars=no, status=no, resizable=no, titlebar=no';
-         
-         const url = "../auth/LogoutForm.jsp";
-         
-         window.open(url, "hello popup", whidowStatus);
       }
             
 

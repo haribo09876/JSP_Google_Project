@@ -428,11 +428,13 @@ public class MemberDao {
 	            
 	      String sql = "";
 	      
-	      sql += "SELECT EMAIL, MNAME";
+	      sql += "SELECT EMAIL, MNAME, PWD";
 	      sql += " FROM MEMBERS";
 	      sql += " WHERE EMAIL = ?";
 	      sql += " AND MNAME = ?";	      	      
 	                              
+	      String pwd = "";
+	      
 	      try {                  
 	         
 	         pstmt = connection.prepareStatement(sql);
@@ -447,8 +449,10 @@ public class MemberDao {
 	         if(rs.next()) {
 	        	email = rs.getString("email");   
 	            mname = rs.getString("mname");
+	            pwd = rs.getString("pwd");
 	            memberDto.setEmail(email);
-	            memberDto.setMname(mname);                        
+	            memberDto.setMname(mname);
+	            memberDto.setPwd(pwd);
 	                                    
 	            return memberDto;
 

@@ -1,3 +1,4 @@
+<%@page import="member.dto.MemberDto"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>     
@@ -5,7 +6,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>이메일 찾기 이름입력</title>
+	<title>이메일 찾기</title>
 	<style type="text/css">
 		p{
 			font-size: 14px;
@@ -63,18 +64,17 @@
 		
 		
 		
-		#idInput, #idInput2{
+		#idInput{
 			border: 1px solid #E5E5E5;			
 			width: 340px;
 			height: 50px;
 			font-size: 18px;
 			padding-left: 20px;
 			border-radius: 5px;
-			margin-bottom: 20px;
 		}
 		
 				
-		#idInput:focus, #idInput2:focus{
+		#idInput:focus{
 			border-color: #0982f0;
 			outline: none;
 		}
@@ -122,51 +122,42 @@
 		
 		
 	
-		function nextFnc() {
-						
-			var hidePTag = document.createElement('hide');
-			var hide2PTag = document.createElement('hide2');
-						
-			var myObj = document.getElementById('inputDiv');
-			
-			var myInput2 = document.getElementById('idInput2');
-										
-				
-			if (!myInput2.value) {
-				myInput2.style.borderColor = 'red';
-				
-				document.getElementById('hide').style.display = 'block';			
-				document.getElementById('hide2').style.display = 'block';
-				event.preventDefault();
-			}
-			
-		}
+		
 	
 	</script>
 </head>
 
 <body>
-	
+<jsp:useBean
+   id="member"
+   scope="session"
+   class="member.dto.MemberDto"
+/>	
 	<div id='totalDiv'>
 	<div id= 'firstDiv'>
 	<div id ='googleDiv'>
 		<a id='firstGoogle'>G</a><a id='secondGoogle'>o</a><a id='thirdGoogle'>o</a><a id='fourthGoogle'>g</a><a id='fifthGoogle'>l</a><a id='sixthGoogle'>e</a>
 	</div>
-	<h2>이름을 입력하세요</h2>
-	<p id='firstPtag'>Google 계정 이름 입력</p>
-	<form action="./FindPassword" method="post">
-		<div id='inputDiv'>
-		<input id='idInput' type="text" name="firstName" placeholder="성" onfocus="this.placeholder = ''" onblur="this.placeholder = '성'"/>			
-		<input id='idInput2' type="text" name="lastName" placeholder="이름" onfocus="this.placeholder = ''" onblur="this.placeholder = '이름'"/>
-		</div>
+	<h2>비밀번호 찾기 결과</h2>
+	<p id='firstPtag'>비밀번호를 확인하세요.</p>
+	<form action="./loginId" method="get">			
+		<h3>
+			비밀번호는
+		</h3>	
+		<h3 style="text-align: center; color: red;">	 
+			 <%=member.getPwd()%>
+		</h3>	 
+		<h3 style="float: right;">
+			 입니다.
+		</h3>	 
 		
-		<span id='hide' style="display:none; color: red;">
-		<img id='hide2'src="./icon.png" style="display: none; float: left;">
-		이름을 입력하세요.</span>				
+		
+		<br>			
 		<br>
+				
 		<br>
 		<br>	
-		<input id='next' type="submit" value="다음" onclick="nextFnc();">
+		<input id='next' type="submit" value="로그인">
 		
 	</form>
 	

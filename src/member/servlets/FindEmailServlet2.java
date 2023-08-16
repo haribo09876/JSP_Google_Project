@@ -53,7 +53,7 @@ public class FindEmailServlet2 extends HttpServlet {
 			
 			if(memberDto == null) { 
 		           RequestDispatcher rd =
-		                 req.getRequestDispatcher("./FindEmailForm.jsp");
+		                 req.getRequestDispatcher("./FindEmailForm3.jsp");
 		                 
 		           rd.forward(req, res);
 		                 
