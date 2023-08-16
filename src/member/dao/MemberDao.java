@@ -363,4 +363,120 @@ public class MemberDao {
          }
          return null;
       }
+   
+   public MemberDto memberFindId(String recovery_email, String mname)
+	         throws SQLException {
+	         
+	      PreparedStatement pstmt = null;
+	      ResultSet rs = null;
+	            
+	      String sql = "";
+	      
+	      sql += "SELECT RECOVERY_EMAIL, MNAME";
+	      sql += " FROM MEMBERS";
+	      sql += " WHERE RECOVERY_EMAIL = ?";
+	      sql += " AND MNAME = ?";	      	      
+	                              
+	      try {                  
+	         
+	         pstmt = connection.prepareStatement(sql);
+	         
+	         pstmt.setString(1, recovery_email);
+	         pstmt.setString(2, mname);
+	         
+	         rs = pstmt.executeQuery();
+	         
+	         MemberDto memberDto = new MemberDto();
+	                                    
+	         if(rs.next()) {
+	        	recovery_email = rs.getString("recovery_email");   
+	            mname = rs.getString("mname");
+	            memberDto.setEmail(recovery_email);
+	            memberDto.setMname(mname);                        
+	                                    
+	            return memberDto;
+
+	         }
+	               
+	         } catch (Exception e) {
+	            e.printStackTrace();
+	         }
+	         finally {
+	            try {
+	               if (rs != null) {
+	                  rs.close();
+	               }
+	            } catch (SQLException e) {
+	               e.printStackTrace();
+	            }
+	            try {
+	               if (pstmt != null) {
+	                  pstmt.close();
+	               }
+	            } catch (SQLException e) {
+	               e.printStackTrace();
+	            }
+	         }
+	         return null;
+	      }
+   
+   public MemberDto memberFindPassword(String email, String mname)
+	         throws SQLException {
+	         
+	      PreparedStatement pstmt = null;
+	      ResultSet rs = null;
+	            
+	      String sql = "";
+	      
+	      sql += "SELECT EMAIL, MNAME, PWD";
+	      sql += " FROM MEMBERS";
+	      sql += " WHERE EMAIL = ?";
+	      sql += " AND MNAME = ?";	      	      
+	                              
+	      String pwd = "";
+	      
+	      try {                  
+	         
+	         pstmt = connection.prepareStatement(sql);
+	         
+	         pstmt.setString(1, email);
+	         pstmt.setString(2, mname);
+	         
+	         rs = pstmt.executeQuery();
+	         
+	         MemberDto memberDto = new MemberDto();
+	                                    
+	         if(rs.next()) {
+	        	email = rs.getString("email");   
+	            mname = rs.getString("mname");
+	            pwd = rs.getString("pwd");
+	            memberDto.setEmail(email);
+	            memberDto.setMname(mname);
+	            memberDto.setPwd(pwd);
+	                                    
+	            return memberDto;
+
+	         }
+	               
+	         } catch (Exception e) {
+	            e.printStackTrace();
+	         }
+	         finally {
+	            try {
+	               if (rs != null) {
+	                  rs.close();
+	               }
+	            } catch (SQLException e) {
+	               e.printStackTrace();
+	            }
+	            try {
+	               if (pstmt != null) {
+	                  pstmt.close();
+	               }
+	            } catch (SQLException e) {
+	               e.printStackTrace();
+	            }
+	         }
+	         return null;
+	      }
 }

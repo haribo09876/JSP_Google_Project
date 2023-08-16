@@ -53,12 +53,14 @@ public class LoginIdServlet extends HttpServlet {
            
             rd.forward(req, res);
            
+         }else {
+        	 HttpSession session = req.getSession();
+             session.setAttribute("email", email);       
+
+             res.sendRedirect("../auth/loginPassword?email=" + req.getParameter("email"));
          }
                              
-         HttpSession session = req.getSession();
-         session.setAttribute("email", email);       
-
-         res.sendRedirect("../auth/loginPassword?email=" + req.getParameter("email"));
+         
 
       } catch (Exception e) {
          e.printStackTrace();

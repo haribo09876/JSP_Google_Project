@@ -36,7 +36,7 @@
          margin-top: 80px;
       }                  
       
-      h2, #firstPtag{
+      h2{
          text-align: center;
       }
             
@@ -128,6 +128,12 @@
          border: none;
          width: 200px;
       }
+      #firstPtag{
+      		
+      }
+      #img{
+      		
+      }
    
    
    </style>
@@ -174,14 +180,21 @@
    scope="session"
    class="member.dto.MemberDto"
 />
-   
+   <%
+   	String email = request.getParameter("email");
+   %>
    <div id='totalDiv'>
    <div id= 'firstDiv'>
    <div id ='googleDiv'>
       <a id='firstGoogle'>G</a><a id='secondGoogle'>o</a><a id='thirdGoogle'>o</a><a id='fourthGoogle'>g</a><a id='fifthGoogle'>l</a><a id='sixthGoogle'>e</a>
    </div>
    <h2>시작하기</h2>
-   <p id='firstPtag' onclick="moveFnc();"><%=member.getEmail()%></p>
+   <div id='firstPtag' onclick="moveFnc();" style="display: flex; align-items: center;">
+   	
+   	<img id='img' src="./cap.png" style="height: 30px; margin-left: 10px;">
+   
+   	<a style="font-size: 20px;"><%=email%></a>
+   	</div>
    <form action="./loginPassword" method="post">
       <div id='inputDiv'>
                
@@ -197,7 +210,7 @@
       </label>
       <br><br><br><br>
       
-      <a id='thirdAtag' href="">비밀번호 찾기</a>      
+      <a id='thirdAtag' href="../auth/FindPassword">비밀번호 찾기</a>      
       <input id='next' type="submit" value="다음" onclick="nextFnc();">
       
    </form>

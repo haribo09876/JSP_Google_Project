@@ -154,7 +154,7 @@
 	</div>
 	<h2>이름을 입력하세요</h2>
 	<p id='firstPtag'>Google 계정 이름 입력</p>
-	<form action="./FindEmail2" method="post">
+	<form action="./FindPassword" method="post">
 		<div id='inputDiv'>
 		<input id='idInput' type="text" name="firstName" placeholder="성" onfocus="this.placeholder = ''" onblur="this.placeholder = '성'"/>			
 		<input id='idInput2' type="text" name="lastName" placeholder="이름" onfocus="this.placeholder = ''" onblur="this.placeholder = '이름'"/>

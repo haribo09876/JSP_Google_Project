@@ -188,7 +188,7 @@
       <a id='firstGoogle'>G</a><a id='secondGoogle'>o</a><a id='thirdGoogle'>o</a><a id='fourthGoogle'>g</a><a id='fifthGoogle'>l</a><a id='sixthGoogle'>e</a>
    </div>
    <h2>시작하기</h2>
-   <p id='firstPtag' onclick="moveFnc();"><%=member.getEmail()%></p>
+   <p id='firstPtag' onclick="moveFnc();"><%=email%></p>
    <form action="./loginPassword" method="post">
       <div id='inputDiv'>
                
@@ -207,7 +207,7 @@
       </label>
       <br><br><br><br>
       
-      <a id='thirdAtag' href="">비밀번호 찾기</a>      
+      <a id='thirdAtag' href="../auth/FindPassword">비밀번호 찾기</a>      
       <input id='next' type="submit" value="다음" onclick="nextFnc();">
       
    </form>

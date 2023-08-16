@@ -37,18 +37,18 @@ public class FindEmailServlet extends HttpServlet {
 	      Connection conn = null;
 
 	      try {
-	         String email = req.getParameter("email");
+	         String recovery_email = req.getParameter("recovery_email");
 
 	         ServletContext sc = this.getServletContext();
 	         conn = (Connection) sc.getAttribute("conn");
 
 	         MemberDao memberDao = new MemberDao();
-	         memberDao.setConnection(conn);
+	         memberDao.setConnection(conn);	         	        
 	         	                        	        	                             
 	         HttpSession session = req.getSession();
-	         session.setAttribute("email", email);       
+	         session.setAttribute("recovery_email", recovery_email);       
 
-	         res.sendRedirect("../auth/FindEmail2?email=" + req.getParameter("email"));
+	         res.sendRedirect("../auth/FindEmail2?recovery_email=" + req.getParameter("recovery_email"));
 
 	      } catch (Exception e) {
 	         e.printStackTrace();
