@@ -12,15 +12,15 @@ import javax.servlet.http.HttpSession;
 @WebServlet(urlPatterns = {"/auth/logout"})
 public class LogoutServlet extends HttpServlet{
 
-	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse res)
-			throws ServletException, IOException {
+   @Override
+   protected void doGet(HttpServletRequest req, HttpServletResponse res)
+         throws ServletException, IOException {
 
-		HttpSession session = req.getSession();
+      HttpSession session = req.getSession();
 
-		session.invalidate();
-		
-		res.sendRedirect("./login");
-	}
-	
+      session.invalidate();
+      
+      res.sendRedirect("./loginId");
+   }
+   
 }

@@ -23,42 +23,39 @@ public class FindEmailServlet extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req
-			, HttpServletResponse res) throws ServletException, IOException {
+	         , HttpServletResponse res) throws ServletException, IOException {
 
-		RequestDispatcher rd = req.getRequestDispatcher("./FindEmailForm.jsp");
-		rd.forward(req, res);
+	      RequestDispatcher rd = req.getRequestDispatcher("./FindEmailForm.jsp");
+	      rd.forward(req, res);
+
+	   }
+
+	   @Override
+	   protected void doPost(HttpServletRequest req
+	         , HttpServletResponse res) throws ServletException, IOException {
+
+	      Connection conn = null;
+
+	      try {
+	         String email = req.getParameter("email");
+
+	         ServletContext sc = this.getServletContext();
+	         conn = (Connection) sc.getAttribute("conn");
+
+	         MemberDao memberDao = new MemberDao();
+	         memberDao.setConnection(conn);
+	         	                        	        	                             
+	         HttpSession session = req.getSession();
+	         session.setAttribute("email", email);       
+
+	         res.sendRedirect("../auth/FindEmail2?email=" + req.getParameter("email"));
+
+	      } catch (Exception e) {
+	         e.printStackTrace();
+//	         throw new ServletException();
+	      } 
+	      
+
+	   }
 
 	}
-
-	@Override
-	protected void doPost(HttpServletRequest req
-			, HttpServletResponse res) throws ServletException, IOException {
-
-		Connection conn = null;
-
-		try {
-			String email = req.getParameter("email");
-
-			ServletContext sc = this.getServletContext();
-			conn = (Connection) sc.getAttribute("conn");
-
-			MemberDao memberDao = new MemberDao();
-			memberDao.setConnection(conn);
-
-			MemberDto memberDto = memberDao.memberIdExist(email);
-														 			 			
-			HttpSession session = req.getSession();
-			session.setAttribute("member", memberDto); 
-
-			res.sendRedirect("../auth/FindEmail2");
-		} catch (IllegalStateException e) {
-			// TODO: handle exception
-			e.printStackTrace();
-		} catch (Exception e) {
-			e.printStackTrace();
-//			throw new ServletException();
-		} 
-
-	}
-
-}
