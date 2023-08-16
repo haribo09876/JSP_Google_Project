@@ -25,7 +25,8 @@ public class BoardDao {
 		
 		try {
 			String sql = "SELECT PNO, TITLE, EDITOR, CRE_DATE, VIEW_COUNT"
-						+ " FROM BOARD";
+						+ " FROM BOARD"
+						+ " ORDER BY PNO DESC";
 			
 			pstmt = connection.prepareStatement(sql);
 			
@@ -101,6 +102,7 @@ public class BoardDao {
 			pstmt.setString(4, contents);
 			
 			resultNum = pstmt.executeUpdate();
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 			throw e;
@@ -123,11 +125,10 @@ public class BoardDao {
 		
 		PreparedStatement pstmt = null;
 		
-		
-		String sql = "DELETE FROM BOARD"
-				+ " WHERE PNO = ?";
-		
 		try {
+			String sql = "DELETE FROM BOARD"
+					+ " WHERE PNO = ?";
+			
 			pstmt = connection.prepareStatement(sql);
 			
 			pstmt.setInt(1, pno);
@@ -158,7 +159,17 @@ public class BoardDao {
 		ResultSet rs = null;
 
 		try {
-			String sql = "SELECT TITLE, EDITOR, P_PWD, CONTENTS"
+			String sql = "UPDATE BOARD"
+					+ " SET VIEW_COUNT = VIEW_COUNT + 1"
+					+ " WHERE PNO = ?";
+				
+				pstmt = connection.prepareStatement(sql);
+				
+				pstmt.setInt(1, pno);
+				
+				rs = pstmt.executeQuery();
+			
+			sql = "SELECT PNO, TITLE, EDITOR, P_PWD, CONTENTS"
 					+ " FROM BOARD"
 					+ " WHERE PNO = ?";
 			
@@ -167,7 +178,7 @@ public class BoardDao {
 			pstmt.setInt(1, pno);
 			
 			rs = pstmt.executeQuery();
-			
+
 			String title = "";
 			String editor = "";
 			String postPwd = "";
@@ -181,6 +192,7 @@ public class BoardDao {
 				
 				boardDto = new BoardDto();
 				
+				boardDto.setPno(pno);
 				boardDto.setTitle(title);
 				boardDto.setEditor(editor);
 				boardDto.setPostPwd(postPwd);
@@ -188,6 +200,7 @@ public class BoardDao {
 			}else {
 				throw new Exception("해당 게시글을 찾을 수 없습니다.");
 			}
+			
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
@@ -211,5 +224,41 @@ public class BoardDao {
 		} //finally end
 		
 		return boardDto;
+	}
+	
+	public int boardUpdate(BoardDto boardDto) throws Exception {
+		int result = 0;
+		
+		PreparedStatement pstmt = null;
+		
+		try {
+			String sql = "UPDATE BOARD"
+					+ " SET TITLE = ?, EDITOR = ?, P_PWD = ?, CONTENTS = ?, CRE_DATE = SYSDATE"
+					+ " WHERE PNO = ?";
+			
+			pstmt = connection.prepareStatement(sql);
+			
+			pstmt.setString(1, boardDto.getTitle());
+			pstmt.setString(2, boardDto.getEditor());
+			pstmt.setString(3, boardDto.getPostPwd());
+			pstmt.setString(4, boardDto.getContents());
+			pstmt.setInt(5, boardDto.getPno());
+			
+			result = pstmt.executeUpdate();
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+			throw e;
+		}finally {
+			if(pstmt != null) {
+				try {
+					pstmt.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		} // finally 종료
+		
+		return result;
 	}
 }

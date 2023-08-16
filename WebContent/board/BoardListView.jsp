@@ -9,7 +9,6 @@
 	
 	<style type="text/css">
 		#container{
-			border: 1px solid black;
 			width: 950px;
 			margin: auto;
 			text-align: center;
@@ -17,11 +16,6 @@
 		
 		h2, p{
 			text-align: left;
-		}
-		
-		table, td{
-			border: 1px solid black;
-			border-collapse: collapse;
 		}
 		
 		#lineDiv{
@@ -55,12 +49,55 @@
 			margin-left: 10px;
 		}
 		
+		#addButton{
+			text-align: right;
+			margin-right: 30px;
+		}
+		
+		#subDiv1{
+			width: 475px;
+			float: left;
+		}
+		
+		#subDiv2{
+			width: 475px;
+			float: right;
+		}
+		
+		a {
+            cursor: pointer;
+        }
+		
 	</style>
 	
 	<script type="text/javascript">
 		function pageMoveAddFnc() {
 			location="/board/add";
 		}
+		
+		function moveListFnc(n) {
+			var num = n.innerHTML;
+			location.href = "./list?page=" + num;
+		}
+		
+		function nextFnc(pln, tp) {
+			pln += 1;
+			if (pln > tp) {
+				pln = tp;
+			}
+			
+			location.href = "./list?page=" + pln;
+		}
+		
+		function prevFnc(psn) {
+			psn -= 1;
+			if (psn < 1) {
+				psn = 1;
+			}
+			
+			location.href = "./list?page=" + psn;
+		}
+		
 	</script>
 </head>
 
@@ -78,7 +115,7 @@
 				<td class="boardTdCustom3">작성일</td>
 				<td id="boardTdCustom4">조회</td>
 			</tr>
-			<c:forEach var="boardDto" items="${boardList}">
+			<c:forEach var="boardDto" items="${boardList}" begin="${pagesSet-5}" end="${pagesSet-1}">
 				<tr>
 					<td id="boardTdCustom1">${boardDto.pno}</td>
 					<td id="boardTdCustom2">
@@ -92,22 +129,28 @@
 				</tr>
 			</c:forEach>
 		</table>
-		<form action="" id="searchSelect">
-			<select>
-				<option value="title">제목</option>
-				<option value="editor">작성자</option>
-			</select>
-			<input type="text" name="searchKeyword">
-			<input type="button" value="찾기">
-		</form>
-		<form action="add">
-			<button onclick='pageMoveAddFnc();'>글쓰기</button>
-		</form>
-		<a>[이전]</a>
-		<a>1</a>
-		<a>[다음]</a>
-		
+		<div id="subDiv1">
+			<form action="" id="searchSelect">
+				<select>
+					<option value="title">제목</option>
+					<option value="editor">작성자</option>
+				</select>
+				<input type="text" name="searchKeyword">
+				<input type="button" value="찾기">
+			</form>
+		</div>
+		<div id="subDiv2">
+			<form action="add" id="addButton">
+				<button onclick='pageMoveAddFnc();'>글쓰기</button>
+			</form>
+		</div>
+		<div>
+			<a onclick="prevFnc(${pageStartNum});">[이전]</a>
+			<c:forEach var="pagesNum" begin="${pageStartNum}" end="${pageLastNum}">
+				<a onclick="moveListFnc(this);">${pagesNum}</a>
+			</c:forEach>
+			<a onclick="nextFnc(${pageLastNum}, ${totalPages});">[다음]</a>
+		</div>
 	</div>
-	
 </body>
 </html>

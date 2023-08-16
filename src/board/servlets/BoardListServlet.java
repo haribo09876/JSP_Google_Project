@@ -15,49 +15,74 @@ import javax.servlet.http.HttpServletResponse;
 import board.dao.BoardDao;
 import board.dto.BoardDto;
 
-@WebServlet("/board/list") 
+@WebServlet("/board/list")
 public class BoardListServlet extends HttpServlet {
-	
+
 	private static final long serialVersionUID = 1L;
 
 	@Override
-	protected void doGet(HttpServletRequest req, 
-			HttpServletResponse res) 
+	protected void doGet(HttpServletRequest req, HttpServletResponse res) 
 			throws ServletException, IOException {
-		
+
 		Connection conn = null;
-		
+
 		try {
 			ServletContext sc = this.getServletContext();
-			
-			conn = (Connection)sc.getAttribute("conn");
-			
+
+			conn = (Connection) sc.getAttribute("conn");
+
 			BoardDao boardDao = new BoardDao();
 			boardDao.setConnection(conn);
-			
+
 			ArrayList<BoardDto> boardList = null;
-			
-			boardList = (ArrayList<BoardDto>)boardDao.selectList();
-			
+
+			boardList = (ArrayList<BoardDto>) boardDao.selectList();
+
 			req.setAttribute("boardList", boardList);
+
+			int page = 1;
+			if (req.getParameter("page") == null) {
+				page = 5;
+				int pagesSet = 5;
+
+				req.setAttribute("pagesSet", pagesSet);
+			} else {
+				page = Integer.parseInt(req.getParameter("page"));
+				int pagesSet = 5 * page;
+				
+				req.setAttribute("pagesSet", pagesSet);
+			}
+			
+			//총 페이지 수
+			int totalPages = (boardList.size()-1) / 5 + 1;
+			System.out.println(boardList.size());
+			req.setAttribute("totalPages", totalPages);
+			
+			int pageStartNum = (page-1)/5*5 + 1;
+			int pageLastNum = (page-1)/5*5 + 5;
+			
+			if (pageLastNum > totalPages) {
+				pageLastNum = totalPages;
+			}
+			
+			req.setAttribute("pageStartNum", pageStartNum);
+			req.setAttribute("pageLastNum", pageLastNum);
 			
 			res.setContentType("text/html");
 			res.setCharacterEncoding("UTF-8");
-			
-			RequestDispatcher dispatcher = 
-					req.getRequestDispatcher("/board/BoardListView.jsp");
-			
+
+			RequestDispatcher dispatcher = req.getRequestDispatcher("/board/BoardListView.jsp");
+
 			dispatcher.include(req, res);
 
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			req.setAttribute("error", e);
 			req.setAttribute("msg", "my sorry");
-			RequestDispatcher dispatcher = 
-					req.getRequestDispatcher("/Error.jsp");
-			
+			RequestDispatcher dispatcher = req.getRequestDispatcher("/Error.jsp");
+
 			dispatcher.forward(req, res);
-		} 
+		}
 	}
 
 }

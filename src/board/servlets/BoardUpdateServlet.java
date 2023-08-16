@@ -17,8 +17,8 @@ import javax.servlet.http.HttpServletResponse;
 import board.dao.BoardDao;
 import board.dto.BoardDto;
 
-@WebServlet("/board/detail")
-public class BoardDetailServlet extends HttpServlet {
+@WebServlet("/board/update")
+public class BoardUpdateServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) 
 			throws ServletException, IOException {
@@ -46,7 +46,7 @@ public class BoardDetailServlet extends HttpServlet {
 			res.setContentType("text/html");
 			res.setCharacterEncoding("UTF-8");
 			
-			rd = req.getRequestDispatcher("./BoardDetailForm.jsp");
+			rd = req.getRequestDispatcher("./BoardUpdateForm.jsp");
 			rd.forward(req, res);
 		
 		} catch (Exception e) {
@@ -79,4 +79,55 @@ public class BoardDetailServlet extends HttpServlet {
 
 	} // doGet end
 
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse res) 
+			throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		BoardDto boardDto = null;
+		
+		Connection conn = null;
+
+		try {
+			String title = req.getParameter("title");
+			String editor = req.getParameter("editor");
+			String postPwd = req.getParameter("postPwd");
+			String contents = req.getParameter("contents");
+			int pno = Integer.parseInt(req.getParameter("pno"));
+			
+			System.out.println("번호 확인" + pno);
+			
+			boardDto = new BoardDto();
+
+			boardDto.setTitle(title);
+			boardDto.setEditor(editor);
+			boardDto.setPostPwd(postPwd);
+			boardDto.setContents(contents);
+			boardDto.setPno(pno);
+			
+			ServletContext sc = this.getServletContext();
+			
+			conn = (Connection)sc.getAttribute("conn");
+			
+			BoardDao boardDao = new BoardDao();
+			boardDao.setConnection(conn);
+			
+			int result = boardDao.boardUpdate(boardDto);
+			
+			if (result == 0) {
+				System.out.println("게시물 조회에 실패하였습니다.");
+			}
+			
+			res.sendRedirect("./list");
+
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			
+			req.setAttribute("error", e);
+			RequestDispatcher dispatcher = 
+					req.getRequestDispatcher("./Error.jsp");
+			
+			dispatcher.forward(req, res);
+		}
+	}
 }
