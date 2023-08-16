@@ -134,7 +134,7 @@
 		}
 		
 		#inputBoxSecond {
-			width: 200px;
+			width: 250px;
 			height: 28px;
 			font-size: 16px;
 			padding-left: 14px;
@@ -144,6 +144,12 @@
 			margin-top: 24px;
 			border: 1px solid #DADCE0;
 			border-radius: 4px;
+		}
+		
+		#countrySelect {
+			width: 80px;
+			border: 0px;
+			border-collapse: collapse;
 		}
 		
 		#divButton {
@@ -170,16 +176,17 @@
 			<div>
 				<img id="logo" src="Logo.png">
 				<h1>전화번호 추가</h1>
-				<select name="country">
-					<option value="">대한민국</option>
-					<option value="">US</option>
-					<option value="">UK</option>
-					<option value="">France</option>
-					<option value="">Germany</option>
-					<option value="">Spain</option>
-				</select>
+
 				<form action="add8" method="post">
 					<div>
+						<select id="countrySelect" name="country">
+							<option value="">대한민국</option>
+							<option value="">US</option>
+							<option value="">UK</option>
+							<option value="">France</option>
+							<option value="">Germany</option>
+							<option value="">Spain</option>
+						</select>
 						<input id="inputBoxSecond" type="number" name="phoneNo"
 							placeholder="전화번호"><br>
 					</div>

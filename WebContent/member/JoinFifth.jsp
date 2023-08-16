@@ -26,7 +26,7 @@
 		}
 		
 		.inputBox {
-			width: 336px;
+			width: 250px;
 			height: 28px;
 			font-size: 16px;
 			padding-left: 14px;
@@ -134,6 +134,25 @@
 			margin-top: 24px;
 		}
 		
+		#inputBoxSecond {
+			width: 250px;
+			height: 28px;
+			font-size: 16px;
+			padding-left: 14px;
+			padding-right: 14px;
+			padding-top: 12px;
+			padding-bottom: 12px;
+			margin-top: 24px;
+			border: 1px solid #DADCE0;
+			border-radius: 4px;
+		}
+		
+		#countrySelect {
+			width: 80px;
+			border: 0px;
+			border-collapse: collapse;
+		}	
+		
 		#divButton {
 			width: 368px;
 			height: 48px;
@@ -161,17 +180,18 @@
 				<div class="thirdTitle">
 					<span>휴대전화로 인증 코드 받기</span><br>
 				</div>
-				<select name="country">
-					<option value="">대한민국</option>
-					<option value="">US</option>
-					<option value="">UK</option>
-					<option value="">France</option>
-					<option value="">Germany</option>
-					<option value="">Spain</option>
-				</select>
+
 				<form action="add5" method="post">
 					<div>
-						<input class="inputBox" type="text" name="tempPhoneNum"
+						<select id="countrySelect" name="country">
+							<option value="">대한민국</option>
+							<option value="">US</option>
+							<option value="">UK</option>
+							<option value="">France</option>
+							<option value="">Germany</option>
+							<option value="">Spain</option>
+						</select>
+						<input id="inputBoxSecond"  class="inputBox" type="text" name="tempPhoneNum"
 							placeholder="전화번호"><br>
 					</div>
 					<div class="thirdTitle">

@@ -136,9 +136,28 @@
 			padding-top: 20px;
 			font-size: 13px;
 		}
-  </style>
-  <script>
-
+	</style>
+	<script>
+  		function conditionCheck() {
+			var secondInputBoxObj = document.getElementsByClassName("inputBox")[1];
+			var firstPwd = document.getElementsByClassName("inputBox")[0].value;
+			var secondPwd = document.getElementsByClassName("inputBox")[1].value;
+			var firstHiddenATagObj = document.getElementById("firstHiddenATag");
+			var secondHiddenATagObj = document.getElementById("secondHiddenATag");
+			var thridHiddenATagObj = document.getElementById("thirdHiddenATag");
+			var fourthHiddenATagObj = document.getElementById("fourthHiddenATag");
+			var numCon = firstPwd.search(/[0-9]/g);
+			var engCon = firstPwd.search(/[a-z]/ig);
+			var speCon = firstPwd.search(/[`~!@@#$%^&*|₩₩₩'₩";:₩/?]/gi);
+			
+			if(firstPwd == "") {
+				secondInputBoxObj.style.border = "2px solid red";
+				firstHiddenATagObj.style.display = "block";
+				firstHiddenATagObj.style.fontSize = "12px";
+				firstHiddenATagObj.style.color = "red";
+				return false;
+			}
+			  		
   </script>
 </head>
 
@@ -151,11 +170,15 @@
 				<div id="secondTitle">
 					<span>문자, 숫자, 기호를 조합하여 안전한 비밀번호를 만드세요.</span><br>
 				</div>
-				<form action="add4" method='post'>
+				<form action="add4" method="post" onsubmit="return conditionCheck()">
 					<div>
 						<input class="inputBox" type="text" name="pwd" placeholder="비밀번호"><br>
 						<input class="inputBox" type="text" name="pwd" placeholder="확인"><br>
 						<input type="checkbox" name="ShowingPassword">비밀번호 표시<br>
+						<a id="firstHiddenATag" style="display: none">&nbsp;? 비밀번호를 입력하세요.</a>
+						<a id="secondHiddenATag" style="display: none">&nbsp;? 비밀번호는 8 ~ 24자리 이내로 입력해주세요.</a>
+						<a id="thirdHiddenATag" style="display: none">&nbsp;? 영문,숫자, 특수문자를 혼합하여 입력해주세요.</a>
+						<a id="fourthHiddenATag" style="display: none">&nbsp;? 비밀번호를 다시 확인하세요.</a>
 					</div>
 					<div id="divButton">
 						<input id="button" type="submit" value="다음">

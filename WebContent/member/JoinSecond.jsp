@@ -138,17 +138,17 @@
 		}
   </style>
   <script>
-    function conditionCheck() {
-      var yearObj = document.getElementsByClassName("innerInput")[0];
-      var monthObj = document.getElementsByClassName("innerInput")[1];
-      var dayObj = document.getElementsByClassName("innerInput")[2];
-      var genderObj = document.getElementsByName("gender")[0];
-      var yearObjValue = document.getElementsByClassName("innerInput")[0].value;
-      var monthObjValue = document.getElementsByClassName("innerInput")[1].value;
-      var dayObjValue = document.getElementsByClassName("innerInput")[2].value;
-      var genderObjValue = document.getElementsByName("gender")[0].value;
-      var firstHiddenATagObj = document.getElementById("firstHiddenATag");
-      var secondHiddenATagObj = document.getElementById("secondHiddenATag");
+//     function conditionCheck() {
+//       var yearObj = document.getElementsByClassName("innerInput")[0];
+//       var monthObj = document.getElementsByClassName("innerInput")[1];
+//       var dayObj = document.getElementsByClassName("innerInput")[2];
+//       var genderObj = document.getElementsByName("gender")[0];
+//       var yearObjValue = document.getElementsByClassName("innerInput")[0].value;
+//       var monthObjValue = document.getElementsByClassName("innerInput")[1].value;
+//       var dayObjValue = document.getElementsByClassName("innerInput")[2].value;
+//       var genderObjValue = document.getElementsByName("gender")[0].value;
+//       var firstHiddenATagObj = document.getElementById("firstHiddenATag");
+//       var secondHiddenATagObj = document.getElementById("secondHiddenATag");
 
 //       if ((yearObjValue + monthObjValue + dayObjValue) == "" && genderObjValue == "") {
 //         yearObj.style.border = "2px solid red";
