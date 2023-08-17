@@ -110,7 +110,7 @@
 					</td>
 				</tr>
 			</table>
-			<input type='button' class='buttonAline' value='삭제' onclick='pageMoveDeleteFnc(${boardDto.pno});' />
+			<input type='button' class='buttonAline' value='삭제' onclick='pageMoveDeleteFnc(${boardDto.pno}, "${boardDto.postPwd}");' />
 			<input type='button' class='buttonAline' value='수정' onclick='pageMoveUpdateFnc(${boardDto.pno}, "${boardDto.postPwd}");' />
 			<input type='button' class='buttonAline' value='목록' onclick='pageMoveListFnc();' />
 		</form>
