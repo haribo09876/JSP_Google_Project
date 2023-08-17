@@ -6,7 +6,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>이메일 찾기</title>
+	<title>이메일 찾기 결과</title>
 	<style type="text/css">
 		p{
 			font-size: 14px;
@@ -57,7 +57,8 @@
 			height: 40px;
 			width: 80px;
 			color: white;
-			background-color: blue;
+			background-color: #1A73E8;
+         	border: none;
 			float: right;
 			border-radius: 5px;
 		}
@@ -84,37 +85,36 @@
 		 	font-size: 30px;
 		 	text-align: center;
 		 }
-		
-		#firstGoogle{
-			color: #4285F4;
-		}
-		
-		#secondGoogle{
-			color: #EA4335;
-		}
-		
-		#thirdGoogle{
-			color: #FBBC05;
-		}
-		
-		#fourthGoogle{
-			color: #4285F4;
-		}
-		
-		#fifthGoogle{
-			color: #34A853;
-		}
-		
-		#sixthGoogle{
-			color: #EA4335;
-		}
-		
-		
-		
+										
 		select{
 			border: none;
 			width: 200px;
 		}
+		
+		#logo {
+		width: 75px;
+		height: 41px;
+		padding-left: 145px;
+	}
+	
+	#login{
+		font-weight: 500;
+		text-align: center;
+		font-size: 25px;
+		margin-top: 5px;
+		margin-bottom: 20px;
+	}
+	
+	#googleDiv{
+          font-size: 30px;
+          display: flex;
+    }
+    
+    #firstPtag{
+      	font-size: 17px;
+      	margin-top: 5px;
+      	margin-bottom: 40px; 
+      }
 	
 	
 	</style>
@@ -136,9 +136,9 @@
 	<div id='totalDiv'>
 	<div id= 'firstDiv'>
 	<div id ='googleDiv'>
-		<a id='firstGoogle'>G</a><a id='secondGoogle'>o</a><a id='thirdGoogle'>o</a><a id='fourthGoogle'>g</a><a id='fifthGoogle'>l</a><a id='sixthGoogle'>e</a>
+		<img id="logo" src="Logo.png">
 	</div>
-	<h2>이메일 찾기 결과</h2>
+	<p id='login'>이메일 찾기 결과</p>
 	<p id='firstPtag'>이메일을 확인하세요.</p>
 	<form action="./loginId" method="get">			
 		<h3>

@@ -62,8 +62,10 @@
 	<a style="font-size: 30px;"><%=member.getEmail()%></a>
 	</div>
 	
-   <div style="margin-top: 10px; text-align: center; display: block; align-items: center; justify-content: center;">
-      <div style="border: 1px solid green; background-color: green; border-radius: 50%;
+   <div style="margin-top: 10px; text-align: center; display: block; 
+   		align-items: center; justify-content: center;">
+      <div style="border: 1px solid green; background-color: green; 
+      	border-radius: 50%;
          height: 70px; width: 70px; color: white; font-size: 20px; margin: auto;
          display: flex; align-items: center; justify-content: center;">      
             <%=member.getMname()%>
@@ -77,14 +79,16 @@
    </div>
    <div style="margin: auto; display: flex; 
    		align-items: center; justify-content: center;">
-      <p id='div' style="border: 1px solid black; border-radius: 20px; width: 200px; height: 40px;
+      <p id='div' style="border: 1px solid black; border-radius: 20px; 
+      		width: 200px; height: 40px;
          font-size: 20px; text-align: center; color: blue;
           display: flex; align-items: center; justify-content: center;">
          Google 계정 관리
       </p>
    </div>
    <div style="display: flex; align-items: center; justify-content: center;">
-   <div id="firstDiv" style="border: 1px solid black; width: 250px; float: left; margin-right: 5px;
+   <div id="firstDiv" style="border: 1px solid black; width: 250px; float: left; 
+   		margin-right: 5px;
    		height: 80px; display: flex; align-items: center; justify-content: center;
    		border-radius: 40px 0px 0px 40px;" onclick="add();">
  	  

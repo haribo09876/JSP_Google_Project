@@ -8,7 +8,12 @@
    <title>로그인 아이디입력</title>
    <style type="text/css">
       p{
-         font-size: 14px;
+        font-size: 14px;
+      }
+      #firstPtag{
+      	font-size: 17px;
+      	margin-top: 5px;
+      	margin-bottom: 40px; 
       }
       
       #firstDiv{
@@ -55,10 +60,11 @@
          font-size: 15px;
          height: 40px;
          width: 80px;
-         color: white;
-         background-color: blue;
+         color: white;         
          float: right;
          border-radius: 5px;
+         background-color: #1A73E8;
+         border: none;
       }
       
       #idInput{
@@ -77,42 +83,46 @@
       
       #googleDiv{
           font-size: 30px;
-          text-align: center;
+          display: flex;
        }
       
-      #firstGoogle{
-         color: #4285F4;
-         letter-spacing: -10px;
-      }
-      
-      #secondGoogle{
-         color: #EA4335;
-         letter-spacing: -10px;
-      }
-      
-      #thirdGoogle{
-         color: #FBBC05;
-         letter-spacing: -10px;
-      }
-      
-      #fourthGoogle{
-         color: #4285F4;
-         letter-spacing: -10px;
-      }
-      
-      #fifthGoogle{
-         color: #34A853;
-         letter-spacing: -10px;
-      }
-      
-      #sixthGoogle{
-         color: #EA4335;
-         letter-spacing: -10px;
-      }
+      #logo {
+			width: 75px;
+			height: 41px;
+			padding-left: 145px;
+		}
+		
+	#login{
+		font-weight: 500;
+		text-align: center;
+		font-size: 25px;
+		margin-top: 5px;
+		margin-bottom: 1px;
+	}	
       
       select{
          border: none;
          width: 200px;
+      }
+      
+      #lastAtag{
+      	margin-top: 1px;
+      }
+      
+      #lastPtag{
+      	margin-bottom: 1px;
+      }
+      
+      #firstAtag{
+      	margin-top: 1px;
+      }
+      
+      #inputDiv{
+      	margin-bottom: 1px;
+      }
+      
+      #hide, #hide2{
+      	margin-bottom: 1px;
       }
    
    </style>
@@ -142,28 +152,24 @@
    <div id='totalDiv'>
    <div id= 'firstDiv'>
    <div id ='googleDiv'>
-      <a id='firstGoogle'>G</a>
-      <a id='secondGoogle'>o</a>
-      <a id='thirdGoogle'>o</a>
-      <a id='fourthGoogle'>g</a>
-      <a id='fifthGoogle'>l</a>
-      <a id='sixthGoogle'>e</a>
+      <img id="logo" src="Logo.png">
    </div>
-   <h2>로그인</h2>
+   <p id='login'>로그인</p>
    <p id='firstPtag'>Google 계정 사용</p>
    <form action="./loginId" method="post">
       <div id='inputDiv'>
                
-      <input id='idInput' type="text" name="email" placeholder="이메일 또는 휴대전화" onfocus="this.placeholder = ''" onblur="this.placeholder = '이메일 또는 휴대전화'"/>
+      <input id='idInput' type="text" name="email" placeholder="이메일 또는 휴대전화" 
+      	onfocus="this.placeholder = ''" onblur="this.placeholder = '이메일 또는 휴대전화'"/>
       </div>
       
       <span id='hide' style="display:none; color: red;">
       <img id='hide2'src="./icon.png" style="display: none; float: left;">
-      이메일이나 전화번호를 입력하세요</span>            
+     	 이메일이나 전화번호를 입력하세요</span>            
       <br>
       <a id='firstAtag' href="./FindEmailForm.jsp">이메일을 잊으셨나요?</a><br><br>            
-      <p>내 컴퓨터가 아닌가요? 게스트 모드를 사용하여 비공개</p>   
-      <a>로 로그인하세요.</a>
+      <p id= 'lastPtag'>내 컴퓨터가 아닌가요? 게스트 모드를 사용하여 비공개</p>   
+      <a id='lastAtag'>로 로그인하세요.</a>
       <a id='secondAtag' href="">자세히 알아보기</a><br><br>
       <a id='thirdAtag' href="../member/add1">계정 만들기</a>      
       <input id='next' type="submit" value="다음" onclick="nextFnc();">

@@ -5,7 +5,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>이메일 찾기 이름입력</title>
+	<title>비밀번호 찾기 이름입력</title>
 	<style type="text/css">
 		p{
 			font-size: 14px;
@@ -24,6 +24,12 @@
 		#firstDiv{
 			margin: auto;
 		}
+		
+		#firstPtag{
+      	font-size: 17px;
+      	margin-top: 5px;
+      	margin-bottom: 40px; 
+      }
 		
 		#lastDiv {
 			display:flex;
@@ -56,7 +62,8 @@
 			height: 40px;
 			width: 80px;
 			color: white;
-			background-color: blue;
+			background-color: #1A73E8;
+        	border: none;
 			float: right;
 			border-radius: 5px;
 		}
@@ -85,36 +92,29 @@
 		 	text-align: center;
 		 }
 		
-		#firstGoogle{
-			color: #4285F4;
-		}
-		
-		#secondGoogle{
-			color: #EA4335;
-		}
-		
-		#thirdGoogle{
-			color: #FBBC05;
-		}
-		
-		#fourthGoogle{
-			color: #4285F4;
-		}
-		
-		#fifthGoogle{
-			color: #34A853;
-		}
-		
-		#sixthGoogle{
-			color: #EA4335;
-		}
-		
-		
-		
 		select{
 			border: none;
 			width: 200px;
 		}
+		
+		#logo {
+		width: 75px;
+		height: 41px;
+		padding-left: 145px;
+	}
+	
+	#login{
+		font-weight: 500;
+		text-align: center;
+		font-size: 25px;
+		margin-top: 5px;
+		margin-bottom: 20px;
+	}
+	
+	#googleDiv{
+          font-size: 30px;
+          display: flex;
+    }
 	
 	
 	</style>
@@ -150,14 +150,18 @@
 	<div id='totalDiv'>
 	<div id= 'firstDiv'>
 	<div id ='googleDiv'>
-		<a id='firstGoogle'>G</a><a id='secondGoogle'>o</a><a id='thirdGoogle'>o</a><a id='fourthGoogle'>g</a><a id='fifthGoogle'>l</a><a id='sixthGoogle'>e</a>
+		<img id="logo" src="Logo.png">
 	</div>
-	<h2>이름을 입력하세요</h2>
+	<p id='login'>이름을 입력하세요</p>
 	<p id='firstPtag'>Google 계정 이름 입력</p>
 	<form action="./FindPassword" method="post">
 		<div id='inputDiv'>
-		<input id='idInput' type="text" name="firstName" placeholder="성" onfocus="this.placeholder = ''" onblur="this.placeholder = '성'"/>			
-		<input id='idInput2' type="text" name="lastName" placeholder="이름" onfocus="this.placeholder = ''" onblur="this.placeholder = '이름'"/>
+		<input id='idInput' type="text" name="firstName" 
+			placeholder="성" onfocus="this.placeholder = ''" 
+			onblur="this.placeholder = '성'"/>			
+		<input id='idInput2' type="text" name="lastName" 
+			placeholder="이름" onfocus="this.placeholder = ''" 
+			onblur="this.placeholder = '이름'"/>
 		</div>
 		
 		<span id='hide' style="display:none; color: red;">

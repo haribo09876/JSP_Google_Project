@@ -53,7 +53,7 @@ public class FindPasswordServlet extends HttpServlet {
 			
 			if(memberDto == null) { 
 		           RequestDispatcher rd =
-		                 req.getRequestDispatcher("./FindPasswordForm.jsp");
+		                 req.getRequestDispatcher("./FindPasswordForm2.jsp");
 		                 
 		           rd.forward(req, res);
 		                 

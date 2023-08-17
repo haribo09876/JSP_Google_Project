@@ -23,7 +23,7 @@
       }
       
       #firstDiv{
-         margin: auto;
+         margin: auto;        
       }
       
       #lastDiv {
@@ -57,7 +57,8 @@
          height: 40px;
          width: 80px;
          color: white;
-         background-color: blue;
+         background-color: #1A73E8;
+         border: none;
          float: right;
          border-radius: 5px;
       }
@@ -85,43 +86,13 @@
           text-align: center;
        }
       
-     #firstGoogle{
-         color: #4285F4;
-         letter-spacing: -10px;
-      }
-      
-      #secondGoogle{
-         color: #EA4335;
-         letter-spacing: -10px;
-      }
-      
-      #thirdGoogle{
-         color: #FBBC05;
-         letter-spacing: -10px;
-      }
-      
-      #fourthGoogle{
-         color: #4285F4;
-         letter-spacing: -10px;
-      }
-      
-      #fifthGoogle{
-         color: #34A853;
-         letter-spacing: -10px;
-      }
-      
-      #sixthGoogle{
-         color: #EA4335;
-         letter-spacing: -10px;
-      }
-      
       #firstPtag{
          border: 1px solid #E5E5E5;
          border-radius: 50px;
          width: 250px;
          height: 30px;
          margin: auto;
-         margin-bottom: 30px;
+         margin-bottom: 60px;
          line-height: 30px;
          font-weight: bolder;
       }
@@ -130,10 +101,33 @@
          background-color: #f9f9f9;
       }
       
+      #hide3{
+      	font-size: 13px;
+      }
+      
       select{
          border: none;
          width: 200px;
       }
+      
+     #logo {
+		width: 75px;
+		height: 41px;
+		padding-left: 145px;
+	}
+	
+	#login{
+		font-weight: 500;
+		text-align: center;
+		font-size: 25px;
+		margin-top: 5px;
+		margin-bottom: 20px;
+	}
+	
+	#googleDiv{
+          font-size: 30px;
+          display: flex;
+    }
    
    
    </style>
@@ -192,17 +186,14 @@
    <div id='totalDiv'>
    <div id= 'firstDiv'>
    <div id ='googleDiv'>
-      <a id='firstGoogle'>G</a>
-      <a id='secondGoogle'>o</a>
-      <a id='thirdGoogle'>o</a>
-      <a id='fourthGoogle'>g</a>
-      <a id='fifthGoogle'>l</a>
-      <a id='sixthGoogle'>e</a>
+      <img id="logo" src="Logo.png">
    </div>
-   <h2>시작하기</h2>
-   <div id='firstPtag' onclick="moveFnc();" style="display: flex; align-items: center;">
+   <p id='login'>시작하기</p>
+   <div id='firstPtag' onclick="moveFnc();" style="display: flex; 
+   		align-items: center;">
    	
-   	<img id='img' src="./cap.png" style="height: 30px; margin-left: 20px; margin-top: 10px;">
+   	<img id='img' src="./cap.png" style="height: 30px; margin-left: 20px; 
+   		margin-top: 10px;">
    
    	<a style="font-size: 20px;"><%=email%></a>
    	</div>   
@@ -210,7 +201,8 @@
    <form action="./loginPassword" method="post">          
       <div id='inputDiv'>
                
-      <input id='idInput' type="password" name="pwd" placeholder="비밀번호 입력" onfocus="this.placeholder = ''" onblur="this.placeholder = '이메일 또는 휴대전화'"/>
+      <input id='idInput' type="password" name="pwd" placeholder="비밀번호 입력" 
+      	onfocus="this.placeholder = ''" onblur="this.placeholder = '이메일 또는 휴대전화'"/>
       </div>
       
       <span id='hide' style="display:none; color: red;">

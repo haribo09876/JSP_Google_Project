@@ -5,7 +5,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>이메일 찾기 이름입력</title>
+	<title>비밀번호 찾기 이름입력2</title>
 	<style type="text/css">
 		p{
 			font-size: 14px;
@@ -16,7 +16,13 @@
 			border: 1px solid #E5E5E5;
 			height: 416px;
 			width: 370px; 
-			padding: 48px 40px 36px;											
+			padding: 48px 40px 36px;
+					
+						
+		}
+		
+		#firstDiv{
+			margin: auto;
 		}
 		
 		#firstPtag{
@@ -24,10 +30,6 @@
       	margin-top: 5px;
       	margin-bottom: 40px; 
       }
-		
-		#firstDiv{
-			margin: auto;
-		}
 		
 		#lastDiv {
 			display:flex;
@@ -39,7 +41,7 @@
 			margin-top: 80px;
 		}						
 		
-		h2, #firstPtag, #secondPtag{
+		h2, #firstPtag{
 			text-align: center;
 		}
 				
@@ -69,7 +71,7 @@
 		
 		
 		#idInput, #idInput2{
-			border: 1px solid #E5E5E5;			
+			border: 1px solid red;			
 			width: 340px;
 			height: 50px;
 			font-size: 18px;
@@ -80,7 +82,7 @@
 		
 				
 		#idInput:focus, #idInput2:focus{
-			border-color: #0982f0;
+			border-color: red;
 			outline: none;
 		}
 		
@@ -89,7 +91,7 @@
 		 	font-size: 30px;
 		 	text-align: center;
 		 }
-		
+										
 		select{
 			border: none;
 			width: 200px;
@@ -124,6 +126,8 @@
 						
 			var hidePTag = document.createElement('hide');
 			var hide2PTag = document.createElement('hide2');
+			var hide3PTag = document.createElement('hide3');
+	        var hide4PTag = document.createElement('hide4');
 						
 			var myObj = document.getElementById('inputDiv');
 			
@@ -135,6 +139,8 @@
 				
 				document.getElementById('hide').style.display = 'block';			
 				document.getElementById('hide2').style.display = 'block';
+				document.getElementById('hide3').style.display = 'none';
+	            document.getElementById('hide4').style.display = 'none';
 				event.preventDefault();
 			}
 			
@@ -144,9 +150,6 @@
 </head>
 
 <body>
-<%
-	String recovery_email = (String)session.getAttribute("recovery_email");
-%>
 	
 	<div id='totalDiv'>
 	<div id= 'firstDiv'>
@@ -155,17 +158,22 @@
 	</div>
 	<p id='login'>이름을 입력하세요</p>
 	<p id='firstPtag'>Google 계정 이름 입력</p>
-	<form action="./FindEmail2" method="post">
+	<form action="./FindPassword" method="post">
 		<div id='inputDiv'>
-		<input id='idInput' type="text" name="firstName" placeholder="성" 
-			onfocus="this.placeholder = ''" onblur="this.placeholder = '성'"/>			
-		<input id='idInput2' type="text" name="lastName" placeholder="이름" 
-			onfocus="this.placeholder = ''" onblur="this.placeholder = '이름'"/>
+		<input id='idInput' type="text" name="firstName" 
+			placeholder="성" onfocus="this.placeholder = ''" 
+			onblur="this.placeholder = '성'"/>			
+		<input id='idInput2' type="text" name="lastName" 
+			placeholder="이름" onfocus="this.placeholder = ''" 
+			onblur="this.placeholder = '이름'"/>
 		</div>
 		
 		<span id='hide' style="display:none; color: red;">
 		<img id='hide2'src="./icon.png" style="display: none; float: left;">
-		이름을 입력하세요.</span>				
+		이름을 입력하세요.</span>
+		<span id='hide3' style="display:block; color: red;">
+     	<img id='hide4'src="./icon.png" style="display: block; float: left;">
+      	잘못된 이름입니다. 이름을 다시 확인해주세요.</span>    				
 		<br>
 		<br>
 		<br>	
