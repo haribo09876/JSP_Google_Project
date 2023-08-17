@@ -117,6 +117,20 @@
 			padding-top: 32px;
 		}
 
+		#inputBoxSecond {
+			width: 340px;
+			height: 28px;
+			font-size: 16px;
+			padding-left: 12px;
+			padding-right: 12px;
+			padding-top: 6px;
+			padding-bottom: 6px;
+			border: 1px solid #DADCE0;
+			border-radius: 4px;
+			border: 0px;
+			border-collapse: collapse;
+		}
+
 		#button {
 			width: 76px;
 			height: 36px;
@@ -138,34 +152,87 @@
 		}
   </style>
   <script>
-//     function conditionCheck() {
-//       var yearObj = document.getElementsByClassName("innerInput")[0];
-//       var monthObj = document.getElementsByClassName("innerInput")[1];
-//       var dayObj = document.getElementsByClassName("innerInput")[2];
-//       var genderObj = document.getElementsByName("gender")[0];
-//       var yearObjValue = document.getElementsByClassName("innerInput")[0].value;
-//       var monthObjValue = document.getElementsByClassName("innerInput")[1].value;
-//       var dayObjValue = document.getElementsByClassName("innerInput")[2].value;
-//       var genderObjValue = document.getElementsByName("gender")[0].value;
-//       var firstHiddenATagObj = document.getElementById("firstHiddenATag");
-//       var secondHiddenATagObj = document.getElementById("secondHiddenATag");
+    function conditionCheck() {
+      var yearObj = document.getElementsByClassName("innerInput")[0];
+      var monthObj = document.getElementsByClassName("innerInput")[1];
+      var dayObj = document.getElementsByClassName("innerInput")[2];
+      var genderObj = document.getElementsByName("gender")[0];
+      var yearObjValue = document.getElementsByClassName("innerInput")[0].value;
+      var monthObjValue = document.getElementsByClassName("innerInput")[1].value;
+      var dayObjValue = document.getElementsByClassName("innerInput")[2].value;
+      var genderObjValue = document.getElementsByName("gender")[0].value;
+      var firstHiddenATagObj = document.getElementById("firstHiddenATag");
+      var secondHiddenATagObj = document.getElementById("secondHiddenATag");
 
-//       if ((yearObjValue + monthObjValue + dayObjValue) == "" && genderObjValue == "") {
-//         yearObj.style.border = "2px solid red";
-//         monthObj.style.border = "2px solid red";
-//         dayObj.style.border = "2px solid red";
-//         genderObj.style.border = "2px solid red";
-//         firstHiddenATagObj.style.display = "block";
-//         firstHiddenATagObj.style.fontSize = "12px";
-//         firstHiddenATagObj.style.color = "red";
-//         secondHiddenATagObj.style.display = "block";
-//         secondHiddenATagObj.style.fontSize = "12px";
-//         secondHiddenATagObj.style.color = "red";
-//         return false;
-//       }
+      // if ((yearObjValue + monthObjValue + dayObjValue) == "" && genderObjValue == "") {
+      //   yearObj.style.border = "2px solid red";
+      //   monthObj.style.border = "2px solid red";
+      //   dayObj.style.border = "2px solid red";
+      //   genderObj.style.border = "2px solid red";
+      //   firstHiddenATagObj.style.display = "block";
+      //   firstHiddenATagObj.style.fontSize = "12px";
+      //   firstHiddenATagObj.style.color = "red";
+      //   secondHiddenATagObj.style.display = "block";
+      //   secondHiddenATagObj.style.fontSize = "12px";
+      //   secondHiddenATagObj.style.color = "red";
+      //   return false;
+      // }
+
+      if(genderObjValue == "") {
+      //  genderObj.style.border = "2px solid red";
+      //  secondHiddenATagObj.style.display = "block";
+      //   secondHiddenATagObj.style.fontSize = "12px";
+      //   secondHiddenATagObj.style.color = "red";
+        alert("비었음");
+        return false;
+      }
 
     }
 
+
+
+
+      // if (yearObjValue >= 1900 && yearObjValue < 2023) {
+
+      // }
+
+
+
+
+   
+
+
+
+
+
+
+
+    // function conditionCheck() {
+    //   var ownNameObj = document.getElementsByClassName("inputBox")[1];
+    //   var familyNameValue = document.getElementsByClassName("inputBox")[0].value;
+    //   var ownNameValue = document.getElementsByClassName("inputBox")[1].value;
+    //   var firstHiddenATagObj = document.getElementById("firstHiddenATag");
+    //   var secondHiddenATagObj = document.getElementById("secondHiddenATag");
+
+    //   if (ownNameValue == "") {
+    //     ownNameObj.style.border = "2px solid red";
+    //     firstHiddenATagObj.style.display = "block";
+    //     firstHiddenATagObj.style.fontSize = "12px";
+    //     firstHiddenATagObj.style.color = "red";
+    //     return false;
+    //   } else if (ownNameValue != "") {
+    //     if ((familyNameValue + ownNameValue).length > 20) {
+    //       ownNameObj.style.border = "2px solid red";
+    //       firstHiddenATagObj.style.display = "none";
+    //       secondHiddenATagObj.style.display = "block";
+    //       secondHiddenATagObj.style.fontSize = "12px";
+    //       secondHiddenATagObj.style.color = "red";
+    //       return false;
+    //     } else {
+    //       return true;
+    //     }
+    //   }
+    // }
   </script>
 </head>
 
@@ -178,7 +245,7 @@
 				<div id="secondTitle">
 					<span>생일과 성별을 입력하세요.</span><br>
 				</div>
-				<form action="add2" method='post'>
+				<form action="add2" method="post" onclick="return conditionCheck()">
 					<div>
 						<input class="innerInput" type="text" name="year" placeholder='연도'>
 						<select class="innerInput" name="month">
@@ -195,17 +262,17 @@
 							<option value="10">10월</option>
 							<option value="11">11월</option>
 							<option value="12">12월</option>
-						</select> <input class="innerInput" type="text" name="day" placeholder='일'><br>
-						<a id="firstHiddenATag" style="display: none">&nbsp;? 생년월일을
-							정확히 입력해 주세요.</a>
+						</select>
+						<input class="innerInput" type="text" name="day" placeholder='일'><br>
+						<a id="firstHiddenATag" style="display: none">&nbsp;? 생년월일을 정확히 입력해 주세요.</a>
 						<div id="innerSelect">
-							<select name="gender">
-								<option value="none" selected>성별</option>
+							<select id="inputBoxSecond" name="gender">
+								<option value="">성별</option>
 								<option value="남성">남성</option>
 								<option value="여성">여성</option>
 								<option value="기타">기타</option>
-							</select><br> <a id="secondHiddenATag" style="display: none">&nbsp;?
-								성별을 선택하세요.</a>
+							</select><br>
+							<a id="secondHiddenATag" style="display: none">&nbsp;? 성별을 선택하세요.</a>
 						</div>
 					</div>
 					<div id="divButton">

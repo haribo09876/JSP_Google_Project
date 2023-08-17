@@ -161,7 +161,7 @@
         <div id="secondTitle">
           <span>나중에 이 이메일 주소를 사용하여 로그인할 수 있습니다</span><br>
         </div>
-        <form action="add9" method="post">
+        <form action="../auth/LoginIdForm.jsp" method="post">
           <div id="profileInfo">
             <img id="profileIcon" src="ProfileIcon.png">
             <a>&nbsp;&nbsp;&nbsp;가입자 이름</a><br>
