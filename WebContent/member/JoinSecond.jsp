@@ -123,8 +123,8 @@
 			font-size: 16px;
 			padding-left: 12px;
 			padding-right: 12px;
-			padding-top: 6px;
-			padding-bottom: 6px;
+			padding-top: 3px;
+			padding-bottom: 3px;
 			border: 1px solid #DADCE0;
 			border-radius: 4px;
 			border: 0px;
@@ -164,75 +164,43 @@
       var firstHiddenATagObj = document.getElementById("firstHiddenATag");
       var secondHiddenATagObj = document.getElementById("secondHiddenATag");
 
-      // if ((yearObjValue + monthObjValue + dayObjValue) == "" && genderObjValue == "") {
-      //   yearObj.style.border = "2px solid red";
-      //   monthObj.style.border = "2px solid red";
-      //   dayObj.style.border = "2px solid red";
-      //   genderObj.style.border = "2px solid red";
-      //   firstHiddenATagObj.style.display = "block";
-      //   firstHiddenATagObj.style.fontSize = "12px";
-      //   firstHiddenATagObj.style.color = "red";
-      //   secondHiddenATagObj.style.display = "block";
-      //   secondHiddenATagObj.style.fontSize = "12px";
-      //   secondHiddenATagObj.style.color = "red";
-      //   return false;
-      // }
-
-      if(genderObjValue == "") {
-      //  genderObj.style.border = "2px solid red";
-      //  secondHiddenATagObj.style.display = "block";
-      //   secondHiddenATagObj.style.fontSize = "12px";
-      //   secondHiddenATagObj.style.color = "red";
-        alert("비었음");
+      if (yearObjValue == "") {
+        genderObj.style.border = "2px solid red";
+        firstHiddenATagObj.style.display = "block";
+        firstHiddenATagObj.style.fontSize = "12px";
+        firstHiddenATagObj.style.color = "red";
         return false;
+      } else if (yearObjValue != "") {
+        if (yearObjValue < 1900 || yearObjValue > 2023) {
+          return false;
+        } else if (yearObjValue >= 1900 && yearObjValue <= 2023) {
+          if (monthObjValue == "") {
+            return false;
+          } else if (monthObjValue != "") {
+            if (dayObjValue == "") {
+              return false;
+            } else if (dayObjValue != "") {
+              if (dayObjValue > 31 || dayObjValue < 1) {
+                return false;
+              } else (dayObjValue <= 31 && dayObjValue >= 1); {
+					firstHiddenATagObj.style.display = "none";
+                if (genderObjValue == "") {
+                  genderObj.style.border = "2px solid red";
+                  secondHiddenATagObj.style.display = "block";
+                  secondHiddenATagObj.style.fontSize = "12px";
+                  secondHiddenATagObj.style.color = "red";
+                  return false;
+                } else if (genderObjValue != "") {
+                	secondHiddenATagObj.style.display = "none";
+                  return true;
+                }
+              }
+            }
+          }
+        }
       }
-
     }
 
-
-
-
-      // if (yearObjValue >= 1900 && yearObjValue < 2023) {
-
-      // }
-
-
-
-
-   
-
-
-
-
-
-
-
-    // function conditionCheck() {
-    //   var ownNameObj = document.getElementsByClassName("inputBox")[1];
-    //   var familyNameValue = document.getElementsByClassName("inputBox")[0].value;
-    //   var ownNameValue = document.getElementsByClassName("inputBox")[1].value;
-    //   var firstHiddenATagObj = document.getElementById("firstHiddenATag");
-    //   var secondHiddenATagObj = document.getElementById("secondHiddenATag");
-
-    //   if (ownNameValue == "") {
-    //     ownNameObj.style.border = "2px solid red";
-    //     firstHiddenATagObj.style.display = "block";
-    //     firstHiddenATagObj.style.fontSize = "12px";
-    //     firstHiddenATagObj.style.color = "red";
-    //     return false;
-    //   } else if (ownNameValue != "") {
-    //     if ((familyNameValue + ownNameValue).length > 20) {
-    //       ownNameObj.style.border = "2px solid red";
-    //       firstHiddenATagObj.style.display = "none";
-    //       secondHiddenATagObj.style.display = "block";
-    //       secondHiddenATagObj.style.fontSize = "12px";
-    //       secondHiddenATagObj.style.color = "red";
-    //       return false;
-    //     } else {
-    //       return true;
-    //     }
-    //   }
-    // }
   </script>
 </head>
 
@@ -272,8 +240,8 @@
 								<option value="여성">여성</option>
 								<option value="기타">기타</option>
 							</select><br>
-							<a id="secondHiddenATag" style="display: none">&nbsp;? 성별을 선택하세요.</a>
 						</div>
+						<a id="secondHiddenATag" style="display: none">&nbsp;? 성별을 선택하세요.</a>
 					</div>
 					<div id="divButton">
 						<input id="button" type="submit" value="다음">
