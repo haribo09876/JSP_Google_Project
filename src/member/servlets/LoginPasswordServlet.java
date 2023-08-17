@@ -25,8 +25,8 @@ public class LoginPasswordServlet extends HttpServlet {
    @Override
    protected void doGet(HttpServletRequest req
          , HttpServletResponse res) throws ServletException, IOException {
-	  HttpSession session = req.getSession();                  
-      String email = (String)session.getAttribute("email");
+//	  HttpSession session = req.getSession();                  
+//      String email = (String)session.getAttribute("email");
       RequestDispatcher rd = req.getRequestDispatcher("./LoginPasswordForm.jsp");
       rd.forward(req, res);      
 
@@ -41,6 +41,7 @@ public class LoginPasswordServlet extends HttpServlet {
       try {         
          HttpSession session = req.getSession();                  
          String email = (String)session.getAttribute("email");
+//    	 String email = req.getParameter("email"); 
          String pwd = req.getParameter("pwd");
          
          ServletContext sc = this.getServletContext();         
@@ -58,6 +59,7 @@ public class LoginPasswordServlet extends HttpServlet {
             rd.forward(req, res);
                  
          }else {
+//        	 HttpSession session = req.getSession();
         	 session.setAttribute("member", memberDto);
 
              res.sendRedirect("../board/list");

@@ -20,8 +20,7 @@
 		}
 		
 		select {
-			width: 50px;
-			height: 50px;
+			width: 180px;
 			border: 0px;
 			border-collapse: collapse;
 		}
@@ -84,6 +83,13 @@
 			color: rgb(26, 115, 232);
 		}
 		
+		#entire {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+		}
+		
 		#frame {
 			width: 368px;
 			height: 416px;
@@ -98,7 +104,7 @@
 		#logo {
 			width: 75px;
 			height: 41px;
-			padding-left: 150px;
+			padding-left: 145px;
 		}
 		
 		#secondTitle {
@@ -169,36 +175,38 @@
 </head>
 
 <body>
-	<div id="frame">
-		<div>
-			<img id="logo" src="Logo.png">
-			<h1>로그인</h1>
-			<div id="secondTitle">
-				<span>Google 계정 사용</span><br>
+	<div id="entire">
+		<div id="frame">
+			<div>
+				<img id="logo" src="Logo.png">
+				<h1>로그인</h1>
+				<div id="secondTitle">
+					<span>Google 계정 사용</span><br>
+				</div>
+				<form action="loginPwd" method="post">
+					<div>
+						<input class="inputBox" type="text" name="emailOrPhoneNo"
+							placeholder="이메일 또는 휴대전화"><br>
+					</div>
+					<input class="simpleButton" type="button" value="이메일을 잊으셨나요?">
+					<div class="thirdTitle">
+						<span>내 컴퓨터가 아닌가요? 시크릿 브라우징 창을 사용하여 로그인하세요.</span> <input
+							class="simpleButton" type="button" value="자세히 알아보기">
+					</div>
+					<div id="divButton">
+						<input class="simpleButton" type="button" value="계정 만들기">
+						<input class="button" type="submit" value="다음">
+					</div>
+				</form>
 			</div>
-			<form action="loginPwd" method="post">
-				<div>
-					<input class="inputBox" type="text" name="emailOrPhoneNo"
-						placeholder="이메일 또는 휴대전화"><br>
-				</div>
-				<input class="simpleButton" type="button" value="이메일을 잊으셨나요?">
-				<div class="thirdTitle">
-					<span>내 컴퓨터가 아닌가요? 시크릿 브라우징 창을 사용하여 로그인하세요.</span> <input
-						class="simpleButton" type="button" value="자세히 알아보기">
-				</div>
-				<div id="divButton">
-					<input class="simpleButton" type="button" value="계정 만들기"> <input
-						class="button" type="submit" value="다음">
-				</div>
-			</form>
 		</div>
-	</div>
-	<div id="footer">
-		<select name="language">
-			<option value="">한국어</option>
-			<option value="">English</option>
-		</select> <a class="footerText">도움말</a> <a class="footerText">개인정보처리방침</a> <a
-			class="footerText">약관</a>
+		<div id="footer">
+			<select name="language">
+				<option value="">한국어</option>
+				<option value="">English</option>
+			</select> <a class="footerText">도움말</a> <a class="footerText">개인정보처리방침</a> <a
+				class="footerText">약관</a>
+		</div>
 	</div>
 </body>
 

@@ -63,6 +63,13 @@
 			font-weight: 400;
 		}
 		
+		#entire {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+		}
+		
 		#frame {
 			width: 368px;
 			height: 416px;
@@ -77,7 +84,7 @@
 		#logo {
 			width: 75px;
 			height: 41px;
-			padding-left: 130px;
+			padding-left: 145px;
 		}
 		
 		#secondTitle {
@@ -135,7 +142,8 @@
 </head>
 
 <body>
-	<div id="frame">
+	<div id="entire">
+			<div id="frame">
 		<div>
 			<img id="logo" src="Logo.png">
 			<h1>복구 이메일 추가</h1>
@@ -161,6 +169,7 @@
 		<a class="footerText">도움말</a>
 		<a class="footerText">개인정보처리방침</a>
 		<a class="footerText">약관</a>
+	</div>
 	</div>
 </body>
 

@@ -82,26 +82,32 @@
       
       #firstGoogle{
          color: #4285F4;
+         letter-spacing: -10px;
       }
       
       #secondGoogle{
          color: #EA4335;
+         letter-spacing: -10px;
       }
       
       #thirdGoogle{
          color: #FBBC05;
+         letter-spacing: -10px;
       }
       
       #fourthGoogle{
          color: #4285F4;
+         letter-spacing: -10px;
       }
       
       #fifthGoogle{
          color: #34A853;
+         letter-spacing: -10px;
       }
       
       #sixthGoogle{
          color: #EA4335;
+         letter-spacing: -10px;
       }
       
       select{
@@ -136,7 +142,12 @@
    <div id='totalDiv'>
    <div id= 'firstDiv'>
    <div id ='googleDiv'>
-      <a id='firstGoogle'>G</a><a id='secondGoogle'>o</a><a id='thirdGoogle'>o</a><a id='fourthGoogle'>g</a><a id='fifthGoogle'>l</a><a id='sixthGoogle'>e</a>
+      <a id='firstGoogle'>G</a>
+      <a id='secondGoogle'>o</a>
+      <a id='thirdGoogle'>o</a>
+      <a id='fourthGoogle'>g</a>
+      <a id='fifthGoogle'>l</a>
+      <a id='sixthGoogle'>e</a>
    </div>
    <h2>로그인</h2>
    <p id='firstPtag'>Google 계정 사용</p>

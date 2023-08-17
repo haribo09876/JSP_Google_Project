@@ -64,6 +64,13 @@
 			float: right;
 		}
 		
+		#entire {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+		}
+		
 		#frame {
 			width: 368px;
 			height: 416px;
@@ -78,7 +85,7 @@
 		#logo {
 			width: 75px;
 			height: 41px;
-			padding-left: 130px;
+			padding-left: 145px;
 		}
 		
 		#secondTitle {
@@ -115,7 +122,20 @@
 			padding-bottom: 12px;
 			border: 1px solid #DADCE0;
 			border-radius: 4px;
-			margin-top: 24px;
+			margin-top: 8px;
+		}
+		
+		#emailInputBox {
+			width: 336px;
+			height: 28px;
+			font-size: 16px;
+			padding-left: 14px;
+			padding-right: 14px;
+			padding-top: 12px;
+			padding-bottom: 12px;
+			margin-top: 8px;
+			border: 1px solid #DADCE0;
+			border-radius: 4px;
 		}
 		
 		#divButton {
@@ -132,41 +152,58 @@
 		}
 	</style>
 	<script>
+    var firstInputBoxObj = document.getElementsByClassName("inputBox")[0];
+    var secondInputBoxObj = document.getElementsByClassName("inputBox")[1];
+
+    function randomString() {
+      const chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz'
+      const stringLength = 6
+      let randomstring = ''
+      for (let i = 0; i < stringLength; i++) {
+        const rnum = Math.floor(Math.random() * chars.length)
+        randomstring += chars.substring(rnum, rnum + 1)
+      }
+      return randomstring
+    }
+
+    firstInputBoxObj.innerHTML = randomstring;
+    firstInputBoxObj.setAttribute("value", randomstring);
+
+    secondInputBoxObj.innerHTML = randomstring;
+    secondInputBoxObj.setAttribute("value", randomstring);
 
 	</script>
 </head>
 
 <body>
-	<div id="frame">
-		<div>
-			<img id="logo" src="Logo.png">
-			<h1>Gmail 주소 선택하기</h1>
-			<div id="secondTitle">
-				<span>Gmail 주소를 선택하거나 새 Gmail 주소를 만드세요.</span><br>
+	<div id="entire">
+		<div id="frame">
+			<div>
+				<img id="logo" src="Logo.png">
+				<h1>Gmail 주소 선택하기</h1>
+				<div id="secondTitle">
+					<span>Gmail 주소를 선택하거나 새 Gmail 주소를 만드세요.</span><br>
+				</div>
+				<form action="add3" method="post">
+					<div>
+						<input class="inputBox" type="radio" name="email"><br>
+						<hr>
+						<input class="inputBox" type="radio" name="email"><br>
+						<input id="emailInputBox" type="text" name="email" placeholder="새 이메일주소"><br>
+					</div>
+					<div id="divButton">
+						<input class="button" type="submit" value="다음">
+					</div>
+				</form>
 			</div>
-			<form action="add3" method="post">
-				<div>
-					<input class="inputBox" type="radio" name="email" value="emailFirst">&nbsp&nbspemailFirst<br>
-					<hr>
-					<input class="inputBox" type="radio" name="email" value="emailSecond">&nbsp&nbspemailSecond<br>
-					<hr>
-					<input class="inputBox" type="radio" name="email" value="emailNew">&nbsp&nbspemailNew<br>
-					<hr>
-				</div>
-				<div id="divButton">
-					<input class="button" type="submit" value="다음">
-				</div>
-			</form>
 		</div>
-	</div>
-	<div id="footer">
-		<select name="language">
-			<option value="">한국어</option>
-			<option value="">English</option>
-		</select>
-			<a class="footerText">도움말</a>
-			<a class="footerText">개인정보처리방침</a>
-			<a class="footerText">약관</a>
+		<div id="footer">
+			<select name="language">
+				<option value="">한국어</option>
+				<option value="">English</option>
+			</select> <a class="footerText">도움말</a> <a class="footerText">개인정보처리방침</a> <a
+				class="footerText">약관</a>
+		</div>
 	</div>
 </body>
 

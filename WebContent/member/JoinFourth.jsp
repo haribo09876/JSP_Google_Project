@@ -50,6 +50,13 @@
 			margin-top: 24px;
 			margin-right: 20px;
 		}
+		
+		#entire {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+		}
 
 		#frame {
 			width: 368px;
@@ -65,7 +72,7 @@
 		#logo {
 			width: 75px;
 			height: 41px;
-			padding-left: 130px;
+			padding-left: 145px;
 		}
 
 		#secondTitle {
@@ -129,40 +136,63 @@
 			padding-top: 20px;
 			font-size: 13px;
 		}
-  </style>
-  <script>
-
+	</style>
+	<script>
+  		function conditionCheck() {
+			var secondInputBoxObj = document.getElementsByClassName("inputBox")[1];
+			var firstPwd = document.getElementsByClassName("inputBox")[0].value;
+			var secondPwd = document.getElementsByClassName("inputBox")[1].value;
+			var firstHiddenATagObj = document.getElementById("firstHiddenATag");
+			var secondHiddenATagObj = document.getElementById("secondHiddenATag");
+			var thridHiddenATagObj = document.getElementById("thirdHiddenATag");
+			var fourthHiddenATagObj = document.getElementById("fourthHiddenATag");
+			var numCon = firstPwd.search(/[0-9]/g);
+			var engCon = firstPwd.search(/[a-z]/ig);
+			var speCon = firstPwd.search(/[`~!@@#$%^&*|₩₩₩'₩";:₩/?]/gi);
+			
+			if(firstPwd == "") {
+				secondInputBoxObj.style.border = "2px solid red";
+				firstHiddenATagObj.style.display = "block";
+				firstHiddenATagObj.style.fontSize = "12px";
+				firstHiddenATagObj.style.color = "red";
+				return false;
+			}
+			  		
   </script>
 </head>
 
 <body>
-	<div id="frame">
-		<div>
-			<img id="logo" src="Logo.png">
-			<h1>안전한 비밀번호 만들기</h1>
-			<div id="secondTitle">
-				<span>문자, 숫자, 기호를 조합하여 안전한 비밀번호를 만드세요.</span><br>
-			</div>
-			<form action="add4" method='post'>
+	<div id="entire">
+		<div id="frame">
 			<div>
-				<input class="inputBox" type="text" name="pwd" placeholder="비밀번호"><br>
-				<input class="inputBox" type="text" name="pwd" placeholder="확인"><br>
-				<input type="checkbox" name="ShowingPassword">비밀번호 표시<br>
+				<img id="logo" src="Logo.png">
+				<h1>안전한 비밀번호 만들기</h1>
+				<div id="secondTitle">
+					<span>문자, 숫자, 기호를 조합하여 안전한 비밀번호를 만드세요.</span><br>
+				</div>
+				<form action="add4" method="post" onsubmit="return conditionCheck()">
+					<div>
+						<input class="inputBox" type="text" name="pwd" placeholder="비밀번호"><br>
+						<input class="inputBox" type="text" name="pwd" placeholder="확인"><br>
+						<input type="checkbox" name="ShowingPassword">비밀번호 표시<br>
+						<a id="firstHiddenATag" style="display: none">&nbsp;? 비밀번호를 입력하세요.</a>
+						<a id="secondHiddenATag" style="display: none">&nbsp;? 비밀번호는 8 ~ 24자리 이내로 입력해주세요.</a>
+						<a id="thirdHiddenATag" style="display: none">&nbsp;? 영문,숫자, 특수문자를 혼합하여 입력해주세요.</a>
+						<a id="fourthHiddenATag" style="display: none">&nbsp;? 비밀번호를 다시 확인하세요.</a>
+					</div>
+					<div id="divButton">
+						<input id="button" type="submit" value="다음">
+					</div>
+				</form>
 			</div>
-			<div id="divButton">
-				<input id="button" type="submit" value="다음">
-			</div>
-			</form>
 		</div>
-	</div>
-	<div id="footer">
-		<select name="language">
-			<option value="">한국어</option>
-			<option value="">English</option>
-		</select>
-			<a class="footerText">도움말</a>
-			<a class="footerText">개인정보처리방침</a>
-			<a class="footerText">약관</a>
+		<div id="footer">
+			<select name="language">
+				<option value="">한국어</option>
+				<option value="">English</option>
+			</select> <a class="footerText">도움말</a> <a class="footerText">개인정보처리방침</a> <a
+				class="footerText">약관</a>
+		</div>
 	</div>
 </body>
 

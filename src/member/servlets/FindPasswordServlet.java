@@ -64,9 +64,6 @@ public class FindPasswordServlet extends HttpServlet {
 		    }
 														 			 			
 			
-		} catch (IllegalStateException e) {
-			// TODO: handle exception
-			e.printStackTrace();
 		} catch (Exception e) {
 			e.printStackTrace();
 //			throw new ServletException();

@@ -87,26 +87,32 @@
       
       #firstGoogle{
          color: #4285F4;
+         letter-spacing: -10px;
       }
       
       #secondGoogle{
          color: #EA4335;
+         letter-spacing: -10px;
       }
       
       #thirdGoogle{
          color: #FBBC05;
+         letter-spacing: -10px;
       }
       
       #fourthGoogle{
          color: #4285F4;
+         letter-spacing: -10px;
       }
       
       #fifthGoogle{
          color: #34A853;
+         letter-spacing: -10px;
       }
       
       #sixthGoogle{
          color: #EA4335;
+         letter-spacing: -10px;
       }
       
       #firstPtag{
@@ -181,17 +187,23 @@
    class="member.dto.MemberDto"
 />
    <%
-   	String email = request.getParameter("email");
+   		String email = (String)session.getAttribute("email");
+//   	String email = request.getParameter("email");
    %>
    <div id='totalDiv'>
    <div id= 'firstDiv'>
    <div id ='googleDiv'>
-      <a id='firstGoogle'>G</a><a id='secondGoogle'>o</a><a id='thirdGoogle'>o</a><a id='fourthGoogle'>g</a><a id='fifthGoogle'>l</a><a id='sixthGoogle'>e</a>
+      <a id='firstGoogle'>G</a>
+      <a id='secondGoogle'>o</a>
+      <a id='thirdGoogle'>o</a>
+      <a id='fourthGoogle'>g</a>
+      <a id='fifthGoogle'>l</a>
+      <a id='sixthGoogle'>e</a>
    </div>
    <h2>시작하기</h2>
    <div id='firstPtag' onclick="moveFnc();" style="display: flex; align-items: center;">
    	
-   	<img id='img' src="./cap.png" style="height: 30px; margin-left: 10px;">
+   	<img id='img' src="./cap.png" style="height: 30px; margin-left: 20px; margin-top: 10px;">
    
    	<a style="font-size: 20px;"><%=email%></a>
    	</div>
