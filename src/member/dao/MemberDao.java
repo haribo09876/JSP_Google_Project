@@ -264,8 +264,7 @@ public class MemberDao {
       sql += "SELECT EMAIL";
       sql += " FROM MEMBERS";
       sql += " WHERE EMAIL = ?";      
-      
-   
+         
       try {
          pstmt = connection.prepareStatement(sql);
                   
@@ -308,36 +307,26 @@ public class MemberDao {
    
    public MemberDto memberPasswordExist(String email, String pwd)
          throws SQLException {
-         
+	   
       PreparedStatement pstmt = null;
-      ResultSet rs = null;
-            
-      String sql = "";
-      
+      ResultSet rs = null;            
+      String sql = "";      
       sql += "SELECT EMAIL, MNAME";
       sql += " FROM MEMBERS";
       sql += " WHERE EMAIL = ?";
-      sql += " AND PWD = ?";
-      
-      String mname = "";
-                              
-      try {                  
-         
-         pstmt = connection.prepareStatement(sql);
-         
+      sql += " AND PWD = ?";      
+      String mname = "";                              
+      try {                          
+         pstmt = connection.prepareStatement(sql);         
          pstmt.setString(1, email);
-         pstmt.setString(2, pwd);
-         
-         rs = pstmt.executeQuery();
-         
-         MemberDto memberDto = new MemberDto();
-                                    
+         pstmt.setString(2, pwd);        
+         rs = pstmt.executeQuery();        
+         MemberDto memberDto = new MemberDto();                                   
          if(rs.next()) {
             email = rs.getString("email");   
             mname = rs.getString("mname");
             memberDto.setEmail(email);
-            memberDto.setMname(mname);                        
-                                    
+            memberDto.setMname(mname);                                                            
             return memberDto;
 
          }

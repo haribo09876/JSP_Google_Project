@@ -57,7 +57,7 @@ public class LoginIdServlet extends HttpServlet {
         	 HttpSession session = req.getSession();
              session.setAttribute("email", email);       
 
-//            res.sendRedirect("../auth/loginPassword?email=" + req.getParameter("email"));
+//           res.sendRedirect("../auth/loginPassword?email=" + req.getParameter("email"));
              res.sendRedirect("../auth/loginPassword");
          }
                              
