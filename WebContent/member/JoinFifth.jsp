@@ -166,9 +166,48 @@
 			font-size: 13px;
 		}
 </style>
-<script>
-	
-</script>
+  <script>
+    function conditionCheck() {
+      var tempPhoneNum = document.getElementById("inputBoxSecond").value;
+      var regExpNum = /^[0-9]*$/;
+      var inputBoxSecondObj = document.getElementById("inputBoxSecond");
+      var firstHiddenATagObj = document.getElementById("firstHiddenATag");
+      var secondHiddenATagObj = document.getElementById("secondHiddenATag");
+      var thridHiddenATagObj = document.getElementById("thirdHiddenATag");
+
+      if (tempPhoneNum == "") {
+        // alert("값이 비어있습니다");
+        firstInputBoxObj.style.border = "2px solid red";
+        firstHiddenATagObj.style.display = "block";
+        firstHiddenATagObj.style.fontSize = "12px";
+        firstHiddenATagObj.style.color = "red";
+        return false;
+      } else if (tempPhoneNum != "") {
+        firstHiddenATagObj.style.display = "none";
+        if (!regExpNum.test(tempPhoneNum)) {
+          // alert("숫자만 입력 가능합니다");
+          secondHiddenATagObj.style.display = "block";
+          secondHiddenATagObj.style.fontSize = "12px";
+          secondHiddenATagObj.style.color = "red";
+          return false;
+        } else if (regExpNum.test(tempPhoneNum)) {
+          secondHiddenATagObj.style.display = "none";
+          if (tempPhoneNum.length != 10) {
+            // alert("번호는 10자리 숫자입니다");
+            thirdHiddenATagObj.style.display = "block";
+            thirdHiddenATagObj.style.fontSize = "12px";
+            thirdHiddenATagObj.style.color = "red";
+            return false;
+          } else if (tempPhoneNum.length == 10) {
+            // alert("넘어가나?");
+            thirdHiddenATagObj.style.display = "none";
+            return true;
+          }
+        }
+      }
+    }
+
+  </script>
 </head>
 
 <body>

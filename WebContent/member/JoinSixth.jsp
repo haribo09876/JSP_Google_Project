@@ -169,9 +169,55 @@
 			font-size: 13px;
 		}
 </style>
-<script>
-	
-</script>
+  <script>
+    function verCodeFnc() {
+      randomVerCode = Math.floor((Math.random() * (999999 - 100000) + 100000));
+    }
+
+    verCodeFnc();
+
+    function checkVerCode() {
+      alert(randomVerCode);
+    }
+
+    checkVerCode();
+
+    function conditionCheck() {
+      var inputBoxObj = document.getElementsByClassName("inputBox")[0];
+      var inputCode = document.getElementsByClassName("inputBox")[0].value;
+      var firstHiddenATagObj = document.getElementById("firstHiddenATag");
+      var secondHiddenATagObj = document.getElementById("secondHiddenATag");
+      var thirdHiddenATagObj = document.getElementById("thirdHiddenATag");
+
+      if (inputCode == "") {
+        // alert("인증 코드를 입력하세요.");
+        inputBoxObj.style.border = "2px solid red";
+        firstHiddenATagObj.style.display = "block";
+        firstHiddenATagObj.style.fontSize = "12px";
+        firstHiddenATagObj.style.color = "red";
+        return false;
+      } else if (inputCode != "") {
+        firstHiddenATagObj.style.display = "none";
+        if (inputCode.length != 6) {
+          secondHiddenATagObj.style.display = "block";
+          secondHiddenATagObj.style.fontSize = "12px";
+          secondHiddenATagObj.style.color = "red";
+          return false;
+        } else if (inputCode.length == 6) {
+          secondHiddenATagObj.style.display = "none";
+          if (inputCode != randomVerCode) {
+            // alert("코드가 일치하지 않습니다");
+            thirdHiddenATagObj.style.display = "block";
+            thirdHiddenATagObj.style.fontSize = "12px";
+            thirdHiddenATagObj.style.color = "red";
+            return false;
+          } else if (inputCode == randomVerCode) {
+            return true;
+          }
+        }
+      }
+    }
+  </script>
 </head>
 
 <body>
@@ -183,16 +229,18 @@
 				<div class="thirdTitle">
 					<span>6자리 인증 코드를 입력하여 문자 메시지를 받았음을 확인하세요.</span><br>
 				</div>
-				<form action="add6" method="post">
-					<div>
-						<input class="inputBox" type="text" name="verCode"
-							placeholder="코드 입력"><br>
-					</div>
-					<div id="divButton">
-						<input id="newCode" type="button" value="새 코드 받기"> <input
-							class="button" type="submit" value="다음">
-					</div>
-				</form>
+      <form action="add6" method="post" onclick="return conditionCheck()">
+        <div>
+          <input class="inputBox" type="text" name="verCode" placeholder="코드 입력"><br>
+          <a id="firstHiddenATag" style="display: none">&nbsp;? 인증 코드를 입력하세요.</a>
+          <a id="secondHiddenATag" style="display: none">&nbsp;? 코드는 6자리 숫자입니다.</a>
+          <a id="thirdHiddenATag" style="display: none">&nbsp;? 코드가 일치하지 않습니다.</a>
+        </div>
+        <div id="divButton">
+          <input id="newCode" type="button" value="코드 다시 확인" onclick="checkVerCode()">
+          <input class="button" type="submit" value="다음">
+        </div>
+      </form>
 			</div>
 		</div>
 		<div id="footer">
