@@ -14,14 +14,17 @@
 			text-align: center;
 		}
 		
-		h2, p{
+		#boardTitle{
 			text-align: left;
+			font-size: 20px;
+			margin-bottom: 0px;
 		}
 		
 		#lineDiv{
-			background-color: gray;
+			background-color: #E6E6E6;
 			width: 950px;
-			height: 5px;
+			height: 3px;
+			margin-bottom: 20px;
 		}
 		
 		#boardTdCustom1{
@@ -52,6 +55,10 @@
 		#addButton{
 			text-align: right;
 			margin-right: 30px;
+		}
+		
+		#subContainer{
+			margin-bottom: 50px;
 		}
 		
 		#subDiv1{
@@ -102,18 +109,33 @@
 </head>
 
 <body>
-<jsp:include page="/Header.jsp"/>
+	<jsp:include page="/Header.jsp"/>
 	<div id="container">
-		<h2>공지사항</h2>
+		<h4 id="boardTitle"><img alt="icon1" src="./images/icon1.jpg" style="width: 13px; height: 13px;"/>공지사항</h4>
 		<div id="lineDiv"></div>
-		<p>아람보감에서 알려드려요. 꼭 읽어주세요 :)</p>
-		<table>
+		<table id="division">
 			<tr>
-				<td id="boardTdCustom1">번호</td>
-				<td id="boardTdCustom2">제목</td>
-				<td class="boardTdCustom3">작성자</td>
-				<td class="boardTdCustom3">작성일</td>
-				<td id="boardTdCustom4">조회</td>
+				<td colspan="2" style="text-align: left;">
+					<img alt="icon2" src="./images/icon2.jpg" style="width: 13px; height: 13px;"/>
+					아람보감에서 알려드려요. 꼭 읽어주세요 :)	
+				</td>
+			</tr>
+			<tr>
+				<td id="boardTdCustom1" style="border: 1px solid white; color: white; background-color: #A18F67; height: 35px;">
+					번호
+				</td>
+				<td id="boardTdCustom2" style="border: 1px solid white; color: white; background-color: #A18F67; height: 35px;">
+					제목
+				</td>
+				<td class="boardTdCustom3" style="border: 1px solid white; color: white; background-color: #A18F67; height: 35px;">
+					작성자
+				</td>
+				<td class="boardTdCustom3" style="border: 1px solid white; color: white; background-color: #A18F67; height: 35px;">
+					작성일
+				</td>
+				<td id="boardTdCustom4" style="border: 1px solid white; color: white; background-color: #A18F67; height: 35px;">
+					조회
+				</td>
 			</tr>
 			<c:forEach var="boardDto" items="${boardList}" begin="${pagesSet-5}" end="${pagesSet-1}">
 				<tr>
@@ -129,20 +151,22 @@
 				</tr>
 			</c:forEach>
 		</table>
-		<div id="subDiv1">
-			<form action="" id="searchSelect">
-				<select>
-					<option value="title">제목</option>
-					<option value="editor">작성자</option>
-				</select>
-				<input type="text" name="searchKeyword">
-				<input type="button" value="찾기">
-			</form>
-		</div>
-		<div id="subDiv2">
-			<form action="add" id="addButton">
-				<button onclick='pageMoveAddFnc();'>글쓰기</button>
-			</form>
+		<div id="subContainer">
+			<div id="subDiv1">
+				<form action="" id="searchSelect">
+					<select>
+						<option value="title">제목</option>
+						<option value="editor">작성자</option>
+					</select>
+					<input type="text" name="searchKeyword">
+					<input type="button" value="찾기">
+				</form>
+			</div>
+			<div id="subDiv2">
+				<form action="add" id="addButton">
+					<button onclick='pageMoveAddFnc();'>글쓰기</button>
+				</form>
+			</div>
 		</div>
 		<div>
 			<a onclick="prevFnc(${pageStartNum});">[이전]</a>

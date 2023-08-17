@@ -23,8 +23,8 @@ public class BoardAddServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) 
 			throws ServletException, IOException {
-		System.out.println("doGet을 탄다");
-
+		System.out.println("add 접근");
+		
 		res.setContentType("text/html");
 		res.setCharacterEncoding("UTF-8");
 

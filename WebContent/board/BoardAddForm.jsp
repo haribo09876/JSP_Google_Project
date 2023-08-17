@@ -1,3 +1,4 @@
+<%@page import="member.dto.MemberDto"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -51,6 +52,12 @@
 </head>
 
 <body>
+	<jsp:useBean
+	   id="member"
+	   scope="session"
+	   class="member.dto.MemberDto"
+	/>
+
 	<div id="container">
 		<p id="pageTitle">게시판 등록</p>
 		<form action='add' method='post'>
@@ -64,7 +71,7 @@
 				<tr>
 					<td class="items">작성자</td>
 					<td>
-						<input type="text" name="editor">
+						<input type="text" name="editor" value="<%=member.getMname()%>" readonly="readonly">
 					</td>
 				</tr>
 				<tr>

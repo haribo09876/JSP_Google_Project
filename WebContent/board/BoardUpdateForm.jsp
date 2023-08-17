@@ -66,7 +66,7 @@
 	/>
 	
 	<div id='container'>
-		<p id='pageTitle'>게시글 상세</p>
+		<p id='pageTitle'>게시글 수정</p>
 		<form action='update?pno=${boardDto.pno}' method='post'>
 			<table>
 				<tr>
@@ -78,7 +78,7 @@
 				<tr>
 					<td class='items'>작성자</td>
 					<td>
-						<input type='text' name='editor' value='${boardDto.editor}'>
+						<input type='text' name='editor' value='${boardDto.editor}' readonly="readonly">
 					</td>
 				</tr>
 				<tr>
