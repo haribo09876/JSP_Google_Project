@@ -229,7 +229,7 @@
 				<div class="thirdTitle">
 					<span>6자리 인증 코드를 입력하여 문자 메시지를 받았음을 확인하세요.</span><br>
 				</div>
-      <form action="add6" method="post" onclick="return conditionCheck()">
+      <form action="add6" method="post" onsubmit="return conditionCheck()">
         <div>
           <input class="inputBox" type="text" name="verCode" placeholder="코드 입력"><br>
           <a id="firstHiddenATag" style="display: none">&nbsp;? 인증 코드를 입력하세요.</a>

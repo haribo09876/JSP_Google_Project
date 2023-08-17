@@ -36,6 +36,7 @@ public class MemberAddServlet1 extends HttpServlet {
 
 		Connection conn = null;
 
+		// '성 + 이름'을 session에 저장 
 		String familyName = req.getParameter("familyName");
 		String ownName = req.getParameter("ownName");
 		String mname = familyName + ownName;

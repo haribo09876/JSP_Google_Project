@@ -150,7 +150,7 @@
 			<div id="secondTitle">
 				<span>사용자 계정에서 비정상적인 활동이 감지되거나 사용자가 계정에 액세스할 수 없는 경우 Google에서 사용자에게 연락하기 위해 사용하는 이메일 주소입니다.</span><br>
 			</div>
-			<form action="add7" method='post'>
+			<form action="add7" method='post' onsubmit="return">
 				<div>
 					<input class="inputBox" type="text" name="recoveryEmail" placeholder="복구 이메일 주소"><br>
 				</div>

@@ -184,7 +184,7 @@
 				<div id="secondTitle">
 					<span>Gmail 주소를 선택하거나 새 Gmail 주소를 만드세요.</span><br>
 				</div>
-				<form action="add3" method="post">
+				<form action="add3" method="post" onsubmit="return randomString()">
 					<div>
 						<input class="inputBox" type="radio" name="email"><br>
 						<hr>

@@ -164,6 +164,7 @@
       var firstHiddenATagObj = document.getElementById("firstHiddenATag");
       var secondHiddenATagObj = document.getElementById("secondHiddenATag");
 
+//      유효성검사
       if (yearObjValue == "") {
         genderObj.style.border = "2px solid red";
         firstHiddenATagObj.style.display = "block";
@@ -213,7 +214,7 @@
 				<div id="secondTitle">
 					<span>생일과 성별을 입력하세요.</span><br>
 				</div>
-				<form action="add2" method="post" onclick="return conditionCheck()">
+				<form action="add2" method="post" onsubmit="return conditionCheck()">
 					<div>
 						<input class="innerInput" type="text" name="year" placeholder='연도'>
 						<select class="innerInput" name="month">

@@ -177,7 +177,7 @@
 				<img id="logo" src="Logo.png">
 				<h1>전화번호 추가</h1>
 
-				<form action="add8" method="post">
+				<form action="add8" method="post" onsubmit="return">
 					<div>
 						<select id="countrySelect" name="country">
 							<option value="">대한민국</option>

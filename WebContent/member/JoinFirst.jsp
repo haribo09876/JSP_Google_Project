@@ -111,6 +111,8 @@
 			var firstHiddenATagObj = document.getElementById("firstHiddenATag");
 			var secondHiddenATagObj = document.getElementById("secondHiddenATag");
 			
+			
+// 			유효성 검사
 			if (ownNameValue == "") {
 				ownNameObj.style.border = "2px solid red";
 				firstHiddenATagObj.style.display = "block";

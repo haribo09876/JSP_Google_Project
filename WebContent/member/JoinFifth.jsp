@@ -220,7 +220,7 @@
 					<span>휴대전화로 인증 코드 받기</span><br>
 				</div>
 
-				<form action="add5" method="post">
+				<form action="add5" method="post" onsubmit="return conditionCheck()">
 					<div>
 						<select id="countrySelect" name="country">
 							<option value="">대한민국</option>
