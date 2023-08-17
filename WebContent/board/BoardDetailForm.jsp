@@ -49,10 +49,15 @@
 			location.href = './list';
 		}
 		
-		function pageMoveDeleteFnc(pno) {
-			var url = './delete?pno=' + pno;
+		function pageMoveDeleteFnc(pno, postPwd) {
+			var postPwdCheck = document.getElementsByName('postPwd')[0].value;
 			
-			location.href= url;
+			if (postPwd == postPwdCheck) {
+				var url = './delete?pno=' + pno;
+				location.href= url;
+			} else {
+				alert("비밀번호가 일치하지 않습니다.");
+			}
 		}
 		
 		function pageMoveUpdateFnc(pno, postPwd) {
@@ -65,6 +70,7 @@
 				alert("비밀번호가 일치하지 않습니다.");
 			}
 		}
+		
 	</script>
 </head>
 

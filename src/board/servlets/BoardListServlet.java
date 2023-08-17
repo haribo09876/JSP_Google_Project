@@ -39,7 +39,8 @@ public class BoardListServlet extends HttpServlet {
 			boardList = (ArrayList<BoardDto>) boardDao.selectList();
 
 			req.setAttribute("boardList", boardList);
-
+			
+			//화면에 보여줄 게시글 수
 			int page = 1;
 			if (req.getParameter("page") == null) {
 				page = 5;
@@ -58,6 +59,7 @@ public class BoardListServlet extends HttpServlet {
 			System.out.println(boardList.size());
 			req.setAttribute("totalPages", totalPages);
 			
+			//목록 페이징 인덱스 최대 5개
 			int pageStartNum = (page-1)/5*5 + 1;
 			int pageLastNum = (page-1)/5*5 + 5;
 			
