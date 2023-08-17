@@ -84,7 +84,7 @@
 				<tr>
 					<td class='items'>비밀번호</td>
 					<td>
-						<input type='text' name='postPwd' value='${boardDto.postPwd}'>
+						<input type='password' name='postPwd' value='${boardDto.postPwd}'>
 					</td>
 				</tr>
 				<tr>

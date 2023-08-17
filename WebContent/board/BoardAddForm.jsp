@@ -70,7 +70,7 @@
 				<tr>
 					<td class="items">비밀번호</td>
 					<td>
-						<input type="text" name="postPwd">
+						<input type="password" name="postPwd">
 					</td>
 				</tr>
 				<tr>

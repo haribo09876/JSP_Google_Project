@@ -55,10 +55,15 @@
 			location.href= url;
 		}
 		
-		function pageMoveUpdateFnc(pno) {
-			var url = './update?pno=' + pno;
+		function pageMoveUpdateFnc(pno, postPwd) {
+			var postPwdObj = document.getElementsByName('postPwd');
+			if (postPwd == postPwdObj.value) {
+				var url = './update?pno=' + pno;
+				location.href= url;
+			} else {
+				alert("비밀번호가 일치하지 않습니다.");
+			}
 			
-			location.href= url;
 		}
 	</script>
 </head>
@@ -90,7 +95,7 @@
 				<tr>
 					<td class='items'>비밀번호</td>
 					<td>
-						<input type='text' name='postPwd' value='${boardDto.postPwd}' readonly='readonly'>
+						<input type='password' name='postPwd' value=''>
 					</td>
 				</tr>
 				<tr>
@@ -100,7 +105,7 @@
 				</tr>
 			</table>
 			<input type='button' class='buttonAline' value='삭제' onclick='pageMoveDeleteFnc(${boardDto.pno});' />
-			<input type='button' class='buttonAline' value='수정' onclick='pageMoveUpdateFnc(${boardDto.pno});' />
+			<input type='button' class='buttonAline' value='수정' onclick='pageMoveUpdateFnc(${boardDto.pno}, ${boardDto.postPwd});' />
 			<input type='button' class='buttonAline' value='목록' onclick='pageMoveListFnc();' />
 		</form>
 	</div>
