@@ -65,7 +65,7 @@ public class MemberAddServlet9 extends HttpServlet {
 			memberDao.setConnection(conn);
 			memberDao.memberInsert(memberDto);
 
-			res.sendRedirect("./LoginIdForm.jsp");
+			res.sendRedirect("../auth/LoginIdForm.jsp");
 			} catch (Exception e) {
 				e.printStackTrace();
 				RequestDispatcher rd = req.getRequestDispatcher("/Error.jsp");
