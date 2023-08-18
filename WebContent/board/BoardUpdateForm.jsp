@@ -89,7 +89,9 @@
 				</tr>
 				<tr>
 					<td colspan='2'>
-						<textarea id='contents' rows='20' cols='70' name='contents' required>${boardDto.contents}</textarea>
+						<textarea id='contents' rows='20' cols='70' name='contents' required>
+							${boardDto.contents}
+						</textarea>
 					</td>
 				</tr>
 			</table>

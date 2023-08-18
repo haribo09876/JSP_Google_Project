@@ -35,7 +35,7 @@ public class BoardDeleteServlet extends HttpServlet {
 			int result = boardDao.boardDelete(pno);
 			
 			if (result == 0) {
-				System.out.println("회원 삭제가 정상처리 되지 않았습니다.");
+				System.out.println("게시글 삭제가 정상처리 되지 않았습니다.");
 			}
 
 			res.sendRedirect("./list");

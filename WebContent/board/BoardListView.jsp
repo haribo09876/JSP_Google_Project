@@ -10,7 +10,7 @@
 	<style type="text/css">
 		#container{
 			width: 950px;
-			margin: auto;
+			margin: 0px auto;
 			text-align: center;
 		}
 		
@@ -111,7 +111,9 @@
 <body>
 	<jsp:include page="/Header.jsp"/>
 	<div id="container">
-		<h4 id="boardTitle"><img alt="icon1" src="./images/icon1.jpg" style="width: 13px; height: 13px;"/>공지사항</h4>
+		<h4 id="boardTitle"><img alt="icon1" src="./images/icon1.jpg" style="width: 13px; height: 13px;"/>
+			공지사항
+		</h4>
 		<div id="lineDiv"></div>
 		<table id="division">
 			<tr>
@@ -121,19 +123,24 @@
 				</td>
 			</tr>
 			<tr>
-				<td id="boardTdCustom1" style="border: 1px solid white; color: white; background-color: #A18F67; height: 35px;">
+				<td id="boardTdCustom1" 
+					style="border: 1px solid white; color: white; background-color: #A18F67; height: 35px;">
 					번호
 				</td>
-				<td id="boardTdCustom2" style="border: 1px solid white; color: white; background-color: #A18F67; height: 35px;">
+				<td id="boardTdCustom2" 
+					style="border: 1px solid white; color: white; background-color: #A18F67; height: 35px;">
 					제목
 				</td>
-				<td class="boardTdCustom3" style="border: 1px solid white; color: white; background-color: #A18F67; height: 35px;">
+				<td class="boardTdCustom3" 
+					style="border: 1px solid white; color: white; background-color: #A18F67; height: 35px;">
 					작성자
 				</td>
-				<td class="boardTdCustom3" style="border: 1px solid white; color: white; background-color: #A18F67; height: 35px;">
+				<td class="boardTdCustom3" 
+					style="border: 1px solid white; color: white; background-color: #A18F67; height: 35px;">
 					작성일
 				</td>
-				<td id="boardTdCustom4" style="border: 1px solid white; color: white; background-color: #A18F67; height: 35px;">
+				<td id="boardTdCustom4" 
+					style="border: 1px solid white; color: white; background-color: #A18F67; height: 35px;">
 					조회
 				</td>
 			</tr>

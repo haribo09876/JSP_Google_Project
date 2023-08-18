@@ -94,8 +94,6 @@ public class BoardUpdateServlet extends HttpServlet {
 			String contents = req.getParameter("contents");
 			int pno = Integer.parseInt(req.getParameter("pno"));
 			
-			System.out.println("번호 확인" + pno);
-			
 			boardDto = new BoardDto();
 
 			boardDto.setTitle(title);
