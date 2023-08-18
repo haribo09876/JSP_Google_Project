@@ -190,7 +190,7 @@
 				<div id="secondTitle">
 					<span>Gmail 주소를 선택하거나 새 Gmail 주소를 만드세요.</span><br>
 				</div>
-				<form action="add3" method="post" onsubmit="">
+				<form action="add3" method="post">
 					<div>
 						<input id="email1" class="inputBox" type="radio" name="email" value="random11">&nbsp;&nbsp;random11<br>
 						<hr>
