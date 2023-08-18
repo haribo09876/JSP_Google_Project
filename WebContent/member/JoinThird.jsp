@@ -152,26 +152,32 @@
 		}
 	</style>
 	<script>
-    var firstInputBoxObj = document.getElementsByClassName("inputBox")[0];
-    var secondInputBoxObj = document.getElementsByClassName("inputBox")[1];
-
     function randomString() {
-      const chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz'
+       var firstInputBoxObj = document.getElementsByClassName("inputBox")[0];
+       var secondInputBoxObj = document.getElementsByClassName("inputBox")[1];
+        
+      const chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz";
       const stringLength = 6
-      let randomstring = ''
+      var randomstring1 = "";
+      var randomstring2 = "";
+      
       for (let i = 0; i < stringLength; i++) {
         const rnum = Math.floor(Math.random() * chars.length)
-        randomstring += chars.substring(rnum, rnum + 1)
+        randomstring1 += chars.substring(rnum, rnum + 1)
       }
-      return randomstring
+      for (let i = 0; i < stringLength; i++) {
+          const rnum = Math.floor(Math.random() * chars.length)
+          randomstring2 += chars.substring(rnum, rnum + 1)
+	  }      
+      
+      firstInputBoxObj.setAttribute("value", randomstring1);
+      firstInputBoxObj.innerHTML = randomstring1;
+
+      secondInputBoxObj.setAttribute("value", randomstring2);
+      secondInputBoxObj.innerHTML = randomstring2;
     }
 
-    firstInputBoxObj.innerHTML = randomstring;
-    firstInputBoxObj.setAttribute("value", randomstring);
-
-    secondInputBoxObj.innerHTML = randomstring;
-    secondInputBoxObj.setAttribute("value", randomstring);
-
+    randomString();
 	</script>
 </head>
 
@@ -184,11 +190,11 @@
 				<div id="secondTitle">
 					<span>Gmail 주소를 선택하거나 새 Gmail 주소를 만드세요.</span><br>
 				</div>
-				<form action="add3" method="post" onsubmit="return randomString()">
+				<form action="add3" method="post" onsubmit="">
 					<div>
-						<input class="inputBox" type="radio" name="email"><br>
+						<input id="email1" class="inputBox" type="radio" name="email" value="random11">&nbsp;&nbsp;random11<br>
 						<hr>
-						<input class="inputBox" type="radio" name="email"><br>
+						<input id="email2" class="inputBox" type="radio" name="email" value="random12">&nbsp;&nbsp;random12<br>
 						<input id="emailInputBox" type="text" name="email" placeholder="새 이메일주소"><br>
 					</div>
 					<div id="divButton">
