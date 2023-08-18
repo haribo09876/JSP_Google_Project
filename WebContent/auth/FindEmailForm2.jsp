@@ -23,7 +23,7 @@
       	font-size: 17px;
       	margin-top: 5px;
       	margin-bottom: 40px; 
-      }
+      	}
 		
 		#firstDiv{
 			margin: auto;
@@ -31,8 +31,7 @@
 		
 		#lastDiv {
 			display:flex;
-			justify-content: center;
-			
+			justify-content: center;			
 		}
 		
 		html, body{
@@ -66,8 +65,6 @@
 			border-radius: 5px;
 		}
 		
-		
-		
 		#idInput, #idInput2{
 			border: 1px solid #E5E5E5;			
 			width: 340px;
@@ -76,14 +73,12 @@
 			padding-left: 20px;
 			border-radius: 5px;
 			margin-bottom: 20px;
-		}
-		
+		}		
 				
 		#idInput:focus, #idInput2:focus{
 			border-color: #0982f0;
 			outline: none;
-		}
-		
+		}		
 		
 		#googleDiv{
 		 	font-size: 30px;
@@ -99,20 +94,20 @@
 		width: 75px;
 		height: 41px;
 		padding-left: 145px;
-	}
+		}
 	
-	#login{
-		font-weight: 500;
-		text-align: center;
-		font-size: 25px;
-		margin-top: 5px;
-		margin-bottom: 20px;
-	}
+		#login{
+			font-weight: 500;
+			text-align: center;
+			font-size: 25px;
+			margin-top: 5px;
+			margin-bottom: 20px;
+		}
 	
-	#googleDiv{
-          font-size: 30px;
-          display: flex;
-    }
+		#googleDiv{
+	          font-size: 30px;
+	          display: flex;
+	    }
 	
 	
 	</style>

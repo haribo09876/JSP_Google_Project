@@ -17,9 +17,7 @@
 			border: 1px solid #E5E5E5;
 			height: 416px;
 			width: 370px; 
-			padding: 48px 40px 36px;
-					
-						
+			padding: 48px 40px 36px;						
 		}
 		
 		#firstDiv{
@@ -28,8 +26,7 @@
 		
 		#lastDiv {
 			display:flex;
-			justify-content: center;
-			
+			justify-content: center;			
 		}
 		
 		html, body{
@@ -63,8 +60,6 @@
 			border-radius: 5px;
 		}
 		
-		
-		
 		#idInput{
 			border: 1px solid #E5E5E5;			
 			width: 340px;
@@ -72,14 +67,12 @@
 			font-size: 18px;
 			padding-left: 20px;
 			border-radius: 5px;
-		}
-		
+		}		
 				
 		#idInput:focus{
 			border-color: #0982f0;
 			outline: none;
-		}
-		
+		}		
 		
 		#googleDiv{
 		 	font-size: 30px;
@@ -95,26 +88,26 @@
 		width: 75px;
 		height: 41px;
 		padding-left: 145px;
-	}
+		}
 	
-	#login{
-		font-weight: 500;
-		text-align: center;
-		font-size: 25px;
-		margin-top: 5px;
-		margin-bottom: 20px;
-	}
+		#login{
+			font-weight: 500;
+			text-align: center;
+			font-size: 25px;
+			margin-top: 5px;
+			margin-bottom: 20px;
+		}
 	
-	#googleDiv{
-          font-size: 30px;
-          display: flex;
-    }
+		#googleDiv{
+			font-size: 30px;
+			display: flex;
+    	}
     
-    #firstPtag{
-      	font-size: 17px;
-      	margin-top: 5px;
-      	margin-bottom: 40px; 
-      }
+    	#firstPtag{
+	      	font-size: 17px;
+	      	margin-top: 5px;
+	      	margin-bottom: 40px; 
+      	}
 	
 	
 	</style>
@@ -132,7 +125,8 @@
    id="member"
    scope="session"
    class="member.dto.MemberDto"
-/>	
+/>
+	
 	<div id='totalDiv'>
 	<div id= 'firstDiv'>
 	<div id ='googleDiv'>

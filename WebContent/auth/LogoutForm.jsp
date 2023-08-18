@@ -9,13 +9,13 @@
    <title>로그인 아이디입력</title>
    <style type="text/css">
    
-   #firstDiv:hover, #secondDiv:hover, #ex:hover{
-   		background-color: gray;
-   }
-   
-   #div:hover{
-   		background-color: #99CCFF;
-   }
+	   #firstDiv:hover, #secondDiv:hover, #ex:hover{
+	   		background-color: gray;
+	   }
+	   
+	   #div:hover{
+	   		background-color: #99CCFF;
+	   }
    
    </style>
 

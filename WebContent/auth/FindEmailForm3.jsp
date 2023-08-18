@@ -16,8 +16,7 @@
 			border: 1px solid #E5E5E5;
 			height: 416px;
 			width: 370px; 
-			padding: 48px 40px 36px;
-					
+			padding: 48px 40px 36px;					
 						
 		}
 		
@@ -62,8 +61,6 @@
 			border-radius: 5px;
 		}
 		
-		
-		
 		#idInput{
 			border: 1px solid red;			
 			width: 340px;
@@ -72,8 +69,7 @@
 			padding-left: 20px;
 			border-radius: 5px;
 		}
-		
-				
+						
 		#idInput:focus{
 			border-color: red;
 			outline: none;
@@ -82,8 +78,7 @@
 		#firstPtag{
 			margin-bottom: 60px;
 		}
-		
-		
+				
 		#googleDiv{
 		 	font-size: 30px;
 		 	text-align: center;
@@ -98,20 +93,20 @@
 		width: 75px;
 		height: 41px;
 		padding-left: 145px;
-	}
+		}
 	
-	#login{
-		font-weight: 500;
-		text-align: center;
-		font-size: 25px;
-		margin-top: 5px;
-		margin-bottom: 20px;
-	}
+		#login{
+			font-weight: 500;
+			text-align: center;
+			font-size: 25px;
+			margin-top: 5px;
+			margin-bottom: 20px;
+		}
 	
-	#googleDiv{
-          font-size: 30px;
-          display: flex;
-    }
+		#googleDiv{
+	          font-size: 30px;
+	          display: flex;
+	    }
 	
 	
 	</style>

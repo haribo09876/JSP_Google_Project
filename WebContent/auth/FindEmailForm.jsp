@@ -17,8 +17,7 @@
 			height: 416px;
 			width: 370px; 
 			padding: 48px 40px 36px;
-					
-						
+											
 		}
 		
 		#firstDiv{
@@ -62,8 +61,6 @@
 			border-radius: 5px;
 		}
 		
-		
-		
 		#idInput{
 			border: 1px solid #E5E5E5;			
 			width: 340px;
@@ -93,23 +90,23 @@
 		}
 		
 		#logo {
-		width: 75px;
-		height: 41px;
-		padding-left: 145px;
-	}
+			width: 75px;
+			height: 41px;
+			padding-left: 145px;
+		}
 	
-	#login{
-		font-weight: 500;
-		text-align: center;
-		font-size: 25px;
-		margin-top: 5px;
-		margin-bottom: 20px;
-	}
+		#login{
+			font-weight: 500;
+			text-align: center;
+			font-size: 25px;
+			margin-top: 5px;
+			margin-bottom: 20px;
+		}
 	
-	#googleDiv{
+		#googleDiv{
           font-size: 30px;
           display: flex;
-    }
+   		}
 	
 	
 	</style>

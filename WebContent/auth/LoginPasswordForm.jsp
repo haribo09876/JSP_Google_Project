@@ -8,121 +8,114 @@
    <meta charset="UTF-8">
    <title>로그인 비밀번호입력</title>
    <style type="text/css">
-      p{
-         font-size: 14px;
-      }
+		p{
+			font-size: 14px;
+		}
       
-      #firstDiv{
-         border-radius: 10px;
-         border: 1px solid #E5E5E5;
-         height: 416px;
-         width: 370px; 
-         padding: 48px 40px 36px;
-               
-                  
-      }
+		#firstDiv{
+			border-radius: 10px;
+			border: 1px solid #E5E5E5;
+			height: 416px;
+			width: 370px; 
+			padding: 48px 40px 36px;                                
+		}
       
-      #firstDiv{
-         margin: auto;
-      }
+		#firstDiv{
+			margin: auto;
+		}
       
-      #lastDiv {
-         display:flex;
-         justify-content: center;
-         
-      }
+		#lastDiv {
+			display:flex;
+			justify-content: center;        
+		}
       
-      html, body{
-         margin-top: 80px;
-      }                  
+		html, body{
+			margin-top: 80px;
+		}                  
       
-      h2{
-         text-align: center;
-      }
+		h2{
+			text-align: center;
+		}
             
-      #firstAtag, #secondAtag, #thirdAtag{
-         color: blue;
-      }
+		#firstAtag, #secondAtag, #thirdAtag{
+			color: blue;
+		}
       
-      #firstAtag, #thirdAtag, #secondAtag, #Atag1, #Atag2, #Atag3{
-         text-decoration-line: none; 
-      }
+		#firstAtag, #thirdAtag, #secondAtag, #Atag1, #Atag2, #Atag3{
+			text-decoration-line: none; 
+		}
       
-      #Atag1, #Atag2, #Atag3{
-         margin-right: 28px; 
-      }
+		#Atag1, #Atag2, #Atag3{
+			margin-right: 28px; 
+		}
       
-      #next{
-         font-size: 15px;
-         height: 40px;
-         width: 80px;
-         color: white;
-         background-color: #1A73E8;
-         border: none;
-         float: right;
-         border-radius: 5px;
-      }
-      
-      
-      
-      #idInput{
-         border: 1px solid #E5E5E5;         
-         width: 340px;
-         height: 50px;
-         font-size: 18px;
-         padding-left: 20px;
-         border-radius: 5px;
-      }
-      
+		#next{
+			font-size: 15px;
+			height: 40px;
+			width: 80px;
+			color: white;
+			background-color: #1A73E8;
+			border: none;
+			float: right;
+			border-radius: 5px;
+		}
+     
+		#idInput{
+			border: 1px solid #E5E5E5;         
+			width: 340px;
+			height: 50px;
+			font-size: 18px;
+			padding-left: 20px;
+			border-radius: 5px;
+		}      
             
-      #idInput:focus{
-         border-color: #0982f0;
-         outline: none;
-      }
+		#idInput:focus{
+			border-color: #0982f0;
+			outline: none;
+		}      
       
+		#googleDiv{
+			font-size: 30px;
+			text-align: center;
+		}           
       
-      #googleDiv{
-          font-size: 30px;
-          text-align: center;
-       }           
+		#firstPtag{
+			border: 1px solid #E5E5E5;
+			border-radius: 50px;
+			width: 250px;
+			height: 30px;
+			margin: auto;
+			margin-bottom: 60px;
+			line-height: 30px;
+			font-weight: bolder;
+		}
       
-      #firstPtag{
-         border: 1px solid #E5E5E5;
-         border-radius: 50px;
-         width: 250px;
-         height: 30px;
-         margin: auto;
-         margin-bottom: 60px;
-         line-height: 30px;
-         font-weight: bolder;
-      }
+		#firstPtag:hover{
+			background-color: #f9f9f9;
+		}
       
-      #firstPtag:hover{
-         background-color: #f9f9f9;
-      }
-      
-      select{
-         border: none;
-         width: 200px;
-      }
-      #logo {
+		select{
+			border: none;
+			width: 200px;
+		}
+		#logo {
 			width: 75px;
 			height: 41px;
 			padding-left: 145px;
-	}
+		}
 	
-	#login{
-		font-weight: 500;
-		text-align: center;
-		font-size: 25px;
-		margin-top: 5px;
-		margin-bottom: 20px;
-	}
+		#login{
+			font-weight: 500;
+			text-align: center;
+			font-size: 25px;
+			margin-top: 5px;
+			margin-bottom: 20px;
+		}
 	
-	#googleDiv{
-          font-size: 30px;
-          display: flex;
-       }
+		#googleDiv{
+			font-size: 30px;
+			display: flex;
+		}
    
    
    </style>
@@ -190,7 +183,7 @@
       <div id='inputDiv'>
                
       <input id='idInput' type="password" name="pwd" placeholder="비밀번호 입력" 
-      	onfocus="this.placeholder = ''" onblur="this.placeholder = '이메일 또는 휴대전화'"/>
+      	onfocus="this.placeholder = ''" onblur="this.placeholder = '비밀번호 입력'"/>
       </div>
       
       <span id='hide' style="display:none; color: red;">

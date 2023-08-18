@@ -7,123 +7,121 @@
    <meta charset="UTF-8">
    <title>로그인 아이디입력</title>
    <style type="text/css">
-      p{
-        font-size: 14px;
-      }
-      #firstPtag{
-      	font-size: 17px;
-      	margin-top: 5px;
-      	margin-bottom: 40px; 
-      }
+		p{
+        	font-size: 14px;        
+		}
       
-      #firstDiv{
-         border-radius: 10px;
-         border: 1px solid #E5E5E5;
-         height: 416px;
-         width: 370px; 
-         padding: 48px 40px 36px;
-               
-                  
-      }
+		#firstPtag{
+      		font-size: 17px;
+      		margin-top: 5px;
+      		margin-bottom: 40px; 
+		}
       
-      #firstDiv{
-         margin: auto;
-      }
+		#firstDiv{
+			border-radius: 10px;
+			border: 1px solid #E5E5E5;
+			height: 416px;
+			width: 370px; 
+			padding: 48px 40px 36px;                                 
+		}
       
-      #lastDiv {
-         display:flex;
-         justify-content: center;
-         
-      }
+		#firstDiv{
+			margin: auto;
+		}
       
-      html, body{
-         margin-top: 80px;
-      }                  
+		#lastDiv {
+			display:flex;
+			justify-content: center;        
+		}
       
-      h2, #firstPtag{
-         text-align: center;
-      }
+		html, body{
+			margin-top: 80px;
+		}                  
+      
+		h2, #firstPtag{
+			text-align: center;
+		}
             
-      #firstAtag, #secondAtag, #thirdAtag{
-         color: blue;
-      }
+		#firstAtag, #secondAtag, #thirdAtag{
+			color: blue;
+		}
       
-      #firstAtag, #thirdAtag, #secondAtag, #Atag1, #Atag2, #Atag3{
-         text-decoration-line: none; 
-      }
+		#firstAtag, #thirdAtag, #secondAtag, #Atag1, #Atag2, #Atag3{
+			text-decoration-line: none; 
+		}
       
-      #Atag1, #Atag2, #Atag3{
-         margin-right: 28px; 
-      }
+		#Atag1, #Atag2, #Atag3{
+			margin-right: 28px; 
+		}
       
-      #next{
-         font-size: 15px;
-         height: 40px;
-         width: 80px;
-         color: white;         
-         float: right;
-         border-radius: 5px;
-         background-color: #1A73E8;
-         border: none;
-      }
+		#next{
+			font-size: 15px;
+			height: 40px;
+			width: 80px;
+			color: white;         
+			float: right;
+			border-radius: 5px;
+			background-color: #1A73E8;
+			border: none;
+		}
       
-      #idInput{
-         border: 1px solid #E5E5E5;         
-         width: 340px;
-         height: 50px;
-         font-size: 18px;
-         padding-left: 20px;
-         border-radius: 5px;
-      }
+		#idInput{
+			border: 1px solid #E5E5E5;         
+			width: 340px;
+			height: 50px;
+			font-size: 18px;
+			padding-left: 20px;
+			border-radius: 5px;
+		}
             
-      #idInput:focus{
-         border-color: #0982f0;
-         outline: none;
-      }
+		#idInput:focus{
+			border-color: #0982f0;
+			outline: none;
+		}
       
-      #googleDiv{
-          font-size: 30px;
-          display: flex;
-       }
+		#googleDiv{
+			font-size: 30px;
+			display: flex;
+		}
       
-      #logo {
+		#logo {
 			width: 75px;
 			height: 41px;
 			padding-left: 145px;
 		}
 		
-	#login{
-		font-weight: 500;
-		text-align: center;
-		font-size: 25px;
-		margin-top: 5px;
-		margin-bottom: 1px;
-	}	
+		#login{
+			font-weight: 500;
+			text-align: center;
+			font-size: 25px;
+			margin-top: 5px;
+			margin-bottom: 1px;
+		}	
       
-      select{
-         border: none;
-         width: 200px;
-      }
+		select{
+			border: none;
+			width: 200px;
+		}
       
-      #lastAtag{
-      	margin-top: 1px;
-      }
+		#lastAtag{
+      		margin-top: 1px;
+		}
       
-      #lastPtag{
-      	margin-bottom: 1px;
-      }
+		#lastPtag{
+      		margin-bottom: 1px;
+		}
       
-      #firstAtag{
-      	margin-top: 1px;
-      }
+		#firstAtag{
+      		margin-top: 1px;
+		}
       
-      #inputDiv{
-      	margin-bottom: 1px;
-      }
+		#inputDiv{
+      		margin-bottom: 1px;
+		}
       
-      #hide, #hide2{
-      	margin-bottom: 1px;
-      }
+		#hide, #hide2{
+      		margin-bottom: 1px;
+		}
    
    </style>
 

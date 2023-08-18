@@ -361,11 +361,12 @@ public class MemberDao {
 	            
 	      String sql = "";
 	      
-	      sql += "SELECT RECOVERY_EMAIL, MNAME";
+	      sql += "SELECT RECOVERY_EMAIL, MNAME, EMAIL";
 	      sql += " FROM MEMBERS";
 	      sql += " WHERE RECOVERY_EMAIL = ?";
 	      sql += " AND MNAME = ?";	      	      
-	                              
+	      
+	      String email = "";
 	      try {                  
 	         
 	         pstmt = connection.prepareStatement(sql);
@@ -380,8 +381,10 @@ public class MemberDao {
 	         if(rs.next()) {
 	        	recovery_email = rs.getString("recovery_email");   
 	            mname = rs.getString("mname");
+	            email = rs.getString("email");
 	            memberDto.setEmail(recovery_email);
-	            memberDto.setMname(mname);                        
+	            memberDto.setMname(mname);
+	            memberDto.setEmail(email);
 	                                    
 	            return memberDto;
 
